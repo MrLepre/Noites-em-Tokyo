@@ -2,15 +2,11 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="Guia oficial do sistema de RPG Noites em Tokyo."
+        content="Noites em Tokyo — Guia oficial do sistema de RPG."
     >
 
     <title>Noites em Tokyo — Guia do Sistema</title>
@@ -20,249 +16,369 @@
 
 <body>
 
-    <!-- ==========================================
-         SIDEBAR / NAVEGAÇÃO
-    =========================================== -->
+    <!-- =========================================
+         FUNDO
+    ========================================== -->
+
+    <div class="background-noise"></div>
+    <div class="background-vignette"></div>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
 
     <aside class="sidebar">
 
-        <div class="brand">
+        <div class="sidebar-top">
 
-            <div class="brand-title">
-                Noites em Tokyo
+            <div class="brand">
+
+                <div class="brand-mark">
+                    N
+                </div>
+
+                <div class="brand-text">
+                    <h1>Noites em Tokyo</h1>
+                    <span>GUIA DO SISTEMA</span>
+                </div>
+
             </div>
 
-            <div class="brand-subtitle">
-                GUIA DO SISTEMA
-            </div>
+
+            <div class="sidebar-divider"></div>
+
+
+            <nav class="navigation">
+
+                <div class="nav-label">
+                    SISTEMA
+                </div>
+
+                <a href="#inicio" class="nav-link active">
+                    <span class="nav-index">00</span>
+                    <span>Início</span>
+                </a>
+
+                <a href="#sistema" class="nav-link">
+                    <span class="nav-index">01</span>
+                    <span>O Sistema</span>
+                </a>
+
+                <a href="#atributos" class="nav-link">
+                    <span class="nav-index">02</span>
+                    <span>Atributos</span>
+                </a>
+
+                <a href="#testes" class="nav-link">
+                    <span class="nav-index">03</span>
+                    <span>Testes</span>
+                </a>
+
+
+                <div class="nav-label nav-label-space">
+                    GHOULS
+                </div>
+
+                <a href="#kagunes" class="nav-link">
+                    <span class="nav-index">04</span>
+                    <span>Kagunes</span>
+                </a>
+
+                <a href="#ciclo" class="nav-link">
+                    <span class="nav-index">05</span>
+                    <span>Ciclo das Kagunes</span>
+                </a>
+
+                <a href="#fome" class="nav-link">
+                    <span class="nav-index">06</span>
+                    <span>Fome</span>
+                </a>
+
+                <a href="#kakuja" class="nav-link">
+                    <span class="nav-index">07</span>
+                    <span>Kakuja</span>
+                </a>
+
+
+                <div class="nav-label nav-label-space">
+                    CONFRONTO
+                </div>
+
+                <a href="#combate" class="nav-link">
+                    <span class="nav-index">08</span>
+                    <span>Combate</span>
+                </a>
+
+                <a href="#desenvolvimento" class="nav-link">
+                    <span class="nav-index">09</span>
+                    <span>Em Desenvolvimento</span>
+                </a>
+
+            </nav>
 
         </div>
 
 
-        <nav class="navigation">
+        <div class="sidebar-bottom">
 
-            <a href="#inicio" class="nav-link active">
-                Início
-            </a>
+            <div class="sidebar-status">
+                <span class="status-dot"></span>
+                SISTEMA EM DESENVOLVIMENTO
+            </div>
 
-            <a href="#sistema" class="nav-link">
-                O Sistema
-            </a>
+            <div class="sidebar-version">
+                NOITES EM TOKYO
+            </div>
 
-            <a href="#atributos" class="nav-link">
-                Atributos
-            </a>
-
-            <a href="#testes" class="nav-link">
-                Testes
-            </a>
-
-            <a href="#kagunes" class="nav-link">
-                Kagunes
-            </a>
-
-            <a href="#ciclo" class="nav-link">
-                Ciclo
-            </a>
-
-            <a href="#fome" class="nav-link">
-                Fome
-            </a>
-
-            <a href="#kakuja" class="nav-link">
-                Kakuja
-            </a>
-
-            <a href="#combate" class="nav-link">
-                Combate
-            </a>
-
-            <a href="#desenvolvimento" class="nav-link">
-                Em Desenvolvimento
-            </a>
-
-        </nav>
-
-
-        <div class="sidebar-footer">
-            <span>NOITES EM TOKYO</span>
-            <small>Sistema em desenvolvimento</small>
         </div>
 
     </aside>
 
 
-    <!-- ==========================================
+
+    <!-- =========================================
          CONTEÚDO PRINCIPAL
-    =========================================== -->
+    ========================================== -->
 
     <main class="main-content">
 
 
-        <!-- ======================================
-             INÍCIO
-        ======================================= -->
+        <!-- =====================================
+             HERO
+        ====================================== -->
 
         <section id="inicio" class="section hero">
 
+            <div class="hero-decoration hero-decoration-left"></div>
+            <div class="hero-decoration hero-decoration-right"></div>
+
             <div class="hero-content">
 
-                <div class="eyebrow">
+                <span class="eyebrow">
                     SISTEMA DE RPG
-                </div>
+                </span>
 
-                <h1>
-                    Noites em Tokyo
-                </h1>
+                <h2>
+                    Noites
+                    <span>em Tokyo</span>
+                </h2>
+
+                <div class="hero-line"></div>
 
                 <p class="hero-description">
-                    Um RPG de horror urbano, sobrevivência e conflito
-                    entre humanos e Ghouls.
+                    Entre humanos e monstros existe apenas uma
+                    fina linha.
                 </p>
-
-                <div class="hero-rule"></div>
 
                 <p class="hero-text">
-                    Em uma Tokyo onde criaturas predatórias caminham
-                    entre os humanos, sobreviver significa aprender
-                    a controlar aquilo que existe dentro de você.
+                    Uma noite pode transformar um homem em predador.
+                    Uma escolha pode revelar o monstro que sempre
+                    esteve escondido dentro dele.
                 </p>
+
+
+                <div class="hero-system">
+
+                    <div class="hero-system-item">
+                        <strong>2d10</strong>
+                        <span>SISTEMA BASE</span>
+                    </div>
+
+                    <div class="hero-system-divider"></div>
+
+                    <div class="hero-system-item">
+                        <strong>7</strong>
+                        <span>ATRIBUTOS</span>
+                    </div>
+
+                    <div class="hero-system-divider"></div>
+
+                    <div class="hero-system-item">
+                        <strong>4</strong>
+                        <span>KAGUNES</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-bottom">
+
+                <span>
+                    GUIA DO SISTEMA
+                </span>
+
+                <span>
+                    SCROLL PARA EXPLORAR
+                </span>
 
             </div>
 
         </section>
 
 
-        <!-- ======================================
-             O SISTEMA
-        ======================================= -->
+
+        <!-- =====================================
+             SISTEMA
+        ====================================== -->
 
         <section id="sistema" class="section">
 
             <div class="section-heading">
 
-                <span class="section-number">
+                <div class="section-number">
                     01
-                </span>
+                </div>
 
-                <div>
+                <div class="section-heading-content">
+
+                    <span class="section-kicker">
+                        FUNDAMENTOS
+                    </span>
+
                     <h2>
                         O Sistema
                     </h2>
 
                     <p>
-                        Os fundamentos de Noites em Tokyo.
+                        As regras fundamentais de Noites em Tokyo.
                     </p>
+
                 </div>
 
             </div>
 
 
-            <div class="intro-panel">
+            <div class="content-panel">
+
+                <div class="panel-decoration"></div>
+
+                <span class="panel-label">
+                    PRINCÍPIO
+                </span>
 
                 <h3>
                     Um sistema baseado em 2d10
                 </h3>
 
                 <p>
-                    Noites em Tokyo utiliza dois dados de dez faces
-                    (<strong>2d10</strong>) como base para a resolução
-                    das ações dos personagens.
+                    Noites em Tokyo utiliza dois dados de dez faces,
+                    conhecidos como <strong>2d10</strong>, como base
+                    para a resolução das ações dos personagens.
                 </p>
 
                 <p>
-                    Sempre que um personagem tentar realizar uma ação
-                    cujo resultado seja incerto, o Mestre pode solicitar
-                    um teste.
+                    Quando uma ação possui risco, dificuldade ou
+                    resultado incerto, o Mestre pode solicitar um
+                    teste.
                 </p>
 
                 <p>
-                    O resultado dos dados é combinado com o modificador
-                    do atributo apropriado para determinar o resultado
-                    da ação.
+                    O personagem rola os dados e adiciona o modificador
+                    correspondente ao atributo utilizado na ação.
                 </p>
 
             </div>
 
 
-            <div class="rules-panel">
+            <div class="feature-grid">
 
-                <div class="rule-card">
+                <article class="feature-card">
 
-                    <span class="rule-number">
+                    <span class="feature-number">
                         01
                     </span>
 
+                    <div class="feature-icon">
+                        ◈
+                    </div>
+
                     <h3>
-                        Role os dados
+                        Role
                     </h3>
 
                     <p>
-                        Role 2d10.
+                        Role os dois dados de dez faces.
                     </p>
 
-                </div>
+                </article>
 
 
-                <div class="rule-card">
+                <article class="feature-card">
 
-                    <span class="rule-number">
+                    <span class="feature-number">
                         02
                     </span>
 
+                    <div class="feature-icon">
+                        ◇
+                    </div>
+
                     <h3>
-                        Adicione o atributo
+                        Modifique
                     </h3>
 
                     <p>
-                        Some o modificador correspondente.
+                        Adicione o modificador do atributo apropriado.
                     </p>
 
-                </div>
+                </article>
 
 
-                <div class="rule-card">
+                <article class="feature-card">
 
-                    <span class="rule-number">
+                    <span class="feature-number">
                         03
                     </span>
 
+                    <div class="feature-icon">
+                        ◆
+                    </div>
+
                     <h3>
-                        Compare o resultado
+                        Resolva
                     </h3>
 
                     <p>
-                        O resultado é comparado com a dificuldade
-                        ou oposição determinada pelo Mestre.
+                        Compare o resultado com a dificuldade ou oposição.
                     </p>
 
-                </div>
+                </article>
 
             </div>
 
         </section>
 
 
-        <!-- ======================================
+
+        <!-- =====================================
              ATRIBUTOS
-        ======================================= -->
+        ====================================== -->
 
         <section id="atributos" class="section">
 
             <div class="section-heading">
 
-                <span class="section-number">
+                <div class="section-number">
                     02
-                </span>
+                </div>
 
-                <div>
+                <div class="section-heading-content">
+
+                    <span class="section-kicker">
+                        PERSONAGEM
+                    </span>
+
                     <h2>
                         Atributos
                     </h2>
 
                     <p>
-                        As capacidades fundamentais de um personagem.
+                        As capacidades que definem cada personagem.
                     </p>
+
                 </div>
 
             </div>
@@ -271,175 +387,139 @@
             <div class="attributes-grid">
 
 
-                <!-- FORÇA -->
-
                 <article class="attribute-card">
 
-                    <div class="attribute-icon">
-                        FOR
+                    <div class="attribute-top">
+                        <span>01</span>
+                        <b>FOR</b>
                     </div>
 
-                    <div class="attribute-content">
+                    <h3>
+                        Força
+                    </h3>
 
-                        <h3>
-                            Força
-                        </h3>
-
-                        <p>
-                            Representa o poder físico, impacto,
-                            força bruta e capacidade de exercer
-                            força corporal.
-                        </p>
-
-                    </div>
+                    <p>
+                        Poder físico, impacto, força bruta e capacidade
+                        de exercer força corporal.
+                    </p>
 
                 </article>
 
 
-                <!-- AGILIDADE -->
-
                 <article class="attribute-card">
 
-                    <div class="attribute-icon">
-                        AGI
+                    <div class="attribute-top">
+                        <span>02</span>
+                        <b>AGI</b>
                     </div>
 
-                    <div class="attribute-content">
+                    <h3>
+                        Agilidade
+                    </h3>
 
-                        <h3>
-                            Agilidade
-                        </h3>
-
-                        <p>
-                            Representa velocidade, reflexos,
-                            coordenação, esquiva e precisão
-                            dos movimentos.
-                        </p>
-
-                    </div>
+                    <p>
+                        Velocidade, reflexos, coordenação, esquiva
+                        e precisão dos movimentos.
+                    </p>
 
                 </article>
 
 
-                <!-- CONSTITUIÇÃO -->
-
                 <article class="attribute-card">
 
-                    <div class="attribute-icon">
-                        CON
+                    <div class="attribute-top">
+                        <span>03</span>
+                        <b>CON</b>
                     </div>
 
-                    <div class="attribute-content">
+                    <h3>
+                        Constituição
+                    </h3>
 
-                        <h3>
-                            Constituição
-                        </h3>
-
-                        <p>
-                            Representa resistência física,
-                            vitalidade, tolerância a ferimentos
-                            e capacidade de suportar esforço.
-                        </p>
-
-                    </div>
+                    <p>
+                        Resistência física, vitalidade e capacidade
+                        de suportar ferimentos e esforço.
+                    </p>
 
                 </article>
 
 
-                <!-- INTELIGÊNCIA -->
-
                 <article class="attribute-card">
 
-                    <div class="attribute-icon">
-                        INT
+                    <div class="attribute-top">
+                        <span>04</span>
+                        <b>INT</b>
                     </div>
 
-                    <div class="attribute-content">
+                    <h3>
+                        Inteligência
+                    </h3>
 
-                        <h3>
-                            Inteligência
-                        </h3>
-
-                        <p>
-                            Representa raciocínio, conhecimento,
-                            análise, lógica e capacidade intelectual.
-                        </p>
-
-                    </div>
+                    <p>
+                        Raciocínio, conhecimento, análise e capacidade
+                        intelectual.
+                    </p>
 
                 </article>
 
 
-                <!-- SABEDORIA -->
-
                 <article class="attribute-card">
 
-                    <div class="attribute-icon">
-                        SAB
+                    <div class="attribute-top">
+                        <span>05</span>
+                        <b>SAB</b>
                     </div>
 
-                    <div class="attribute-content">
+                    <h3>
+                        Sabedoria
+                    </h3>
 
-                        <h3>
-                            Sabedoria
-                        </h3>
-
-                        <p>
-                            Representa percepção, experiência,
-                            leitura do ambiente e instinto.
-                        </p>
-
-                    </div>
+                    <p>
+                        Percepção, experiência, leitura do ambiente
+                        e instinto.
+                    </p>
 
                 </article>
 
 
-                <!-- CARISMA -->
-
                 <article class="attribute-card">
 
-                    <div class="attribute-icon">
-                        CAR
+                    <div class="attribute-top">
+                        <span>06</span>
+                        <b>CAR</b>
                     </div>
 
-                    <div class="attribute-content">
+                    <h3>
+                        Carisma
+                    </h3>
 
-                        <h3>
-                            Carisma
-                        </h3>
-
-                        <p>
-                            Representa presença, influência,
-                            comunicação e capacidade de afetar
-                            outras pessoas.
-                        </p>
-
-                    </div>
+                    <p>
+                        Presença, influência, comunicação e capacidade
+                        de afetar outras pessoas.
+                    </p>
 
                 </article>
 
-
-                <!-- FOME -->
 
                 <article class="attribute-card attribute-fome">
 
-                    <div class="attribute-icon">
-                        FOM
+                    <div class="attribute-top">
+                        <span>07</span>
+                        <b>FOM</b>
                     </div>
 
-                    <div class="attribute-content">
+                    <h3>
+                        Fome
+                    </h3>
 
-                        <h3>
-                            Fome
-                        </h3>
+                    <p>
+                        Instinto predatório, desejo de consumir e a
+                        natureza Ghoul existente dentro do personagem.
+                    </p>
 
-                        <p>
-                            Representa o instinto predatório,
-                            o desejo de consumir e a natureza
-                            Ghoul existente dentro do personagem.
-                        </p>
-
-                    </div>
+                    <span class="attribute-warning">
+                        ESPECIAL
+                    </span>
 
                 </article>
 
@@ -450,136 +530,140 @@
 
             <div class="modifier-panel">
 
-                <div class="modifier-title">
+                <div class="modifier-header">
 
-                    <span>
-                        MODIFICADORES
+                    <div>
+
+                        <span class="section-kicker">
+                            REFERÊNCIA
+                        </span>
+
+                        <h3>
+                            Modificadores
+                        </h3>
+
+                    </div>
+
+                    <span class="modifier-caption">
+                        VALOR DO ATRIBUTO → MODIFICADOR
                     </span>
-
-                    <small>
-                        Conversão dos valores dos atributos
-                    </small>
 
                 </div>
 
 
-                <table>
+                <div class="table-wrapper">
 
-                    <thead>
+                    <table>
 
-                        <tr>
-                            <th>
-                                Valor
-                            </th>
+                        <thead>
 
-                            <th>
-                                Modificador
-                            </th>
-                        </tr>
+                            <tr>
+                                <th>Valor</th>
+                                <th>Modificador</th>
+                                <th>Valor</th>
+                                <th>Modificador</th>
+                            </tr>
 
-                    </thead>
+                        </thead>
 
+                        <tbody>
 
-                    <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>-1</td>
+                                <td>6</td>
+                                <td>+5</td>
+                            </tr>
 
-                        <tr>
-                            <td>0</td>
-                            <td>-1</td>
-                        </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>+0</td>
+                                <td>7</td>
+                                <td>+6</td>
+                            </tr>
 
-                        <tr>
-                            <td>1</td>
-                            <td>+0</td>
-                        </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>+1</td>
+                                <td>8</td>
+                                <td>+7</td>
+                            </tr>
 
-                        <tr>
-                            <td>2</td>
-                            <td>+1</td>
-                        </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>+2</td>
+                                <td>9</td>
+                                <td>+8</td>
+                            </tr>
 
-                        <tr>
-                            <td>3</td>
-                            <td>+2</td>
-                        </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>+3</td>
+                                <td>10</td>
+                                <td>+9</td>
+                            </tr>
 
-                        <tr>
-                            <td>4</td>
-                            <td>+3</td>
-                        </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>+4</td>
+                                <td>—</td>
+                                <td>—</td>
+                            </tr>
 
-                        <tr>
-                            <td>5</td>
-                            <td>+4</td>
-                        </tr>
+                        </tbody>
 
-                        <tr>
-                            <td>6</td>
-                            <td>+5</td>
-                        </tr>
+                    </table>
 
-                        <tr>
-                            <td>7</td>
-                            <td>+6</td>
-                        </tr>
-
-                        <tr>
-                            <td>8</td>
-                            <td>+7</td>
-                        </tr>
-
-                        <tr>
-                            <td>9</td>
-                            <td>+8</td>
-                        </tr>
-
-                        <tr>
-                            <td>10</td>
-                            <td>+9</td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- ======================================
+
+        <!-- =====================================
              TESTES
-        ======================================= -->
+        ====================================== -->
 
         <section id="testes" class="section">
 
             <div class="section-heading">
 
-                <span class="section-number">
+                <div class="section-number">
                     03
-                </span>
+                </div>
 
-                <div>
+                <div class="section-heading-content">
+
+                    <span class="section-kicker">
+                        RESOLUÇÃO
+                    </span>
+
                     <h2>
                         Testes
                     </h2>
 
                     <p>
-                        Como determinar o resultado das ações.
+                        Quando o resultado de uma ação é incerto.
                     </p>
+
                 </div>
 
             </div>
 
 
-            <div class="formula-box">
+            <div class="formula-panel">
 
-                <span class="formula-label">
-                    FÓRMULA BÁSICA
+                <span>
+                    FÓRMULA DE TESTE
                 </span>
 
-                <div class="formula">
-                    2d10 + MODIFICADOR DO ATRIBUTO
-                </div>
+                <strong>
+                    2d10
+                    <em>+</em>
+                    MODIFICADOR
+                </strong>
 
             </div>
 
@@ -588,18 +672,18 @@
 
                 <article class="rule-card">
 
-                    <span class="rule-number">
-                        TESTE
-                    </span>
+                    <div class="rule-card-top">
+                        <span>01</span>
+                        <b>TESTE</b>
+                    </div>
 
                     <h3>
-                        Ações
+                        Quando testar?
                     </h3>
 
                     <p>
-                        Sempre que uma ação possuir risco,
-                        dificuldade ou resultado incerto,
-                        o Mestre pode solicitar um teste.
+                        Sempre que uma ação possuir risco, dificuldade
+                        ou resultado incerto.
                     </p>
 
                 </article>
@@ -607,17 +691,17 @@
 
                 <article class="rule-card">
 
-                    <span class="rule-number">
-                        ATRIBUTO
-                    </span>
+                    <div class="rule-card-top">
+                        <span>02</span>
+                        <b>ATRIBUTO</b>
+                    </div>
 
                     <h3>
-                        Escolha adequada
+                        Qual atributo?
                     </h3>
 
                     <p>
-                        O atributo utilizado depende da natureza
-                        da ação realizada pelo personagem.
+                        O atributo depende da natureza da ação realizada.
                     </p>
 
                 </article>
@@ -625,18 +709,18 @@
 
                 <article class="rule-card">
 
-                    <span class="rule-number">
-                        OPOSIÇÃO
-                    </span>
+                    <div class="rule-card-top">
+                        <span>03</span>
+                        <b>RESULTADO</b>
+                    </div>
 
                     <h3>
-                        Dificuldade
+                        O que acontece?
                     </h3>
 
                     <p>
-                        O resultado pode ser comparado com uma
-                        dificuldade ou com o resultado de outro
-                        personagem.
+                        O resultado é comparado com a dificuldade ou
+                        com a oposição determinada pelo Mestre.
                     </p>
 
                 </article>
@@ -646,62 +730,81 @@
         </section>
 
 
-        <!-- ======================================
-             KAGUNES
-        ======================================= -->
 
-        <section id="kagunes" class="section">
+        <!-- =====================================
+             KAGUNES
+        ====================================== -->
+
+        <section id="kagunes" class="section kagunes-section">
 
             <div class="section-heading">
 
-                <span class="section-number">
+                <div class="section-number">
                     04
-                </span>
+                </div>
 
-                <div>
+                <div class="section-heading-content">
+
+                    <span class="section-kicker">
+                        BIOLOGIA GHOUL
+                    </span>
+
                     <h2>
                         Kagunes
                     </h2>
 
                     <p>
-                        As estruturas predatórias dos Ghouls.
+                        A arma natural que nasce do corpo de um Ghoul.
                     </p>
+
                 </div>
 
             </div>
 
 
-            <div class="intro-panel">
+            <div class="content-panel">
+
+                <span class="panel-label">
+                    KAGUNE
+                </span>
+
+                <h3>
+                    A manifestação da natureza predatória
+                </h3>
 
                 <p>
-                    A Kagune é um órgão predatório formado a partir
-                    das células RC de um Ghoul.
+                    A Kagune é uma estrutura predatória formada pelas
+                    células RC de um Ghoul.
                 </p>
 
                 <p>
-                    Cada tipo de Kagune possui características,
-                    vantagens e limitações próprias.
+                    Existem quatro tipos principais de Kagune.
+                    Cada um possui características, vantagens e
+                    limitações próprias.
                 </p>
 
             </div>
+
 
 
             <!-- UKAKU -->
 
             <article class="kagune-entry">
 
-                <div class="kagune-header">
+                <div class="kagune-entry-header">
 
-                    <span class="kagune-type">
-                        TIPO I
-                    </span>
+                    <div>
+                        <span>
+                            TIPO I
+                        </span>
 
-                    <h3>
-                        Ukaku
-                    </h3>
+                        <h3>
+                            Ukaku
+                        </h3>
+                    </div>
 
                     <p>
-                        Velocidade e ataques à distância.
+                        VELOCIDADE · DISTÂNCIA · MOBILIDADE
                     </p>
 
                 </div>
@@ -728,9 +831,9 @@
                             </h4>
 
                             <p>
-                                A Ukaku é uma Kagune extremamente
-                                leve e veloz, especializada em
-                                mobilidade e ataques à distância.
+                                Uma Kagune extremamente leve e veloz,
+                                especializada em mobilidade e ataques
+                                à distância.
                             </p>
 
                         </div>
@@ -743,23 +846,10 @@
                             </h4>
 
                             <ul>
-
-                                <li>
-                                    Alta velocidade
-                                </li>
-
-                                <li>
-                                    Grande mobilidade
-                                </li>
-
-                                <li>
-                                    Ataques à distância
-                                </li>
-
-                                <li>
-                                    Excelente capacidade de perseguição
-                                </li>
-
+                                <li>Alta velocidade</li>
+                                <li>Grande mobilidade</li>
+                                <li>Ataques à distância</li>
+                                <li>Excelente perseguição</li>
                             </ul>
 
                         </div>
@@ -772,14 +862,9 @@
                             </h4>
 
                             <p>
-                                O uso intenso consome muita resistência,
-                                tornando a Ukaku menos eficiente em
-                                combates prolongados.
-                            </p>
-
-                            <p>
-                                Também possui menor eficiência
-                                em combate corpo a corpo.
+                                O uso intenso consome muita resistência.
+                                É menos eficiente em combates prolongados
+                                e no corpo a corpo.
                             </p>
 
                         </div>
@@ -805,22 +890,25 @@
             </article>
 
 
+
             <!-- KOUKAKU -->
 
             <article class="kagune-entry">
 
-                <div class="kagune-header">
+                <div class="kagune-entry-header">
 
-                    <span class="kagune-type">
-                        TIPO II
-                    </span>
+                    <div>
+                        <span>
+                            TIPO II
+                        </span>
 
-                    <h3>
-                        Koukaku
-                    </h3>
+                        <h3>
+                            Koukaku
+                        </h3>
+                    </div>
 
                     <p>
-                        Resistência, defesa e força.
+                        RESISTÊNCIA · DEFESA · IMPACTO
                     </p>
 
                 </div>
@@ -847,10 +935,9 @@
                             </h4>
 
                             <p>
-                                A Koukaku é uma Kagune extremamente
-                                resistente, normalmente assumindo
-                                formas semelhantes a lâminas,
-                                escudos ou armaduras.
+                                Extremamente resistente, a Koukaku
+                                normalmente assume formas semelhantes
+                                a lâminas, escudos ou armaduras.
                             </p>
 
                         </div>
@@ -863,23 +950,10 @@
                             </h4>
 
                             <ul>
-
-                                <li>
-                                    Alta resistência
-                                </li>
-
-                                <li>
-                                    Excelente defesa
-                                </li>
-
-                                <li>
-                                    Grande poder de impacto
-                                </li>
-
-                                <li>
-                                    Pode assumir formas defensivas
-                                </li>
-
+                                <li>Alta resistência</li>
+                                <li>Excelente defesa</li>
+                                <li>Grande impacto</li>
+                                <li>Formas defensivas</li>
                             </ul>
 
                         </div>
@@ -893,8 +967,7 @@
 
                             <p>
                                 Sua estrutura pesada reduz a mobilidade
-                                e limita seu alcance em comparação
-                                com outros tipos.
+                                e limita seu alcance.
                             </p>
 
                         </div>
@@ -920,22 +993,25 @@
             </article>
 
 
+
             <!-- RINKAKU -->
 
             <article class="kagune-entry">
 
-                <div class="kagune-header">
+                <div class="kagune-entry-header">
 
-                    <span class="kagune-type">
-                        TIPO III
-                    </span>
+                    <div>
+                        <span>
+                            TIPO III
+                        </span>
 
-                    <h3>
-                        Rinkaku
-                    </h3>
+                        <h3>
+                            Rinkaku
+                        </h3>
+                    </div>
 
                     <p>
-                        Regeneração e poder destrutivo.
+                        REGENERAÇÃO · PODER · ALCANCE
                     </p>
 
                 </div>
@@ -962,9 +1038,9 @@
                             </h4>
 
                             <p>
-                                A Rinkaku possui uma estrutura flexível,
-                                normalmente formada por múltiplos tentáculos
-                                ou ramificações.
+                                Possui uma estrutura flexível, normalmente
+                                formada por múltiplos tentáculos ou
+                                ramificações.
                             </p>
 
                         </div>
@@ -977,23 +1053,10 @@
                             </h4>
 
                             <ul>
-
-                                <li>
-                                    Grande poder ofensivo
-                                </li>
-
-                                <li>
-                                    Ataques simultâneos
-                                </li>
-
-                                <li>
-                                    Excelente regeneração
-                                </li>
-
-                                <li>
-                                    Grande alcance
-                                </li>
-
+                                <li>Grande poder ofensivo</li>
+                                <li>Ataques simultâneos</li>
+                                <li>Excelente regeneração</li>
+                                <li>Grande alcance</li>
                             </ul>
 
                         </div>
@@ -1006,9 +1069,8 @@
                             </h4>
 
                             <p>
-                                Sua estrutura é menos resistente,
-                                tornando-a mais vulnerável a ataques
-                                de Kagunes especializadas em defesa.
+                                Sua estrutura possui menor resistência,
+                                tornando-a vulnerável a Kagunes defensivas.
                             </p>
 
                         </div>
@@ -1034,22 +1096,25 @@
             </article>
 
 
+
             <!-- BIKAKU -->
 
             <article class="kagune-entry">
 
-                <div class="kagune-header">
+                <div class="kagune-entry-header">
 
-                    <span class="kagune-type">
-                        TIPO IV
-                    </span>
+                    <div>
+                        <span>
+                            TIPO IV
+                        </span>
 
-                    <h3>
-                        Bikaku
-                    </h3>
+                        <h3>
+                            Bikaku
+                        </h3>
+                    </div>
 
                     <p>
-                        Equilíbrio e combate versátil.
+                        EQUILÍBRIO · FORÇA · VERSATILIDADE
                     </p>
 
                 </div>
@@ -1076,10 +1141,9 @@
                             </h4>
 
                             <p>
-                                A Bikaku normalmente assume uma forma
-                                semelhante a uma cauda, proporcionando
-                                excelente equilíbrio entre alcance,
-                                força e mobilidade.
+                                Normalmente assume uma forma semelhante
+                                a uma cauda, proporcionando equilíbrio
+                                entre alcance, força e mobilidade.
                             </p>
 
                         </div>
@@ -1092,23 +1156,10 @@
                             </h4>
 
                             <ul>
-
-                                <li>
-                                    Boa força física
-                                </li>
-
-                                <li>
-                                    Bom alcance
-                                </li>
-
-                                <li>
-                                    Grande versatilidade
-                                </li>
-
-                                <li>
-                                    Excelente equilíbrio
-                                </li>
-
+                                <li>Boa força física</li>
+                                <li>Bom alcance</li>
+                                <li>Grande versatilidade</li>
+                                <li>Excelente equilíbrio</li>
                             </ul>
 
                         </div>
@@ -1121,9 +1172,8 @@
                             </h4>
 
                             <p>
-                                É mais lenta que uma Rinkaku e não
-                                possui a especialização defensiva
-                                de uma Koukaku.
+                                É mais lenta que uma Rinkaku e não possui
+                                a especialização defensiva de uma Koukaku.
                             </p>
 
                         </div>
@@ -1151,198 +1201,159 @@
         </section>
 
 
-        <!-- ======================================
-             CICLO DAS KAGUNES
-        ======================================= -->
+
+        <!-- =====================================
+             CICLO
+        ====================================== -->
 
         <section id="ciclo" class="section">
 
             <div class="section-heading">
 
-                <span class="section-number">
+                <div class="section-number">
                     05
-                </span>
+                </div>
 
-                <div>
+                <div class="section-heading-content">
+
+                    <span class="section-kicker">
+                        RELAÇÃO NATURAL
+                    </span>
+
                     <h2>
-                        O Ciclo das Kagunes
+                        Ciclo das Kagunes
                     </h2>
 
                     <p>
-                        A relação natural entre os quatro tipos.
+                        Nenhum tipo é superior a todos os outros.
                     </p>
+
                 </div>
 
             </div>
 
 
-            <div class="intro-panel">
+            <div class="cycle-panel">
+
+                <div class="cycle-item">
+
+                    <span>UKAKU</span>
+
+                    <strong>›</strong>
+
+                    <span>BIKAKU</span>
+
+                </div>
+
+
+                <div class="cycle-item">
+
+                    <span>BIKAKU</span>
+
+                    <strong>›</strong>
+
+                    <span>RINKAKU</span>
+
+                </div>
+
+
+                <div class="cycle-item">
+
+                    <span>RINKAKU</span>
+
+                    <strong>›</strong>
+
+                    <span>KOUKAKU</span>
+
+                </div>
+
+
+                <div class="cycle-item">
+
+                    <span>KOUKAKU</span>
+
+                    <strong>›</strong>
+
+                    <span>UKAKU</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="cycle-explanation">
+
+                <div>
+                    <strong>UKAKU</strong>
+                    <span>vantagem contra</span>
+                    <b>BIKAKU</b>
+                </div>
+
+                <div>
+                    <strong>BIKAKU</strong>
+                    <span>vantagem contra</span>
+                    <b>RINKAKU</b>
+                </div>
+
+                <div>
+                    <strong>RINKAKU</strong>
+                    <span>vantagem contra</span>
+                    <b>KOUKAKU</b>
+                </div>
+
+                <div>
+                    <strong>KOUKAKU</strong>
+                    <span>vantagem contra</span>
+                    <b>UKAKU</b>
+                </div>
+
+            </div>
+
+
+            <div class="content-panel small-panel">
+
+                <span class="panel-label">
+                    IMPORTANTE
+                </span>
 
                 <p>
-                    Os quatro tipos de Kagune possuem uma relação
-                    natural de vantagem e desvantagem.
+                    A vantagem do ciclo representa uma superioridade
+                    natural entre os tipos de Kagune. Ela não significa
+                    uma vitória automática.
                 </p>
-
-                <p>
-                    Essa relação não significa uma vitória automática,
-                    mas representa uma vantagem natural quando dois
-                    tipos entram em conflito.
-                </p>
-
-            </div>
-
-
-            <div class="cycle-container">
-
-
-                <div class="cycle-item">
-
-                    <span>
-                        UKAKU
-                    </span>
-
-                    <strong>
-                        &gt;
-                    </strong>
-
-                    <span>
-                        BIKAKU
-                    </span>
-
-                </div>
-
-
-                <div class="cycle-item">
-
-                    <span>
-                        BIKAKU
-                    </span>
-
-                    <strong>
-                        &gt;
-                    </strong>
-
-                    <span>
-                        RINKAKU
-                    </span>
-
-                </div>
-
-
-                <div class="cycle-item">
-
-                    <span>
-                        RINKAKU
-                    </span>
-
-                    <strong>
-                        &gt;
-                    </strong>
-
-                    <span>
-                        KOUKAKU
-                    </span>
-
-                </div>
-
-
-                <div class="cycle-item">
-
-                    <span>
-                        KOUKAKU
-                    </span>
-
-                    <strong>
-                        &gt;
-                    </strong>
-
-                    <span>
-                        UKAKU
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="rules-panel">
-
-                <div class="rule-card">
-
-                    <h3>
-                        Ukaku
-                    </h3>
-
-                    <p>
-                        Possui vantagem natural contra Bikaku.
-                    </p>
-
-                </div>
-
-
-                <div class="rule-card">
-
-                    <h3>
-                        Bikaku
-                    </h3>
-
-                    <p>
-                        Possui vantagem natural contra Rinkaku.
-                    </p>
-
-                </div>
-
-
-                <div class="rule-card">
-
-                    <h3>
-                        Rinkaku
-                    </h3>
-
-                    <p>
-                        Possui vantagem natural contra Koukaku.
-                    </p>
-
-                </div>
-
-
-                <div class="rule-card">
-
-                    <h3>
-                        Koukaku
-                    </h3>
-
-                    <p>
-                        Possui vantagem natural contra Ukaku.
-                    </p>
-
-                </div>
 
             </div>
 
         </section>
 
 
-        <!-- ======================================
+
+        <!-- =====================================
              FOME
-        ======================================= -->
+        ====================================== -->
 
         <section id="fome" class="section">
 
             <div class="section-heading">
 
-                <span class="section-number">
+                <div class="section-number">
                     06
-                </span>
+                </div>
 
-                <div>
+                <div class="section-heading-content">
+
+                    <span class="section-kicker">
+                        INSTINTO
+                    </span>
+
                     <h2>
                         Fome
                     </h2>
 
                     <p>
-                        O instinto que existe dentro de cada Ghoul.
+                        O monstro que existe dentro do Ghoul.
                     </p>
+
                 </div>
 
             </div>
@@ -1354,18 +1365,21 @@
                     F
                 </div>
 
+                <div class="fome-content">
 
-                <div>
+                    <span class="panel-label">
+                        ATRIBUTO ESPECIAL
+                    </span>
 
                     <h3>
-                        A Fome não é apenas uma necessidade física.
+                        A Fome não é apenas uma necessidade.
                     </h3>
 
                     <p>
                         Ela representa o instinto predatório do Ghoul,
                         o desejo de consumir carne humana e a luta
-                        constante entre a natureza monstruosa e a
-                        consciência do personagem.
+                        constante entre a consciência e a natureza
+                        monstruosa.
                     </p>
 
                     <p>
@@ -1382,73 +1396,72 @@
 
             <div class="fome-grid">
 
-                <article class="rule-card">
+                <article class="feature-card">
 
-                    <span class="rule-number">
-                        INSTINTO
+                    <span class="feature-number">
+                        01
                     </span>
 
                     <h3>
-                        Natureza predatória
+                        Instinto
                     </h3>
 
                     <p>
-                        A Fome representa os impulsos mais básicos
-                        e violentos de um Ghoul.
+                        Representa os impulsos predatórios mais básicos
+                        de um Ghoul.
                     </p>
 
                 </article>
 
 
-                <article class="rule-card">
+                <article class="feature-card">
 
-                    <span class="rule-number">
-                        CONTROLE
+                    <span class="feature-number">
+                        02
                     </span>
 
                     <h3>
-                        Resistir à natureza
+                        Controle
                     </h3>
 
                     <p>
-                        O personagem precisa lidar constantemente
-                        com o desejo de consumir.
+                        A luta constante para resistir à própria natureza.
                     </p>
 
                 </article>
 
 
-                <article class="rule-card">
+                <article class="feature-card">
 
-                    <span class="rule-number">
-                        EVOLUÇÃO
+                    <span class="feature-number">
+                        03
                     </span>
 
                     <h3>
-                        Além dos limites
+                        Evolução
                     </h3>
 
                     <p>
-                        A Fome poderá influenciar regeneração,
-                        Kagune, estresse e evolução do personagem.
+                        A Fome poderá influenciar regeneração, Kagune,
+                        estresse e evolução.
                     </p>
 
                 </article>
 
 
-                <article class="rule-card">
+                <article class="feature-card">
 
-                    <span class="rule-number">
-                        KAKUJA
+                    <span class="feature-number">
+                        04
                     </span>
 
                     <h3>
-                        O caminho do monstro
+                        Kakuja
                     </h3>
 
                     <p>
-                        A relação entre Fome, consumo e evolução
-                        poderá levar ao desenvolvimento de um Kakuja.
+                        O caminho da Fome pode eventualmente conduzir
+                        ao desenvolvimento de um Kakuja.
                     </p>
 
                 </article>
@@ -1456,16 +1469,15 @@
             </div>
 
 
-            <div class="intro-panel">
+            <div class="development-note">
 
-                <h3>
-                    Mecânica em desenvolvimento
-                </h3>
+                <span>
+                    EM DESENVOLVIMENTO
+                </span>
 
                 <p>
                     Os valores e regras exatas da Fome ainda estão
-                    sendo desenvolvidos e serão adicionados ao sistema
-                    posteriormente.
+                    sendo desenvolvidos.
                 </p>
 
             </div>
@@ -1473,44 +1485,58 @@
         </section>
 
 
-        <!-- ======================================
+
+        <!-- =====================================
              KAKUJA
-        ======================================= -->
+        ====================================== -->
 
         <section id="kakuja" class="section">
 
             <div class="section-heading">
 
-                <span class="section-number">
+                <div class="section-number">
                     07
-                </span>
+                </div>
 
-                <div>
+                <div class="section-heading-content">
+
+                    <span class="section-kicker">
+                        EVOLUÇÃO
+                    </span>
+
                     <h2>
                         Kakuja
                     </h2>
 
                     <p>
-                        Quando o Ghoul começa a se tornar algo além
-                        de um simples predador.
+                        Quando o Ghoul ultrapassa seus próprios limites.
                     </p>
+
                 </div>
 
             </div>
 
 
-            <div class="intro-panel">
+            <div class="content-panel">
+
+                <span class="panel-label">
+                    MANIFESTAÇÃO AVANÇADA
+                </span>
+
+                <h3>
+                    O nascimento do monstro
+                </h3>
 
                 <p>
                     O Kakuja é uma manifestação avançada da Kagune,
-                    normalmente associada ao acúmulo e mutação de
-                    células RC.
+                    normalmente associada ao acúmulo e à mutação
+                    de células RC.
                 </p>
 
                 <p>
-                    A transformação pode assumir diferentes formas,
-                    variando desde uma manifestação parcial até uma
-                    forma monstruosa que cobre grande parte do corpo.
+                    Sua forma pode variar desde uma manifestação
+                    parcial até uma transformação monstruosa que
+                    cobre grande parte do corpo.
                 </p>
 
                 <p>
@@ -1519,6 +1545,7 @@
                 </p>
 
             </div>
+
 
 
             <!-- KAKUJA PARCIAL -->
@@ -1562,7 +1589,8 @@
             </article>
 
 
-            <!-- KAKUJA COMPLETA — ARMADURA -->
+
+            <!-- KAKUJA ARMADURA -->
 
             <article class="kakuja-card">
 
@@ -1597,8 +1625,8 @@
                     </p>
 
                     <p>
-                        Usuários experientes podem manter maior controle
-                        sobre essa forma.
+                        Usuários experientes podem manter maior
+                        controle sobre essa forma.
                     </p>
 
                 </div>
@@ -1606,7 +1634,8 @@
             </article>
 
 
-            <!-- KAKUJA COMPLETA — MONSTRUOSA -->
+
+            <!-- KAKUJA MONSTRUOSA -->
 
             <article class="kakuja-card">
 
@@ -1651,10 +1680,15 @@
             </article>
 
 
-            <div class="intro-panel">
+
+            <div class="content-panel">
+
+                <span class="panel-label">
+                    A IDENTIDADE DO PREDADOR
+                </span>
 
                 <h3>
-                    A máscara do predador
+                    A máscara
                 </h3>
 
                 <p>
@@ -1664,89 +1698,40 @@
                 </p>
 
                 <p>
-                    Em alguns casos, a máscara pode se tornar uma
-                    das características mais marcantes da transformação.
+                    Em alguns casos, a máscara se torna uma das
+                    características mais marcantes da transformação.
                 </p>
-
-            </div>
-
-
-            <div class="rules-panel">
-
-                <div class="rule-card">
-
-                    <span class="rule-number">
-                        I
-                    </span>
-
-                    <h3>
-                        Parcial
-                    </h3>
-
-                    <p>
-                        Primeiros sinais da evolução.
-                    </p>
-
-                </div>
-
-
-                <div class="rule-card">
-
-                    <span class="rule-number">
-                        II
-                    </span>
-
-                    <h3>
-                        Armadura
-                    </h3>
-
-                    <p>
-                        Manifestação completa e defensiva.
-                    </p>
-
-                </div>
-
-
-                <div class="rule-card">
-
-                    <span class="rule-number">
-                        III
-                    </span>
-
-                    <h3>
-                        Monstruosa
-                    </h3>
-
-                    <p>
-                        Evolução extrema da natureza predatória.
-                    </p>
-
-                </div>
 
             </div>
 
         </section>
 
 
-        <!-- ======================================
+
+        <!-- =====================================
              COMBATE
-        ======================================= -->
+        ====================================== -->
 
         <section id="combate" class="section">
 
             <div class="section-heading">
 
-                <span class="section-number">
+                <div class="section-number">
                     08
-                </span>
+                </div>
 
-                <div>
+                <div class="section-heading-content">
+
+                    <span class="section-kicker">
+                        CONFRONTO
+                    </span>
+
                     <h2>
                         Combate
                     </h2>
 
                     <p>
-                        Confrontos entre humanos, Ghouls e monstros.
+                        Humanos, Ghouls e monstros frente a frente.
                     </p>
 
                 </div>
@@ -1754,133 +1739,85 @@
             </div>
 
 
-            <div class="intro-panel">
+            <div class="combat-warning">
 
-                <h3>
-                    Sistema de combate em desenvolvimento
-                </h3>
+                <div class="warning-symbol">
+                    !
+                </div>
 
-                <p>
-                    As regras completas de combate ainda estão sendo
-                    desenvolvidas.
-                </p>
+                <div>
 
-                <p>
-                    O objetivo é criar um sistema rápido, brutal e
-                    cinematográfico, capaz de representar a violência
-                    e a velocidade dos confrontos de Noites em Tokyo.
-                </p>
+                    <span>
+                        SISTEMA EM DESENVOLVIMENTO
+                    </span>
+
+                    <h3>
+                        O combate ainda está sendo construído.
+                    </h3>
+
+                    <p>
+                        O objetivo é criar confrontos rápidos, brutais
+                        e cinematográficos, capazes de representar a
+                        velocidade e a violência do universo de
+                        Noites em Tokyo.
+                    </p>
+
+                </div>
 
             </div>
 
 
             <div class="development-grid">
 
-
-                <article class="rule-card">
-
-                    <span class="rule-number">
-                        01
-                    </span>
-
-                    <h3>
-                        Iniciativa
-                    </h3>
-
+                <article class="feature-card">
+                    <span class="feature-number">01</span>
+                    <h3>Iniciativa</h3>
                     <p>
-                        Determinação da ordem dos personagens
-                        durante o combate.
+                        Determinação da ordem dos personagens durante
+                        o combate.
                     </p>
-
                 </article>
 
-
-                <article class="rule-card">
-
-                    <span class="rule-number">
-                        02
-                    </span>
-
-                    <h3>
-                        Ataques
-                    </h3>
-
+                <article class="feature-card">
+                    <span class="feature-number">02</span>
+                    <h3>Ataques</h3>
                     <p>
-                        Regras para ataques físicos, Kagunes
-                        e armas.
+                        Ataques físicos, Kagunes e armas.
                     </p>
-
                 </article>
 
-
-                <article class="rule-card">
-
-                    <span class="rule-number">
-                        03
-                    </span>
-
-                    <h3>
-                        Dano
-                    </h3>
-
+                <article class="feature-card">
+                    <span class="feature-number">03</span>
+                    <h3>Dano</h3>
                     <p>
-                        Sistema de dano e consequências
-                        dos ferimentos.
+                        Sistema de dano e consequências dos ferimentos.
                     </p>
-
                 </article>
 
-
-                <article class="rule-card">
-
-                    <span class="rule-number">
-                        04
-                    </span>
-
-                    <h3>
-                        Regeneração
-                    </h3>
-
+                <article class="feature-card">
+                    <span class="feature-number">04</span>
+                    <h3>Regeneração</h3>
                     <p>
                         Regras para recuperação dos Ghouls.
                     </p>
-
                 </article>
 
-
-                <article class="rule-card">
-
-                    <span class="rule-number">
-                        05
-                    </span>
-
-                    <h3>
-                        Fome
-                    </h3>
-
+                <article class="feature-card">
+                    <span class="feature-number">05</span>
+                    <h3>Fome</h3>
                     <p>
-                        Influência da Fome durante situações
-                        de combate e estresse.
+                        Influência da Fome durante situações de
+                        combate e estresse.
                     </p>
-
                 </article>
 
-
-                <article class="rule-card">
-
-                    <span class="rule-number">
-                        06
-                    </span>
-
-                    <h3>
-                        Kagune
-                    </h3>
-
+                <article class="feature-card">
+                    <span class="feature-number">06</span>
+                    <h3>Kagune</h3>
                     <p>
-                        Regras específicas para utilização
-                        das diferentes Kagunes.
+                        Regras específicas para utilização das
+                        diferentes Kagunes.
                     </p>
-
                 </article>
 
             </div>
@@ -1888,19 +1825,25 @@
         </section>
 
 
-        <!-- ======================================
-             EM DESENVOLVIMENTO
-        ======================================= -->
+
+        <!-- =====================================
+             DESENVOLVIMENTO
+        ====================================== -->
 
         <section id="desenvolvimento" class="section">
 
             <div class="section-heading">
 
-                <span class="section-number">
+                <div class="section-number">
                     09
-                </span>
+                </div>
 
-                <div>
+                <div class="section-heading-content">
+
+                    <span class="section-kicker">
+                        STATUS
+                    </span>
+
                     <h2>
                         Em Desenvolvimento
                     </h2>
@@ -1908,126 +1851,78 @@
                     <p>
                         Elementos que ainda receberão regras detalhadas.
                     </p>
+
                 </div>
 
             </div>
 
 
-            <div class="development-grid">
+            <div class="development-status">
 
+                <div class="development-status-header">
 
-                <article class="rule-card">
-
-                    <span class="rule-number">
-                        01
+                    <span>
+                        NOITES EM TOKYO
                     </span>
 
-                    <h3>
-                        Combate
-                    </h3>
+                    <strong>
+                        CONSTRUINDO O SISTEMA
+                    </strong>
 
-                    <p>
-                        Estrutura completa das ações durante combate.
-                    </p>
-
-                </article>
+                </div>
 
 
-                <article class="rule-card">
+                <div class="development-list">
 
-                    <span class="rule-number">
-                        02
-                    </span>
+                    <div>
+                        <span>01</span>
+                        <strong>Combate</strong>
+                        <small>Em desenvolvimento</small>
+                    </div>
 
-                    <h3>
-                        Dano e Ferimentos
-                    </h3>
+                    <div>
+                        <span>02</span>
+                        <strong>Dano e Ferimentos</strong>
+                        <small>Em desenvolvimento</small>
+                    </div>
 
-                    <p>
-                        Consequências mecânicas dos ferimentos
-                        sofridos pelos personagens.
-                    </p>
+                    <div>
+                        <span>03</span>
+                        <strong>Fome</strong>
+                        <small>Em desenvolvimento</small>
+                    </div>
 
-                </article>
+                    <div>
+                        <span>04</span>
+                        <strong>Kakuja</strong>
+                        <small>Em desenvolvimento</small>
+                    </div>
 
+                    <div>
+                        <span>05</span>
+                        <strong>Críticos</strong>
+                        <small>Em desenvolvimento</small>
+                    </div>
 
-                <article class="rule-card">
+                    <div>
+                        <span>06</span>
+                        <strong>Regeneração</strong>
+                        <small>Em desenvolvimento</small>
+                    </div>
 
-                    <span class="rule-number">
-                        03
-                    </span>
-
-                    <h3>
-                        Fome
-                    </h3>
-
-                    <p>
-                        Valores, níveis e consequências da Fome.
-                    </p>
-
-                </article>
-
-
-                <article class="rule-card">
-
-                    <span class="rule-number">
-                        04
-                    </span>
-
-                    <h3>
-                        Kakuja
-                    </h3>
-
-                    <p>
-                        Progressão, condições e efeitos mecânicos
-                        das diferentes formas de Kakuja.
-                    </p>
-
-                </article>
-
-
-                <article class="rule-card">
-
-                    <span class="rule-number">
-                        05
-                    </span>
-
-                    <h3>
-                        Críticos
-                    </h3>
-
-                    <p>
-                        Regras para resultados excepcionais
-                        nos testes.
-                    </p>
-
-                </article>
-
-
-                <article class="rule-card">
-
-                    <span class="rule-number">
-                        06
-                    </span>
-
-                    <h3>
-                        Regeneração
-                    </h3>
-
-                    <p>
-                        Regras detalhadas para regeneração
-                        e recuperação dos Ghouls.
-                    </p>
-
-                </article>
+                </div>
 
             </div>
 
 
-            <div class="intro-panel">
+            <div class="content-panel">
+
+                <span class="panel-label">
+                    NOTA DO SISTEMA
+                </span>
 
                 <h3>
-                    O sistema ainda está sendo construído
+                    Este guia está vivo.
                 </h3>
 
                 <p>
@@ -2038,9 +1933,12 @@
                 <p>
                     Mecânicas que ainda não possuem valores ou
                     procedimentos definitivos permanecem marcadas
-                    como <strong>em desenvolvimento</strong> para
-                    evitar que regras provisórias sejam confundidas
-                    com regras oficiais.
+                    como <strong>em desenvolvimento</strong>.
+                </p>
+
+                <p>
+                    Dessa forma, regras provisórias não são confundidas
+                    com regras oficiais do sistema.
                 </p>
 
             </div>
@@ -2048,24 +1946,29 @@
         </section>
 
 
-        <!-- ======================================
-             RODAPÉ
-        ======================================= -->
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
 
         <footer class="footer">
 
-            <div class="footer-title">
-                NOITES EM TOKYO
+            <div class="footer-symbol">
+                N
             </div>
+
+            <h2>
+                Noites em Tokyo
+            </h2>
 
             <div class="footer-line"></div>
 
             <p>
-                Guia do Sistema
+                GUIA DO SISTEMA
             </p>
 
             <small>
-                Sistema de RPG original — Em desenvolvimento
+                Sistema de RPG original · Em desenvolvimento
             </small>
 
         </footer>
@@ -2074,9 +1977,10 @@
     </main>
 
 
-    <!-- ==========================================
+
+    <!-- =========================================
          JAVASCRIPT
-    =========================================== -->
+    ========================================== -->
 
     <script src="js/app.js"></script>
 
