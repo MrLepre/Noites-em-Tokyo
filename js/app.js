@@ -1,15 +1,22 @@
 /* =========================================================
-   GUIA RPG — APP.JS
-   Navegação, animações e tratamento básico das imagens
+   NOITES EM TOKYO
+   APP.JS
    ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    iniciarNavegacao();
-    iniciarAnimacoes();
-    iniciarTratamentoDeImagens();
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-});
+        iniciarNavegacao();
+
+        iniciarAnimacoes();
+
+        verificarImagens();
+
+    }
+);
+
 
 
 /* =========================================================
@@ -18,56 +25,97 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function iniciarNavegacao() {
 
-    const links = document.querySelectorAll(".nav-link");
-    const secoes = document.querySelectorAll("section[id]");
+    const links =
+        document.querySelectorAll(
+            ".nav-link"
+        );
+
+
+    const secoes =
+        document.querySelectorAll(
+            "section[id]"
+        );
+
 
     /*
-     * Rolagem suave ao clicar no menu
+     * Rolagem suave
      */
 
     links.forEach(link => {
 
-        link.addEventListener("click", event => {
+        link.addEventListener(
+            "click",
+            event => {
 
-            const destino = link.getAttribute("href");
+                const destino =
+                    link.getAttribute(
+                        "href"
+                    );
 
-            if (!destino || !destino.startsWith("#")) {
-                return;
+
+                if (
+                    !destino ||
+                    !destino.startsWith("#")
+                ) {
+
+                    return;
+
+                }
+
+
+                const elemento =
+                    document.querySelector(
+                        destino
+                    );
+
+
+                if (!elemento) {
+
+                    return;
+
+                }
+
+
+                event.preventDefault();
+
+
+                elemento.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "start"
+
+                });
+
             }
-
-            const elemento = document.querySelector(destino);
-
-            if (!elemento) {
-                return;
-            }
-
-            event.preventDefault();
-
-            elemento.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        });
+        );
 
     });
 
 
+
     /*
-     * Atualiza o item ativo do menu
-     * conforme a posição da página
+     * Atualizar menu durante a rolagem
      */
 
-    function atualizarNavegacao() {
+    function atualizarMenu() {
 
         let secaoAtual = "";
 
+
         secoes.forEach(secao => {
 
-            const topo = secao.offsetTop - 220;
+            const posicao =
+                secao.offsetTop - 250;
 
-            if (window.scrollY >= topo) {
-                secaoAtual = secao.id;
+
+            if (
+                window.scrollY >= posicao
+            ) {
+
+                secaoAtual =
+                    secao.id;
+
             }
 
         });
@@ -75,17 +123,25 @@ function iniciarNavegacao() {
 
         links.forEach(link => {
 
-            link.classList.remove("active");
+            link.classList.remove(
+                "active"
+            );
+
 
             const destino =
-                link.getAttribute("href");
+                link.getAttribute(
+                    "href"
+                );
+
 
             if (
                 destino ===
                 `#${secaoAtual}`
             ) {
 
-                link.classList.add("active");
+                link.classList.add(
+                    "active"
+                );
 
             }
 
@@ -96,50 +152,57 @@ function iniciarNavegacao() {
 
     window.addEventListener(
         "scroll",
-        atualizarNavegacao,
+        atualizarMenu,
         {
             passive: true
         }
     );
 
 
-    atualizarNavegacao();
+    atualizarMenu();
 
 }
 
 
+
 /* =========================================================
-   ANIMAÇÕES DE ENTRADA
+   ANIMAÇÕES
    ========================================================= */
 
 function iniciarAnimacoes() {
 
     const elementos =
         document.querySelectorAll(
-            ".kagune-section, " +
+            ".kagune-entry, " +
             ".kakuja-card, " +
             ".info-box, " +
             ".matchup, " +
             ".cycle-item, " +
             ".intro-panel, " +
+            ".rule-card, " +
+            ".attribute-card, " +
+            ".fome-panel, " +
+            ".fome-grid, " +
             ".rules-panel"
         );
 
 
-    /*
-     * Caso o navegador não suporte
-     * IntersectionObserver
-     */
+    if (
+        !("IntersectionObserver" in window)
+    ) {
 
-    if (!("IntersectionObserver" in window)) {
+        elementos.forEach(
+            elemento => {
 
-        elementos.forEach(elemento => {
+                elemento.classList.add(
+                    "visible"
+                );
 
-            elemento.classList.add("visible");
-
-        });
+            }
+        );
 
         return;
+
     }
 
 
@@ -147,21 +210,29 @@ function iniciarAnimacoes() {
         new IntersectionObserver(
             (entradas, observador) => {
 
-                entradas.forEach(entrada => {
+                entradas.forEach(
+                    entrada => {
 
-                    if (!entrada.isIntersecting) {
-                        return;
+                        if (
+                            !entrada.isIntersecting
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        entrada.target.classList.add(
+                            "visible"
+                        );
+
+
+                        observador.unobserve(
+                            entrada.target
+                        );
+
                     }
-
-                    entrada.target.classList.add(
-                        "visible"
-                    );
-
-                    observador.unobserve(
-                        entrada.target
-                    );
-
-                });
+                );
 
             },
             {
@@ -170,102 +241,101 @@ function iniciarAnimacoes() {
         );
 
 
-    elementos.forEach(elemento => {
+    elementos.forEach(
+        elemento => {
 
-        observer.observe(elemento);
+            observer.observe(
+                elemento
+            );
 
-    });
+        }
+    );
 
 }
 
 
+
 /* =========================================================
-   IMAGENS
+   VERIFICAÇÃO DAS IMAGENS
    ========================================================= */
 
-function iniciarTratamentoDeImagens() {
+function verificarImagens() {
 
     const imagens =
-        document.querySelectorAll("img");
+        document.querySelectorAll(
+            "img"
+        );
 
 
     console.log(
-        `[GUIA RPG] ${imagens.length} imagens encontradas.`
+        `[Noites em Tokyo] ${imagens.length} imagens encontradas.`
     );
 
 
-    imagens.forEach(imagem => {
-
-        /*
-         * NÃO MODIFICAMOS A IMAGEM.
-         *
-         * Ela será exibida exatamente como
-         * está no arquivo JPEG.
-         */
+    imagens.forEach(
+        imagem => {
 
 
-        imagem.addEventListener(
-            "load",
-            () => {
+            imagem.addEventListener(
+                "load",
+                () => {
+
+                    imagem.classList.add(
+                        "imagem-carregada"
+                    );
+
+                },
+                {
+                    once: true
+                }
+            );
+
+
+            imagem.addEventListener(
+                "error",
+                () => {
+
+                    console.error(
+                        "[Noites em Tokyo] Erro ao carregar:",
+                        imagem.src
+                    );
+
+
+                    imagem.classList.add(
+                        "imagem-erro"
+                    );
+
+                }
+            );
+
+
+            if (
+                imagem.complete &&
+                imagem.naturalWidth > 0
+            ) {
 
                 imagem.classList.add(
                     "imagem-carregada"
                 );
 
-            },
-            {
-                once: true
             }
-        );
-
-
-        /*
-         * Caso a imagem já tenha carregado
-         * antes do JavaScript executar.
-         */
-
-        if (
-            imagem.complete &&
-            imagem.naturalWidth > 0
-        ) {
-
-            imagem.classList.add(
-                "imagem-carregada"
-            );
 
         }
-
-
-        /*
-         * Tratamento de erro.
-         */
-
-        imagem.addEventListener(
-            "error",
-            () => {
-
-                console.error(
-                    "[GUIA RPG] Não foi possível carregar:",
-                    imagem.src
-                );
-
-                imagem.classList.add(
-                    "imagem-erro"
-                );
-
-            }
-        );
-
-    });
+    );
 
 }
 
 
+
 /* =========================================================
-   FINAL
+   FIM
    ========================================================= */
 
 console.log(
-    "%c GUIA RPG carregado corretamente ",
-    "font-weight: bold;"
+    "%c NOITES EM TOKYO ",
+    "font-weight:bold;font-size:16px;"
+);
+
+console.log(
+    "Guia do sistema carregado."
 );
