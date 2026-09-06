@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
 
@@ -9,169 +8,124 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Guia do Sistema RPG</title>
-
-    <link
-        rel="stylesheet"
-        href="css/style.css"
+    <meta
+        name="description"
+        content="Guia oficial do sistema de RPG Noites em Tokyo."
     >
+
+    <title>Noites em Tokyo — Guia do Sistema</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- =====================================================
-         MENU LATERAL
-         ===================================================== -->
+    <!-- ==========================================
+         SIDEBAR / NAVEGAÇÃO
+    =========================================== -->
 
     <aside class="sidebar">
 
-        <div class="sidebar-header">
+        <div class="brand">
 
-            <div class="logo-symbol">
-                ◈
+            <div class="brand-title">
+                Noites em Tokyo
             </div>
 
-            <h1>
-                GUIA
-            </h1>
-
-            <span>
-                SISTEMA RPG
-            </span>
+            <div class="brand-subtitle">
+                GUIA DO SISTEMA
+            </div>
 
         </div>
 
 
         <nav class="navigation">
 
-            <a
-                href="#inicio"
-                class="nav-link active"
-            >
-                <span>01</span>
+            <a href="#inicio" class="nav-link active">
                 Início
             </a>
 
-            <a
-                href="#kagunes"
-                class="nav-link"
-            >
-                <span>02</span>
+            <a href="#sistema" class="nav-link">
+                O Sistema
+            </a>
+
+            <a href="#atributos" class="nav-link">
+                Atributos
+            </a>
+
+            <a href="#testes" class="nav-link">
+                Testes
+            </a>
+
+            <a href="#kagunes" class="nav-link">
                 Kagunes
             </a>
 
-            <a
-                href="#ukaku"
-                class="nav-link"
-            >
-                <span>03</span>
-                Ukaku
+            <a href="#ciclo" class="nav-link">
+                Ciclo
             </a>
 
-            <a
-                href="#koukaku"
-                class="nav-link"
-            >
-                <span>04</span>
-                Koukaku
+            <a href="#fome" class="nav-link">
+                Fome
             </a>
 
-            <a
-                href="#rinkaku"
-                class="nav-link"
-            >
-                <span>05</span>
-                Rinkaku
-            </a>
-
-            <a
-                href="#bikaku"
-                class="nav-link"
-            >
-                <span>06</span>
-                Bikaku
-            </a>
-
-            <a
-                href="#ciclo"
-                class="nav-link"
-            >
-                <span>07</span>
-                Ciclo das Kagunes
-            </a>
-
-            <a
-                href="#kakuja"
-                class="nav-link"
-            >
-                <span>08</span>
+            <a href="#kakuja" class="nav-link">
                 Kakuja
             </a>
 
-            <a
-                href="#regras"
-                class="nav-link"
-            >
-                <span>09</span>
-                Regras
+            <a href="#combate" class="nav-link">
+                Combate
+            </a>
+
+            <a href="#desenvolvimento" class="nav-link">
+                Em Desenvolvimento
             </a>
 
         </nav>
 
 
         <div class="sidebar-footer">
-
-            <span>
-                ELARION RPG
-            </span>
-
-            <small>
-                GUIA DO JOGADOR
-            </small>
-
+            <span>NOITES EM TOKYO</span>
+            <small>Sistema em desenvolvimento</small>
         </div>
 
     </aside>
 
 
-    <!-- =====================================================
+    <!-- ==========================================
          CONTEÚDO PRINCIPAL
-         ===================================================== -->
+    =========================================== -->
 
     <main class="main-content">
 
 
-        <!-- =================================================
+        <!-- ======================================
              INÍCIO
-             ================================================= -->
+        ======================================= -->
 
-        <section
-            id="inicio"
-            class="hero section"
-        >
+        <section id="inicio" class="section hero">
 
             <div class="hero-content">
 
                 <div class="eyebrow">
-                    GUIA DO SISTEMA
+                    SISTEMA DE RPG
                 </div>
 
-                <h2>
-                    O MUNDO
-                    <br>
-                    <strong>ALÉM DO VÉU</strong>
-                </h2>
+                <h1>
+                    Noites em Tokyo
+                </h1>
 
                 <p class="hero-description">
-                    Um sistema de RPG inspirado em histórias de
-                    sobrevivência, monstros, humanidade e poder.
+                    Um RPG de horror urbano, sobrevivência e conflito
+                    entre humanos e Ghouls.
                 </p>
 
-                <div class="hero-line"></div>
+                <div class="hero-rule"></div>
 
-                <p class="hero-small">
-                    Este guia apresenta as principais formas de
-                    manifestação das Kagunes e suas evoluções.
+                <p class="hero-text">
+                    Em uma Tokyo onde criaturas predatórias caminham
+                    entre os humanos, sobreviver significa aprender
+                    a controlar aquilo que existe dentro de você.
                 </p>
 
             </div>
@@ -179,14 +133,121 @@
         </section>
 
 
-        <!-- =================================================
-             INTRODUÇÃO
-             ================================================= -->
+        <!-- ======================================
+             O SISTEMA
+        ======================================= -->
 
-        <section
-            id="kagunes"
-            class="section"
-        >
+        <section id="sistema" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <div>
+                    <h2>
+                        O Sistema
+                    </h2>
+
+                    <p>
+                        Os fundamentos de Noites em Tokyo.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="intro-panel">
+
+                <h3>
+                    Um sistema baseado em 2d10
+                </h3>
+
+                <p>
+                    Noites em Tokyo utiliza dois dados de dez faces
+                    (<strong>2d10</strong>) como base para a resolução
+                    das ações dos personagens.
+                </p>
+
+                <p>
+                    Sempre que um personagem tentar realizar uma ação
+                    cujo resultado seja incerto, o Mestre pode solicitar
+                    um teste.
+                </p>
+
+                <p>
+                    O resultado dos dados é combinado com o modificador
+                    do atributo apropriado para determinar o resultado
+                    da ação.
+                </p>
+
+            </div>
+
+
+            <div class="rules-panel">
+
+                <div class="rule-card">
+
+                    <span class="rule-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Role os dados
+                    </h3>
+
+                    <p>
+                        Role 2d10.
+                    </p>
+
+                </div>
+
+
+                <div class="rule-card">
+
+                    <span class="rule-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Adicione o atributo
+                    </h3>
+
+                    <p>
+                        Some o modificador correspondente.
+                    </p>
+
+                </div>
+
+
+                <div class="rule-card">
+
+                    <span class="rule-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Compare o resultado
+                    </h3>
+
+                    <p>
+                        O resultado é comparado com a dificuldade
+                        ou oposição determinada pelo Mestre.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             ATRIBUTOS
+        ======================================= -->
+
+        <section id="atributos" class="section">
 
             <div class="section-heading">
 
@@ -195,15 +256,416 @@
                 </span>
 
                 <div>
-
-                    <span class="eyebrow">
-                        BIOLOGIA DOS GHOULS
-                    </span>
-
                     <h2>
-                        O que é uma Kagune?
+                        Atributos
                     </h2>
 
+                    <p>
+                        As capacidades fundamentais de um personagem.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="attributes-grid">
+
+
+                <!-- FORÇA -->
+
+                <article class="attribute-card">
+
+                    <div class="attribute-icon">
+                        FOR
+                    </div>
+
+                    <div class="attribute-content">
+
+                        <h3>
+                            Força
+                        </h3>
+
+                        <p>
+                            Representa o poder físico, impacto,
+                            força bruta e capacidade de exercer
+                            força corporal.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- AGILIDADE -->
+
+                <article class="attribute-card">
+
+                    <div class="attribute-icon">
+                        AGI
+                    </div>
+
+                    <div class="attribute-content">
+
+                        <h3>
+                            Agilidade
+                        </h3>
+
+                        <p>
+                            Representa velocidade, reflexos,
+                            coordenação, esquiva e precisão
+                            dos movimentos.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CONSTITUIÇÃO -->
+
+                <article class="attribute-card">
+
+                    <div class="attribute-icon">
+                        CON
+                    </div>
+
+                    <div class="attribute-content">
+
+                        <h3>
+                            Constituição
+                        </h3>
+
+                        <p>
+                            Representa resistência física,
+                            vitalidade, tolerância a ferimentos
+                            e capacidade de suportar esforço.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- INTELIGÊNCIA -->
+
+                <article class="attribute-card">
+
+                    <div class="attribute-icon">
+                        INT
+                    </div>
+
+                    <div class="attribute-content">
+
+                        <h3>
+                            Inteligência
+                        </h3>
+
+                        <p>
+                            Representa raciocínio, conhecimento,
+                            análise, lógica e capacidade intelectual.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SABEDORIA -->
+
+                <article class="attribute-card">
+
+                    <div class="attribute-icon">
+                        SAB
+                    </div>
+
+                    <div class="attribute-content">
+
+                        <h3>
+                            Sabedoria
+                        </h3>
+
+                        <p>
+                            Representa percepção, experiência,
+                            leitura do ambiente e instinto.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARISMA -->
+
+                <article class="attribute-card">
+
+                    <div class="attribute-icon">
+                        CAR
+                    </div>
+
+                    <div class="attribute-content">
+
+                        <h3>
+                            Carisma
+                        </h3>
+
+                        <p>
+                            Representa presença, influência,
+                            comunicação e capacidade de afetar
+                            outras pessoas.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FOME -->
+
+                <article class="attribute-card attribute-fome">
+
+                    <div class="attribute-icon">
+                        FOM
+                    </div>
+
+                    <div class="attribute-content">
+
+                        <h3>
+                            Fome
+                        </h3>
+
+                        <p>
+                            Representa o instinto predatório,
+                            o desejo de consumir e a natureza
+                            Ghoul existente dentro do personagem.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- MODIFICADORES -->
+
+            <div class="modifier-panel">
+
+                <div class="modifier-title">
+
+                    <span>
+                        MODIFICADORES
+                    </span>
+
+                    <small>
+                        Conversão dos valores dos atributos
+                    </small>
+
+                </div>
+
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>
+                                Valor
+                            </th>
+
+                            <th>
+                                Modificador
+                            </th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>0</td>
+                            <td>-1</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>+0</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>+1</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>+2</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>+3</td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>+4</td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td>+5</td>
+                        </tr>
+
+                        <tr>
+                            <td>7</td>
+                            <td>+6</td>
+                        </tr>
+
+                        <tr>
+                            <td>8</td>
+                            <td>+7</td>
+                        </tr>
+
+                        <tr>
+                            <td>9</td>
+                            <td>+8</td>
+                        </tr>
+
+                        <tr>
+                            <td>10</td>
+                            <td>+9</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             TESTES
+        ======================================= -->
+
+        <section id="testes" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <div>
+                    <h2>
+                        Testes
+                    </h2>
+
+                    <p>
+                        Como determinar o resultado das ações.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="formula-box">
+
+                <span class="formula-label">
+                    FÓRMULA BÁSICA
+                </span>
+
+                <div class="formula">
+                    2d10 + MODIFICADOR DO ATRIBUTO
+                </div>
+
+            </div>
+
+
+            <div class="test-grid">
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        TESTE
+                    </span>
+
+                    <h3>
+                        Ações
+                    </h3>
+
+                    <p>
+                        Sempre que uma ação possuir risco,
+                        dificuldade ou resultado incerto,
+                        o Mestre pode solicitar um teste.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        ATRIBUTO
+                    </span>
+
+                    <h3>
+                        Escolha adequada
+                    </h3>
+
+                    <p>
+                        O atributo utilizado depende da natureza
+                        da ação realizada pelo personagem.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        OPOSIÇÃO
+                    </span>
+
+                    <h3>
+                        Dificuldade
+                    </h3>
+
+                    <p>
+                        O resultado pode ser comparado com uma
+                        dificuldade ou com o resultado de outro
+                        personagem.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             KAGUNES
+        ======================================= -->
+
+        <section id="kagunes" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    04
+                </span>
+
+                <div>
+                    <h2>
+                        Kagunes
+                    </h2>
+
+                    <p>
+                        As estruturas predatórias dos Ghouls.
+                    </p>
                 </div>
 
             </div>
@@ -212,152 +674,127 @@
             <div class="intro-panel">
 
                 <p>
-                    A <strong>Kagune</strong> é um órgão predatório
-                    especializado que se manifesta no corpo dos Ghouls.
-                    Ela funciona como uma extensão natural do indivíduo,
-                    podendo assumir diferentes formas, características
-                    e estilos de combate.
+                    A Kagune é um órgão predatório formado a partir
+                    das células RC de um Ghoul.
                 </p>
 
                 <p>
-                    Existem quatro tipos principais de Kagune:
-                    <strong>Ukaku</strong>,
-                    <strong>Koukaku</strong>,
-                    <strong>Rinkaku</strong> e
-                    <strong>Bikaku</strong>.
-                </p>
-
-                <p>
-                    Cada tipo possui vantagens e limitações próprias,
-                    criando um ciclo natural de vantagens entre as
-                    diferentes manifestações.
+                    Cada tipo de Kagune possui características,
+                    vantagens e limitações próprias.
                 </p>
 
             </div>
 
-        </section>
 
+            <!-- UKAKU -->
 
-        <!-- =================================================
-             UKAKU
-             ================================================= -->
+            <article class="kagune-entry">
 
-        <section
-            id="ukaku"
-            class="section kagune-section"
-        >
+                <div class="kagune-header">
 
-            <div class="kagune-header">
-
-                <div>
-
-                    <span class="eyebrow">
+                    <span class="kagune-type">
                         TIPO I
                     </span>
 
-                    <h2>
-                        UKAKU
-                    </h2>
+                    <h3>
+                        Ukaku
+                    </h3>
 
-                    <p class="subtitle">
-                        Velocidade • Alcance • Mobilidade
+                    <p>
+                        Velocidade e ataques à distância.
                     </p>
 
                 </div>
 
-                <span class="kagune-code">
-                    K-01
-                </span>
 
-            </div>
+                <div class="kagune-layout">
 
+                    <div class="kagune-art">
 
-            <div class="kagune-layout">
-
-                <div class="kagune-art">
-
-                    <img
-                        src="imagens/kagunes/ukaku.jpeg"
-                        alt="Ukaku"
-                        class="remover-fundo"
-                    >
-
-                </div>
-
-
-                <div class="kagune-info">
-
-                    <div class="info-box">
-
-                        <span class="info-label">
-                            LOCALIZAÇÃO
-                        </span>
-
-                        <p>
-                            Região superior das costas,
-                            entre os ombros e a nuca.
-                        </p>
+                        <img
+                            src="imagens/kagunes/ukaku.jpeg"
+                            alt="Kagune Ukaku"
+                        >
 
                     </div>
 
 
-                    <div class="info-box">
+                    <div class="kagune-info">
 
-                        <span class="info-label">
-                            CARACTERÍSTICAS
-                        </span>
+                        <div class="info-box">
 
-                        <ul>
+                            <h4>
+                                Características
+                            </h4>
 
-                            <li>
-                                Ataques de longa distância
-                            </li>
-
-                            <li>
-                                Ataques de curta distância
-                            </li>
-
-                            <li>
-                                Alta velocidade
-                            </li>
-
-                            <li>
-                                Grande mobilidade
-                            </li>
-
-                            <li>
-                                Baixo consumo de resistência
-                                prolongada
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="matchup">
-
-                        <div>
-
-                            <span>
-                                VANTAGEM NATURAL
-                            </span>
-
-                            <strong>
-                                BIKAKU
-                            </strong>
+                            <p>
+                                A Ukaku é uma Kagune extremamente
+                                leve e veloz, especializada em
+                                mobilidade e ataques à distância.
+                            </p>
 
                         </div>
 
-                        <div>
 
-                            <span>
-                                DESVANTAGEM NATURAL
-                            </span>
+                        <div class="info-box">
 
-                            <strong>
-                                KOUKAKU
-                            </strong>
+                            <h4>
+                                Vantagens
+                            </h4>
+
+                            <ul>
+
+                                <li>
+                                    Alta velocidade
+                                </li>
+
+                                <li>
+                                    Grande mobilidade
+                                </li>
+
+                                <li>
+                                    Ataques à distância
+                                </li>
+
+                                <li>
+                                    Excelente capacidade de perseguição
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h4>
+                                Limitações
+                            </h4>
+
+                            <p>
+                                O uso intenso consome muita resistência,
+                                tornando a Ukaku menos eficiente em
+                                combates prolongados.
+                            </p>
+
+                            <p>
+                                Também possui menor eficiência
+                                em combate corpo a corpo.
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h4>
+                                Manifestação
+                            </h4>
+
+                            <p>
+                                Surge na região superior das costas,
+                                entre os ombros e próxima à nuca.
+                            </p>
 
                         </div>
 
@@ -365,130 +802,114 @@
 
                 </div>
 
-            </div>
-
-        </section>
+            </article>
 
 
-        <!-- =================================================
-             KOUKAKU
-             ================================================= -->
+            <!-- KOUKAKU -->
 
-        <section
-            id="koukaku"
-            class="section kagune-section"
-        >
+            <article class="kagune-entry">
 
-            <div class="kagune-header">
+                <div class="kagune-header">
 
-                <div>
-
-                    <span class="eyebrow">
+                    <span class="kagune-type">
                         TIPO II
                     </span>
 
-                    <h2>
-                        KOUKAKU
-                    </h2>
+                    <h3>
+                        Koukaku
+                    </h3>
 
-                    <p class="subtitle">
-                        Resistência • Defesa • Impacto
+                    <p>
+                        Resistência, defesa e força.
                     </p>
 
                 </div>
 
-                <span class="kagune-code">
-                    K-02
-                </span>
 
-            </div>
+                <div class="kagune-layout">
 
+                    <div class="kagune-art">
 
-            <div class="kagune-layout">
-
-                <div class="kagune-art">
-
-                    <img
-                        src="imagens/kagunes/koukaku.jpeg"
-                        alt="Koukaku"
-                        class="remover-fundo"
-                    >
-
-                </div>
-
-
-                <div class="kagune-info">
-
-                    <div class="info-box">
-
-                        <span class="info-label">
-                            LOCALIZAÇÃO
-                        </span>
-
-                        <p>
-                            Região das escápulas,
-                            abaixo dos ombros.
-                        </p>
+                        <img
+                            src="imagens/kagunes/koukaku.jpeg"
+                            alt="Kagune Koukaku"
+                        >
 
                     </div>
 
 
-                    <div class="info-box">
+                    <div class="kagune-info">
 
-                        <span class="info-label">
-                            CARACTERÍSTICAS
-                        </span>
+                        <div class="info-box">
 
-                        <ul>
+                            <h4>
+                                Características
+                            </h4>
 
-                            <li>
-                                Alta densidade de células
-                            </li>
-
-                            <li>
-                                Grande resistência física
-                            </li>
-
-                            <li>
-                                Estrutura semelhante a lâminas
-                            </li>
-
-                            <li>
-                                Pode funcionar como escudo
-                            </li>
-
-                            <li>
-                                Grande peso estrutural
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="matchup">
-
-                        <div>
-
-                            <span>
-                                VANTAGEM NATURAL
-                            </span>
-
-                            <strong>
-                                UKAKU
-                            </strong>
+                            <p>
+                                A Koukaku é uma Kagune extremamente
+                                resistente, normalmente assumindo
+                                formas semelhantes a lâminas,
+                                escudos ou armaduras.
+                            </p>
 
                         </div>
 
-                        <div>
 
-                            <span>
-                                DESVANTAGEM NATURAL
-                            </span>
+                        <div class="info-box">
 
-                            <strong>
-                                RINKAKU
-                            </strong>
+                            <h4>
+                                Vantagens
+                            </h4>
+
+                            <ul>
+
+                                <li>
+                                    Alta resistência
+                                </li>
+
+                                <li>
+                                    Excelente defesa
+                                </li>
+
+                                <li>
+                                    Grande poder de impacto
+                                </li>
+
+                                <li>
+                                    Pode assumir formas defensivas
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h4>
+                                Limitações
+                            </h4>
+
+                            <p>
+                                Sua estrutura pesada reduz a mobilidade
+                                e limita seu alcance em comparação
+                                com outros tipos.
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h4>
+                                Manifestação
+                            </h4>
+
+                            <p>
+                                Normalmente surge abaixo das escápulas,
+                                na região das costas próxima aos ombros.
+                            </p>
 
                         </div>
 
@@ -496,129 +917,113 @@
 
                 </div>
 
-            </div>
-
-        </section>
+            </article>
 
 
-        <!-- =================================================
-             RINKAKU
-             ================================================= -->
+            <!-- RINKAKU -->
 
-        <section
-            id="rinkaku"
-            class="section kagune-section"
-        >
+            <article class="kagune-entry">
 
-            <div class="kagune-header">
+                <div class="kagune-header">
 
-                <div>
-
-                    <span class="eyebrow">
+                    <span class="kagune-type">
                         TIPO III
                     </span>
 
-                    <h2>
-                        RINKAKU
-                    </h2>
+                    <h3>
+                        Rinkaku
+                    </h3>
 
-                    <p class="subtitle">
-                        Regeneração • Força • Brutalidade
+                    <p>
+                        Regeneração e poder destrutivo.
                     </p>
 
                 </div>
 
-                <span class="kagune-code">
-                    K-03
-                </span>
 
-            </div>
+                <div class="kagune-layout">
 
+                    <div class="kagune-art">
 
-            <div class="kagune-layout">
-
-                <div class="kagune-art">
-
-                    <img
-                        src="imagens/kagunes/rinkaku.jpeg"
-                        alt="Rinkaku"
-                        class="remover-fundo"
-                    >
-
-                </div>
-
-
-                <div class="kagune-info">
-
-                    <div class="info-box">
-
-                        <span class="info-label">
-                            LOCALIZAÇÃO
-                        </span>
-
-                        <p>
-                            Região lombar, acima da cintura.
-                        </p>
+                        <img
+                            src="imagens/kagunes/rinkaku.jpeg"
+                            alt="Kagune Rinkaku"
+                        >
 
                     </div>
 
 
-                    <div class="info-box">
+                    <div class="kagune-info">
 
-                        <span class="info-label">
-                            CARACTERÍSTICAS
-                        </span>
+                        <div class="info-box">
 
-                        <ul>
+                            <h4>
+                                Características
+                            </h4>
 
-                            <li>
-                                Alta capacidade regenerativa
-                            </li>
-
-                            <li>
-                                Grande poder de ataque
-                            </li>
-
-                            <li>
-                                Múltiplos braços ou tentáculos
-                            </li>
-
-                            <li>
-                                Excelente para ataques simultâneos
-                            </li>
-
-                            <li>
-                                Estrutura relativamente frágil
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="matchup">
-
-                        <div>
-
-                            <span>
-                                VANTAGEM NATURAL
-                            </span>
-
-                            <strong>
-                                KOUKAKU
-                            </strong>
+                            <p>
+                                A Rinkaku possui uma estrutura flexível,
+                                normalmente formada por múltiplos tentáculos
+                                ou ramificações.
+                            </p>
 
                         </div>
 
-                        <div>
 
-                            <span>
-                                DESVANTAGEM NATURAL
-                            </span>
+                        <div class="info-box">
 
-                            <strong>
-                                BIKAKU
-                            </strong>
+                            <h4>
+                                Vantagens
+                            </h4>
+
+                            <ul>
+
+                                <li>
+                                    Grande poder ofensivo
+                                </li>
+
+                                <li>
+                                    Ataques simultâneos
+                                </li>
+
+                                <li>
+                                    Excelente regeneração
+                                </li>
+
+                                <li>
+                                    Grande alcance
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h4>
+                                Limitações
+                            </h4>
+
+                            <p>
+                                Sua estrutura é menos resistente,
+                                tornando-a mais vulnerável a ataques
+                                de Kagunes especializadas em defesa.
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h4>
+                                Manifestação
+                            </h4>
+
+                            <p>
+                                Surge na região lombar das costas,
+                                geralmente acima da cintura.
+                            </p>
 
                         </div>
 
@@ -626,134 +1031,290 @@
 
                 </div>
 
-            </div>
-
-        </section>
+            </article>
 
 
-        <!-- =================================================
-             BIKAKU
-             ================================================= -->
+            <!-- BIKAKU -->
 
-        <section
-            id="bikaku"
-            class="section kagune-section"
-        >
+            <article class="kagune-entry">
 
-            <div class="kagune-header">
+                <div class="kagune-header">
 
-                <div>
-
-                    <span class="eyebrow">
+                    <span class="kagune-type">
                         TIPO IV
                     </span>
 
-                    <h2>
-                        BIKAKU
-                    </h2>
+                    <h3>
+                        Bikaku
+                    </h3>
 
-                    <p class="subtitle">
-                        Equilíbrio • Estabilidade • Versatilidade
+                    <p>
+                        Equilíbrio e combate versátil.
                     </p>
 
                 </div>
 
-                <span class="kagune-code">
-                    K-04
+
+                <div class="kagune-layout">
+
+                    <div class="kagune-art">
+
+                        <img
+                            src="imagens/kagunes/bikaku.jpeg"
+                            alt="Kagune Bikaku"
+                        >
+
+                    </div>
+
+
+                    <div class="kagune-info">
+
+                        <div class="info-box">
+
+                            <h4>
+                                Características
+                            </h4>
+
+                            <p>
+                                A Bikaku normalmente assume uma forma
+                                semelhante a uma cauda, proporcionando
+                                excelente equilíbrio entre alcance,
+                                força e mobilidade.
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h4>
+                                Vantagens
+                            </h4>
+
+                            <ul>
+
+                                <li>
+                                    Boa força física
+                                </li>
+
+                                <li>
+                                    Bom alcance
+                                </li>
+
+                                <li>
+                                    Grande versatilidade
+                                </li>
+
+                                <li>
+                                    Excelente equilíbrio
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h4>
+                                Limitações
+                            </h4>
+
+                            <p>
+                                É mais lenta que uma Rinkaku e não
+                                possui a especialização defensiva
+                                de uma Koukaku.
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h4>
+                                Manifestação
+                            </h4>
+
+                            <p>
+                                Surge na parte inferior das costas,
+                                próxima ao cóccix.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- ======================================
+             CICLO DAS KAGUNES
+        ======================================= -->
+
+        <section id="ciclo" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    05
                 </span>
+
+                <div>
+                    <h2>
+                        O Ciclo das Kagunes
+                    </h2>
+
+                    <p>
+                        A relação natural entre os quatro tipos.
+                    </p>
+                </div>
 
             </div>
 
 
-            <div class="kagune-layout">
+            <div class="intro-panel">
 
-                <div class="kagune-art">
+                <p>
+                    Os quatro tipos de Kagune possuem uma relação
+                    natural de vantagem e desvantagem.
+                </p>
 
-                    <img
-                        src="imagens/kagunes/bikaku.jpeg"
-                        alt="Bikaku"
-                        class="remover-fundo"
-                    >
+                <p>
+                    Essa relação não significa uma vitória automática,
+                    mas representa uma vantagem natural quando dois
+                    tipos entram em conflito.
+                </p>
+
+            </div>
+
+
+            <div class="cycle-container">
+
+
+                <div class="cycle-item">
+
+                    <span>
+                        UKAKU
+                    </span>
+
+                    <strong>
+                        &gt;
+                    </strong>
+
+                    <span>
+                        BIKAKU
+                    </span>
 
                 </div>
 
 
-                <div class="kagune-info">
+                <div class="cycle-item">
 
-                    <div class="info-box">
+                    <span>
+                        BIKAKU
+                    </span>
 
-                        <span class="info-label">
-                            LOCALIZAÇÃO
-                        </span>
+                    <strong>
+                        &gt;
+                    </strong>
 
-                        <p>
-                            Região inferior das costas,
-                            próxima ao cóccix.
-                        </p>
+                    <span>
+                        RINKAKU
+                    </span>
 
-                    </div>
-
-
-                    <div class="info-box">
-
-                        <span class="info-label">
-                            CARACTERÍSTICAS
-                        </span>
-
-                        <ul>
-
-                            <li>
-                                Grande equilíbrio geral
-                            </li>
-
-                            <li>
-                                Boa força física
-                            </li>
-
-                            <li>
-                                Bom alcance
-                            </li>
-
-                            <li>
-                                Estrutura semelhante a uma cauda
-                            </li>
-
-                            <li>
-                                Nenhuma fraqueza extrema
-                            </li>
-
-                        </ul>
-
-                    </div>
+                </div>
 
 
-                    <div class="matchup">
+                <div class="cycle-item">
 
-                        <div>
+                    <span>
+                        RINKAKU
+                    </span>
 
-                            <span>
-                                VANTAGEM NATURAL
-                            </span>
+                    <strong>
+                        &gt;
+                    </strong>
 
-                            <strong>
-                                RINKAKU
-                            </strong>
+                    <span>
+                        KOUKAKU
+                    </span>
 
-                        </div>
+                </div>
 
-                        <div>
 
-                            <span>
-                                DESVANTAGEM NATURAL
-                            </span>
+                <div class="cycle-item">
 
-                            <strong>
-                                UKAKU
-                            </strong>
+                    <span>
+                        KOUKAKU
+                    </span>
 
-                        </div>
+                    <strong>
+                        &gt;
+                    </strong>
 
-                    </div>
+                    <span>
+                        UKAKU
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="rules-panel">
+
+                <div class="rule-card">
+
+                    <h3>
+                        Ukaku
+                    </h3>
+
+                    <p>
+                        Possui vantagem natural contra Bikaku.
+                    </p>
+
+                </div>
+
+
+                <div class="rule-card">
+
+                    <h3>
+                        Bikaku
+                    </h3>
+
+                    <p>
+                        Possui vantagem natural contra Rinkaku.
+                    </p>
+
+                </div>
+
+
+                <div class="rule-card">
+
+                    <h3>
+                        Rinkaku
+                    </h3>
+
+                    <p>
+                        Possui vantagem natural contra Koukaku.
+                    </p>
+
+                </div>
+
+
+                <div class="rule-card">
+
+                    <h3>
+                        Koukaku
+                    </h3>
+
+                    <p>
+                        Possui vantagem natural contra Ukaku.
+                    </p>
 
                 </div>
 
@@ -762,14 +1323,161 @@
         </section>
 
 
-        <!-- =================================================
-             CICLO
-             ================================================= -->
+        <!-- ======================================
+             FOME
+        ======================================= -->
 
-        <section
-            id="ciclo"
-            class="section"
-        >
+        <section id="fome" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    06
+                </span>
+
+                <div>
+                    <h2>
+                        Fome
+                    </h2>
+
+                    <p>
+                        O instinto que existe dentro de cada Ghoul.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="fome-panel">
+
+                <div class="fome-symbol">
+                    F
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        A Fome não é apenas uma necessidade física.
+                    </h3>
+
+                    <p>
+                        Ela representa o instinto predatório do Ghoul,
+                        o desejo de consumir carne humana e a luta
+                        constante entre a natureza monstruosa e a
+                        consciência do personagem.
+                    </p>
+
+                    <p>
+                        Quanto mais a Fome influencia o personagem,
+                        maior pode se tornar sua capacidade de ultrapassar
+                        seus próprios limites — mas também maior pode ser
+                        o risco de perder o controle.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="fome-grid">
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        INSTINTO
+                    </span>
+
+                    <h3>
+                        Natureza predatória
+                    </h3>
+
+                    <p>
+                        A Fome representa os impulsos mais básicos
+                        e violentos de um Ghoul.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        CONTROLE
+                    </span>
+
+                    <h3>
+                        Resistir à natureza
+                    </h3>
+
+                    <p>
+                        O personagem precisa lidar constantemente
+                        com o desejo de consumir.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        EVOLUÇÃO
+                    </span>
+
+                    <h3>
+                        Além dos limites
+                    </h3>
+
+                    <p>
+                        A Fome poderá influenciar regeneração,
+                        Kagune, estresse e evolução do personagem.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        KAKUJA
+                    </span>
+
+                    <h3>
+                        O caminho do monstro
+                    </h3>
+
+                    <p>
+                        A relação entre Fome, consumo e evolução
+                        poderá levar ao desenvolvimento de um Kakuja.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="intro-panel">
+
+                <h3>
+                    Mecânica em desenvolvimento
+                </h3>
+
+                <p>
+                    Os valores e regras exatas da Fome ainda estão
+                    sendo desenvolvidos e serão adicionados ao sistema
+                    posteriormente.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             KAKUJA
+        ======================================= -->
+
+        <section id="kakuja" class="section">
 
             <div class="section-heading">
 
@@ -778,179 +1486,36 @@
                 </span>
 
                 <div>
-
-                    <span class="eyebrow">
-                        RELAÇÃO NATURAL
-                    </span>
-
                     <h2>
-                        O Ciclo das Kagunes
+                        Kakuja
                     </h2>
 
+                    <p>
+                        Quando o Ghoul começa a se tornar algo além
+                        de um simples predador.
+                    </p>
                 </div>
 
             </div>
 
 
-            <div class="cycle-container">
-
-                <div class="cycle-item ukaku-cycle">
-
-                    <span>
-                        I
-                    </span>
-
-                    <strong>
-                        UKAKU
-                    </strong>
-
-                    <small>
-                        supera
-                    </small>
-
-                    <b>
-                        BIKAKU
-                    </b>
-
-                </div>
-
-
-                <div class="cycle-arrow">
-                    →
-                </div>
-
-
-                <div class="cycle-item bikaku-cycle">
-
-                    <span>
-                        IV
-                    </span>
-
-                    <strong>
-                        BIKAKU
-                    </strong>
-
-                    <small>
-                        supera
-                    </small>
-
-                    <b>
-                        RINKAKU
-                    </b>
-
-                </div>
-
-
-                <div class="cycle-arrow">
-                    →
-                </div>
-
-
-                <div class="cycle-item rinkaku-cycle">
-
-                    <span>
-                        III
-                    </span>
-
-                    <strong>
-                        RINKAKU
-                    </strong>
-
-                    <small>
-                        supera
-                    </small>
-
-                    <b>
-                        KOUKAKU
-                    </b>
-
-                </div>
-
-
-                <div class="cycle-arrow">
-                    →
-                </div>
-
-
-                <div class="cycle-item koukaku-cycle">
-
-                    <span>
-                        II
-                    </span>
-
-                    <strong>
-                        KOUKAKU
-                    </strong>
-
-                    <small>
-                        supera
-                    </small>
-
-                    <b>
-                        UKAKU
-                    </b>
-
-                </div>
-
-            </div>
-
-
-            <div class="cycle-description">
+            <div class="intro-panel">
 
                 <p>
-                    Nenhuma Kagune é absolutamente superior às outras.
-                    O equilíbrio entre os quatro tipos cria um ciclo
-                    natural de vantagens e desvantagens.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             KAKUJA
-             ================================================= -->
-
-        <section
-            id="kakuja"
-            class="section kakuja-section"
-        >
-
-            <div class="section-heading">
-
-                <span class="section-number">
-                    08
-                </span>
-
-                <div>
-
-                    <span class="eyebrow">
-                        EVOLUÇÃO
-                    </span>
-
-                    <h2>
-                        KAKUJA
-                    </h2>
-
-                </div>
-
-            </div>
-
-
-            <div class="kakuja-intro">
-
-                <p>
-                    A <strong>Kakuja</strong> é uma manifestação rara
-                    e avançada da Kagune, na qual o órgão predatório
-                    sofre uma transformação profunda e passa a envolver
-                    parte ou todo o corpo do Ghoul.
+                    O Kakuja é uma manifestação avançada da Kagune,
+                    normalmente associada ao acúmulo e mutação de
+                    células RC.
                 </p>
 
                 <p>
-                    Essa transformação está associada ao acúmulo de
-                    células RC e ao consumo de outros Ghouls, podendo
-                    provocar alterações físicas e psicológicas extremas.
+                    A transformação pode assumir diferentes formas,
+                    variando desde uma manifestação parcial até uma
+                    forma monstruosa que cobre grande parte do corpo.
+                </p>
+
+                <p>
+                    O desenvolvimento de um Kakuja também pode afetar
+                    profundamente a mente do usuário.
                 </p>
 
             </div>
@@ -960,9 +1525,19 @@
 
             <article class="kakuja-card">
 
+                <div class="kakuja-art">
+
+                    <img
+                        src="imagens/kakuja/kakuja-parcial.jpeg"
+                        alt="Kakuja Parcial"
+                    >
+
+                </div>
+
+
                 <div class="kakuja-text">
 
-                    <span class="eyebrow">
+                    <span class="kakuja-stage">
                         ESTÁGIO I
                     </span>
 
@@ -971,177 +1546,353 @@
                     </h3>
 
                     <p>
-                        A transformação começa a envolver partes do
-                        corpo, formando uma espécie de armadura orgânica
-                        incompleta.
+                        Uma manifestação incompleta do Kakuja.
+                        Partes da Kagune evoluem e começam a formar
+                        uma estrutura semelhante a uma armadura.
                     </p>
 
-                    <ul>
-
-                        <li>
-                            Manifestação parcial
-                        </li>
-
-                        <li>
-                            Aumento de força
-                        </li>
-
-                        <li>
-                            Aumento de resistência
-                        </li>
-
-                        <li>
-                            Maior risco de perda de controle
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <div class="kakuja-art">
-
-                    <img
-                        src="imagens/kakuja/kakuja-parcial.jpeg"
-                        alt="Kakuja Parcial"
-                        class="remover-fundo"
-                    >
+                    <p>
+                        O usuário ainda mantém uma aparência relativamente
+                        próxima da sua forma normal, embora elementos
+                        monstruosos possam surgir.
+                    </p>
 
                 </div>
 
             </article>
 
 
-            <!-- KAKUJA ARMADURA -->
+            <!-- KAKUJA COMPLETA — ARMADURA -->
 
-            <article class="kakuja-card reverse">
-
-                <div class="kakuja-text">
-
-                    <span class="eyebrow">
-                        ESTÁGIO II
-                    </span>
-
-                    <h3>
-                        Kakuja Completa
-                    </h3>
-
-                    <p>
-                        Armadura
-                    </p>
-
-                    <p>
-                        A Kagune passa a cobrir uma parcela muito maior
-                        do corpo, formando uma estrutura orgânica de
-                        proteção e combate.
-                    </p>
-
-                    <ul>
-
-                        <li>
-                            Armadura orgânica
-                        </li>
-
-                        <li>
-                            Maior resistência
-                        </li>
-
-                        <li>
-                            Novas estruturas ofensivas
-                        </li>
-
-                        <li>
-                            Maior poder físico
-                        </li>
-
-                    </ul>
-
-                </div>
-
+            <article class="kakuja-card">
 
                 <div class="kakuja-art">
 
                     <img
                         src="imagens/kakuja/kakuja-completa-armadura.jpeg"
-                        alt="Kakuja Completa — Armadura"
-                        class="remover-fundo"
+                        alt="Kakuja Completa Armadura"
                     >
+
+                </div>
+
+
+                <div class="kakuja-text">
+
+                    <span class="kakuja-stage">
+                        ESTÁGIO II
+                    </span>
+
+                    <h3>
+                        Kakuja Completa — Armadura
+                    </h3>
+
+                    <p>
+                        O Kakuja passa a formar uma armadura mais
+                        completa sobre o corpo do usuário.
+                    </p>
+
+                    <p>
+                        A transformação aumenta significativamente
+                        a presença física e predatória do Ghoul.
+                    </p>
+
+                    <p>
+                        Usuários experientes podem manter maior controle
+                        sobre essa forma.
+                    </p>
 
                 </div>
 
             </article>
 
 
-            <!-- KAKUJA MONSTRUOSA -->
+            <!-- KAKUJA COMPLETA — MONSTRUOSA -->
 
             <article class="kakuja-card">
-
-                <div class="kakuja-text">
-
-                    <span class="eyebrow">
-                        ESTÁGIO III
-                    </span>
-
-                    <h3>
-                        Kakuja Completa
-                    </h3>
-
-                    <p>
-                        Forma Monstruosa
-                    </p>
-
-                    <p>
-                        Uma manifestação extremamente avançada,
-                        na qual a identidade predatória do Ghoul
-                        pode assumir uma forma monstruosa.
-                    </p>
-
-                    <ul>
-
-                        <li>
-                            Transformação extrema
-                        </li>
-
-                        <li>
-                            Estruturas orgânicas complexas
-                        </li>
-
-                        <li>
-                            Poder físico elevado
-                        </li>
-
-                        <li>
-                            Grande risco psicológico
-                        </li>
-
-                    </ul>
-
-                </div>
-
 
                 <div class="kakuja-art">
 
                     <img
                         src="imagens/kakuja/kakuja-completa-monstruosa.jpeg"
-                        alt="Kakuja Completa — Monstruosa"
-                        class="remover-fundo"
+                        alt="Kakuja Completa Monstruosa"
                     >
+
+                </div>
+
+
+                <div class="kakuja-text">
+
+                    <span class="kakuja-stage">
+                        ESTÁGIO III
+                    </span>
+
+                    <h3>
+                        Kakuja Completa — Monstruosa
+                    </h3>
+
+                    <p>
+                        A forma mais extrema de desenvolvimento do Kakuja.
+                    </p>
+
+                    <p>
+                        O corpo pode ser completamente envolvido por
+                        estruturas monstruosas, lâminas, espinhos,
+                        membros adicionais e outras formas orgânicas.
+                    </p>
+
+                    <p>
+                        Quanto maior a transformação, maior também pode
+                        ser o risco de perder o controle sobre a própria
+                        natureza.
+                    </p>
 
                 </div>
 
             </article>
 
+
+            <div class="intro-panel">
+
+                <h3>
+                    A máscara do predador
+                </h3>
+
+                <p>
+                    A manifestação facial de um Kakuja pode assumir
+                    diferentes formas e representar a identidade
+                    predatória ou subconsciente do usuário.
+                </p>
+
+                <p>
+                    Em alguns casos, a máscara pode se tornar uma
+                    das características mais marcantes da transformação.
+                </p>
+
+            </div>
+
+
+            <div class="rules-panel">
+
+                <div class="rule-card">
+
+                    <span class="rule-number">
+                        I
+                    </span>
+
+                    <h3>
+                        Parcial
+                    </h3>
+
+                    <p>
+                        Primeiros sinais da evolução.
+                    </p>
+
+                </div>
+
+
+                <div class="rule-card">
+
+                    <span class="rule-number">
+                        II
+                    </span>
+
+                    <h3>
+                        Armadura
+                    </h3>
+
+                    <p>
+                        Manifestação completa e defensiva.
+                    </p>
+
+                </div>
+
+
+                <div class="rule-card">
+
+                    <span class="rule-number">
+                        III
+                    </span>
+
+                    <h3>
+                        Monstruosa
+                    </h3>
+
+                    <p>
+                        Evolução extrema da natureza predatória.
+                    </p>
+
+                </div>
+
+            </div>
+
         </section>
 
 
-        <!-- =================================================
-             REGRAS
-             ================================================= -->
+        <!-- ======================================
+             COMBATE
+        ======================================= -->
 
-        <section
-            id="regras"
-            class="section"
-        >
+        <section id="combate" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    08
+                </span>
+
+                <div>
+                    <h2>
+                        Combate
+                    </h2>
+
+                    <p>
+                        Confrontos entre humanos, Ghouls e monstros.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="intro-panel">
+
+                <h3>
+                    Sistema de combate em desenvolvimento
+                </h3>
+
+                <p>
+                    As regras completas de combate ainda estão sendo
+                    desenvolvidas.
+                </p>
+
+                <p>
+                    O objetivo é criar um sistema rápido, brutal e
+                    cinematográfico, capaz de representar a violência
+                    e a velocidade dos confrontos de Noites em Tokyo.
+                </p>
+
+            </div>
+
+
+            <div class="development-grid">
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Iniciativa
+                    </h3>
+
+                    <p>
+                        Determinação da ordem dos personagens
+                        durante o combate.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Ataques
+                    </h3>
+
+                    <p>
+                        Regras para ataques físicos, Kagunes
+                        e armas.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Dano
+                    </h3>
+
+                    <p>
+                        Sistema de dano e consequências
+                        dos ferimentos.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Regeneração
+                    </h3>
+
+                    <p>
+                        Regras para recuperação dos Ghouls.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        05
+                    </span>
+
+                    <h3>
+                        Fome
+                    </h3>
+
+                    <p>
+                        Influência da Fome durante situações
+                        de combate e estresse.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        06
+                    </span>
+
+                    <h3>
+                        Kagune
+                    </h3>
+
+                    <p>
+                        Regras específicas para utilização
+                        das diferentes Kagunes.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             EM DESENVOLVIMENTO
+        ======================================= -->
+
+        <section id="desenvolvimento" class="section">
 
             <div class="section-heading">
 
@@ -1150,94 +1901,172 @@
                 </span>
 
                 <div>
-
-                    <span class="eyebrow">
-                        SISTEMA
-                    </span>
-
                     <h2>
-                        Regras em Desenvolvimento
+                        Em Desenvolvimento
                     </h2>
 
+                    <p>
+                        Elementos que ainda receberão regras detalhadas.
+                    </p>
                 </div>
 
             </div>
 
 
-            <div class="rules-panel">
+            <div class="development-grid">
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Combate
+                    </h3>
+
+                    <p>
+                        Estrutura completa das ações durante combate.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Dano e Ferimentos
+                    </h3>
+
+                    <p>
+                        Consequências mecânicas dos ferimentos
+                        sofridos pelos personagens.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Fome
+                    </h3>
+
+                    <p>
+                        Valores, níveis e consequências da Fome.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Kakuja
+                    </h3>
+
+                    <p>
+                        Progressão, condições e efeitos mecânicos
+                        das diferentes formas de Kakuja.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        05
+                    </span>
+
+                    <h3>
+                        Críticos
+                    </h3>
+
+                    <p>
+                        Regras para resultados excepcionais
+                        nos testes.
+                    </p>
+
+                </article>
+
+
+                <article class="rule-card">
+
+                    <span class="rule-number">
+                        06
+                    </span>
+
+                    <h3>
+                        Regeneração
+                    </h3>
+
+                    <p>
+                        Regras detalhadas para regeneração
+                        e recuperação dos Ghouls.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="intro-panel">
+
+                <h3>
+                    O sistema ainda está sendo construído
+                </h3>
 
                 <p>
-                    As regras mecânicas relacionadas às Kagunes,
-                    Kakuja, combate e progressão ainda estão sendo
-                    desenvolvidas.
+                    As regras apresentadas nesta versão representam
+                    os fundamentos já definidos de Noites em Tokyo.
                 </p>
 
-                <div class="development-grid">
-
-                    <div>
-                        <span>
-                            ●
-                        </span>
-
-                        <strong>
-                            Combate
-                        </strong>
-
-                        <small>
-                            Em desenvolvimento
-                        </small>
-                    </div>
-
-
-                    <div>
-                        <span>
-                            ●
-                        </span>
-
-                        <strong>
-                            Kakuja
-                        </strong>
-
-                        <small>
-                            Em desenvolvimento
-                        </small>
-                    </div>
-
-
-                    <div>
-                        <span>
-                            ●
-                        </span>
-
-                        <strong>
-                            Fome
-                        </strong>
-
-                        <small>
-                            Em desenvolvimento
-                        </small>
-                    </div>
-
-                </div>
+                <p>
+                    Mecânicas que ainda não possuem valores ou
+                    procedimentos definitivos permanecem marcadas
+                    como <strong>em desenvolvimento</strong> para
+                    evitar que regras provisórias sejam confundidas
+                    com regras oficiais.
+                </p>
 
             </div>
 
         </section>
 
 
-        <!-- =================================================
+        <!-- ======================================
              RODAPÉ
-             ================================================= -->
+        ======================================= -->
 
         <footer class="footer">
 
-            <div>
-                ELARION RPG
+            <div class="footer-title">
+                NOITES EM TOKYO
             </div>
 
-            <span>
-                GUIA DO SISTEMA
-            </span>
+            <div class="footer-line"></div>
+
+            <p>
+                Guia do Sistema
+            </p>
+
+            <small>
+                Sistema de RPG original — Em desenvolvimento
+            </small>
 
         </footer>
 
@@ -1245,12 +2074,11 @@
     </main>
 
 
-    <!-- =====================================================
+    <!-- ==========================================
          JAVASCRIPT
-         ===================================================== -->
+    =========================================== -->
 
     <script src="js/app.js"></script>
 
 </body>
-
 </html>
