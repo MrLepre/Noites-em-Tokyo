@@ -1,36 +1,87 @@
 /* =========================================================
    NOITES EM TOKYO
-   APP.JS
+   JAVASCRIPT
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    iniciarNavegacao();
-    observarSecoes();
-    iniciarTransicaoTema();
+    /* =====================================================
+       ANO AUTOMÁTICO
+    ====================================================== */
 
-});
+    const year = document.getElementById("current-year");
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
 
 
-/* =========================================================
-   NAVEGAÇÃO
-========================================================= */
+    /* =====================================================
+       NAVEGAÇÃO ATIVA
+    ====================================================== */
 
-function iniciarNavegacao() {
+    const navLinks = document.querySelectorAll(".nav-link");
 
-    const links = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll(
+        "main section[id]"
+    );
 
-    links.forEach(link => {
 
-        link.addEventListener("click", event => {
+    const observer = new IntersectionObserver(
+        (entries) => {
 
-            const href = link.getAttribute("href");
+            entries.forEach((entry) => {
 
-            if (!href || !href.startsWith("#")) {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                const id = entry.target.getAttribute("id");
+
+                navLinks.forEach((link) => {
+
+                    link.classList.remove("active");
+
+                    if (
+                        link.getAttribute("href") === `#${id}`
+                    ) {
+                        link.classList.add("active");
+                    }
+
+                });
+
+            });
+
+        },
+        {
+            rootMargin: "-30% 0px -60% 0px",
+            threshold: 0
+        }
+    );
+
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+
+
+    /* =====================================================
+       SCROLL SUAVE
+    ====================================================== */
+
+    navLinks.forEach((link) => {
+
+        link.addEventListener("click", (event) => {
+
+            const targetId =
+                link.getAttribute("href");
+
+            if (!targetId.startsWith("#")) {
                 return;
             }
 
-            const target = document.querySelector(href);
+            const target =
+                document.querySelector(targetId);
 
             if (!target) {
                 return;
@@ -47,128 +98,84 @@ function iniciarNavegacao() {
 
     });
 
-}
 
+    /* =====================================================
+       REVELAÇÃO DOS ELEMENTOS
+    ====================================================== */
 
-/* =========================================================
-   NAV ATIVA
-========================================================= */
-
-function observarSecoes() {
-
-    const sections = document.querySelectorAll(
-        "main section[id]"
+    const revealElements = document.querySelectorAll(
+        ".feature-card, " +
+        ".attribute-card, " +
+        ".kagune-entry, " +
+        ".kakuja-card, " +
+        ".small-panel, " +
+        ".rank-card, " +
+        ".district-grid article, " +
+        ".investigation-grid article"
     );
 
-    const links = document.querySelectorAll(
-        ".nav-link"
-    );
 
-    const observer = new IntersectionObserver(
-        entries => {
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
 
-            entries.forEach(entry => {
+            entries.forEach((entry) => {
 
                 if (!entry.isIntersecting) {
                     return;
                 }
 
-                const id = entry.target.id;
+                entry.target.classList.add("revealed");
 
-                links.forEach(link => {
-
-                    link.classList.remove("active");
-
-                    if (
-                        link.getAttribute("href") === `#${id}`
-                    ) {
-                        link.classList.add("active");
-                    }
-
-                });
+                observer.unobserve(entry.target);
 
             });
 
         },
         {
-            rootMargin: "-35% 0px -55% 0px"
+            threshold: 0.08
         }
     );
 
-    sections.forEach(section => {
-        observer.observe(section);
+
+    revealElements.forEach((element) => {
+
+        element.style.opacity = "0";
+        element.style.transform = "translateY(16px)";
+        element.style.transition =
+            "opacity .6s ease, transform .6s ease";
+
+        revealObserver.observe(element);
+
     });
 
-}
 
+    /* =====================================================
+       CSS DA REVELAÇÃO
+    ====================================================== */
 
-/* =========================================================
-   TRANSIÇÃO GHOUL → CCG
-========================================================= */
+    const style = document.createElement("style");
 
-function iniciarTransicaoTema() {
-
-    const ccgSections = document.querySelectorAll(
-        ".ccg-section, .ccg-section-inner"
-    );
-
-    const body = document.body;
-
-    const observer = new IntersectionObserver(
-        entries => {
-
-            const ccgVisivel = entries.some(
-                entry => entry.isIntersecting
-            );
-
-            if (ccgVisivel) {
-
-                body.classList.add("ccg-mode");
-                body.classList.remove("ghoul-mode");
-
-            } else {
-
-                body.classList.remove("ccg-mode");
-                body.classList.add("ghoul-mode");
-
-            }
-
-        },
-        {
-            threshold: 0.15
+    style.textContent = `
+        .revealed {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
+    `;
+
+    document.head.appendChild(style);
+
+
+    /* =====================================================
+       LOG INICIAL
+    ====================================================== */
+
+    console.log(
+        "%c NOITES EM TOKYO ",
+        "color:#d83243;font-weight:bold;"
     );
 
-    ccgSections.forEach(section => {
-        observer.observe(section);
-    });
+    console.log(
+        "Manual carregado."
+    );
 
-}
-
-
-/* =========================================================
-   CONTROLE MANUAL DO TEMA
-   Útil caso futuramente o guia receba botões.
-========================================================= */
-
-function ativarTemaGhoul() {
-
-    document.body.classList.remove("ccg-mode");
-    document.body.classList.add("ghoul-mode");
-
-}
-
-function ativarTemaCCG() {
-
-    document.body.classList.remove("ghoul-mode");
-    document.body.classList.add("ccg-mode");
-
-}
-
-
-/* =========================================================
-   EXPORTAÇÃO GLOBAL
-========================================================= */
-
-window.ativarTemaGhoul = ativarTemaGhoul;
-window.ativarTemaCCG = ativarTemaCCG;
+});
