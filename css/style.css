@@ -1,1167 +1,1430 @@
-/* =========================================
+/* =========================================================
+   GUIA RPG — STYLE.CSS
+   ========================================================= */
+
+:root {
+    --bg-main: #080808;
+    --bg-sidebar: #0d0d0d;
+    --bg-panel: #111111;
+    --bg-panel-light: #151515;
+
+    --text-main: #e8e3dc;
+    --text-secondary: #aaa39a;
+    --text-muted: #68635e;
+
+    --accent: #c51f2b;
+    --accent-dark: #71151d;
+
+    --border: #292929;
+    --border-light: #353535;
+
+    --sidebar-width: 260px;
+
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
    RESET
-========================================= */
+   ========================================================= */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+
 
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #080808;
-    color: #dedede;
-    line-height: 1.7;
+    background: var(--bg-main);
+    color: var(--text-main);
+
+    font-family: var(--serif);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
 }
 
 
-/* =========================================
-   VARIÁVEIS
-========================================= */
-
-:root {
-    --bg: #080808;
-    --bg-light: #111111;
-    --panel: #151515;
-    --panel-light: #1b1b1b;
-
-    --text: #dedede;
-    --muted: #888888;
-
-    --white: #f4f4f4;
-
-    --line: rgba(255, 255, 255, 0.12);
-
-    --red: #9d2929;
-    --red-light: #d44b4b;
-
-    --gold: #a58b57;
-    --gold-light: #d0b979;
-}
-
-
-/* =========================================
-   BODY
-========================================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(120, 20, 20, 0.08),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 80% 80%,
-            rgba(100, 80, 30, 0.05),
-            transparent 35%
-        );
-
-    z-index: -1;
-}
-
-
-/* =========================================
+/* =========================================================
    SIDEBAR
-========================================= */
+   ========================================================= */
 
 .sidebar {
+
     position: fixed;
 
     left: 0;
     top: 0;
     bottom: 0;
 
-    width: 260px;
+    width: var(--sidebar-width);
 
-    background: #0c0c0c;
+    background:
+        linear-gradient(
+            180deg,
+            #101010 0%,
+            #0b0b0b 100%
+        );
 
-    border-right: 1px solid var(--line);
-
-    padding: 45px 30px;
+    border-right: 1px solid var(--border);
 
     display: flex;
     flex-direction: column;
 
-    z-index: 100;
+    z-index: 1000;
 }
 
 
-.logo {
-    margin-bottom: 70px;
-}
+.sidebar-header {
 
-.logo-small {
-    display: block;
+    padding: 48px 30px 35px;
 
-    font-family: Arial, sans-serif;
-
-    font-size: 10px;
-    letter-spacing: 4px;
-
-    color: var(--muted);
-
-    margin-bottom: 8px;
-}
-
-.logo-main {
-    display: block;
-
-    font-size: 26px;
-
-    letter-spacing: 5px;
-
-    color: var(--white);
 }
 
 
-/* =========================================
-   NAVIGATION
-========================================= */
+.logo-symbol {
 
-.navigation {
-    display: flex;
-    flex-direction: column;
+    color: var(--accent);
 
-    gap: 8px;
+    font-size: 22px;
+
+    margin-bottom: 15px;
+
 }
 
-.nav-link {
-    display: flex;
-    align-items: center;
 
-    gap: 15px;
+.sidebar-header h1 {
 
-    padding: 13px 10px;
-
-    color: #777;
-
-    text-decoration: none;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
+    font-size: 34px;
 
     letter-spacing: 1px;
 
-    transition: 0.3s;
-}
+    font-weight: 700;
 
-.nav-link span {
-    color: #444;
-
-    font-size: 10px;
-
-    transition: 0.3s;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--white);
-}
-
-.nav-link:hover span,
-.nav-link.active span {
-    color: var(--red-light);
 }
 
 
-.sidebar-footer {
-    margin-top: auto;
+.sidebar-header span {
 
-    font-family: Arial, sans-serif;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    color: #444;
-}
-
-
-/* =========================================
-   MAIN
-========================================= */
-
-.main-content {
-    margin-left: 260px;
-
-    min-height: 100vh;
-}
-
-
-/* =========================================
-   SECTION
-========================================= */
-
-.section {
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 120px 70px;
-}
-
-
-.section-header {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 25px;
-
-    margin-bottom: 65px;
-}
-
-.section-number {
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-
-    color: var(--red-light);
-
-    letter-spacing: 2px;
-
-    padding-top: 8px;
-}
-
-.section-label {
     display: block;
 
-    font-family: Arial, sans-serif;
+    margin-top: 3px;
 
-    font-size: 9px;
+    font-size: 13px;
 
-    letter-spacing: 4px;
+    letter-spacing: 1px;
 
-    color: var(--muted);
-
-    margin-bottom: 10px;
-}
-
-.section h2 {
-    font-size: 44px;
-
-    font-weight: normal;
-
-    color: var(--white);
-
-    line-height: 1.1;
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
 
-.hero {
-    min-height: 100vh;
+.navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 0 18px;
+
+}
+
+
+.nav-link {
+
+    position: relative;
 
     display: flex;
 
     align-items: center;
 
-    position: relative;
+    gap: 14px;
 
-    border-bottom: 1px solid var(--line);
+    padding: 12px 12px;
+
+    color: #817b74;
+
+    text-decoration: none;
+
+    font-family: var(--sans);
+
+    font-size: 13px;
+
+    letter-spacing: .4px;
+
+    transition:
+        color .25s ease,
+        background .25s ease;
+
 }
 
-.hero-content {
-    max-width: 850px;
-}
 
-.eyebrow {
-    font-family: Arial, sans-serif;
+.nav-link span {
+
+    width: 18px;
+
+    color: #4e4a46;
 
     font-size: 10px;
 
-    letter-spacing: 5px;
+    letter-spacing: 1px;
 
-    color: var(--red-light);
-}
-
-.hero h1 {
-    margin-top: 25px;
-
-    font-size: clamp(60px, 9vw, 125px);
-
-    font-weight: normal;
-
-    line-height: 0.85;
-
-    letter-spacing: -5px;
-
-    color: var(--white);
-}
-
-.hero h1 span {
-    color: var(--red);
-
-    font-size: 0.5em;
-
-    letter-spacing: 0;
-}
-
-.hero-description {
-    margin-top: 45px;
-
-    max-width: 600px;
-
-    font-size: 20px;
-
-    color: #aaa;
-}
-
-.hero-line {
-    width: 100px;
-
-    height: 1px;
-
-    background: var(--red);
-
-    margin: 35px 0;
-}
-
-.hero-note {
-    max-width: 600px;
-
-    font-size: 14px;
-
-    color: #666;
 }
 
 
-/* =========================================
-   INTRO
-========================================= */
+.nav-link:hover {
 
-.intro-grid {
-    display: grid;
+    color: var(--text-main);
 
-    grid-template-columns: 1.4fr 0.8fr;
+    background: rgba(255,255,255,.025);
 
-    gap: 80px;
-}
-
-.intro-text p {
-    margin-bottom: 25px;
-
-    color: #999;
-
-    font-size: 16px;
-}
-
-.intro-text strong {
-    color: var(--white);
 }
 
 
-.quote-box {
-    padding: 35px;
+.nav-link.active {
 
-    border-left: 2px solid var(--red);
+    color: #fff;
 
-    background: rgba(255, 255, 255, 0.025);
-}
-
-.quote-symbol {
-    font-size: 50px;
-
-    color: var(--red);
-
-    line-height: 0.7;
-
-    margin-bottom: 20px;
-}
-
-.quote-box p {
-    font-size: 19px;
-
-    color: #aaa;
-
-    font-style: italic;
 }
 
 
-/* =========================================
-   KAGUNE LIST
-========================================= */
+.nav-link.active span {
 
-.kagune-list {
-    display: flex;
+    color: var(--accent);
 
-    flex-direction: column;
-
-    gap: 70px;
 }
 
 
-/* =========================================
-   KAGUNE CARD
-========================================= */
+.nav-link.active::before {
 
-.kagune-card {
-    display: grid;
-
-    grid-template-columns: 48% 52%;
-
-    min-height: 580px;
-
-    background: var(--panel);
-
-    border: 1px solid var(--line);
-
-    overflow: hidden;
-
-    transition: transform 0.4s, border-color 0.4s;
-}
-
-.kagune-card:hover {
-    transform: translateY(-5px);
-
-    border-color: rgba(255, 255, 255, 0.25);
-}
-
-
-/* =========================================
-   KAGUNE IMAGE
-========================================= */
-
-.kagune-image {
-    position: relative;
-
-    min-height: 580px;
-
-    overflow: hidden;
-
-    background: #050505;
-}
-
-.kagune-image::after {
     content: "";
 
     position: absolute;
 
-    inset: 0;
+    left: -18px;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent 60%,
-            #151515 100%
-        );
+    top: 0;
+    bottom: 0;
 
-    pointer-events: none;
+    width: 2px;
+
+    background: var(--accent);
+
 }
 
-.kagune-image img {
+
+/* =========================================================
+   SIDEBAR FOOTER
+   ========================================================= */
+
+.sidebar-footer {
+
+    margin-top: auto;
+
+    padding: 25px 30px 30px;
+
+    font-family: var(--sans);
+
+}
+
+
+.sidebar-footer span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #6a655f;
+
+}
+
+
+.sidebar-footer small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color: #45413d;
+
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
+
+.main-content {
+
+    margin-left: var(--sidebar-width);
+
+    width: calc(100% - var(--sidebar-width));
+
+    min-width: 0;
+
+}
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+.section {
+
     width: 100%;
-    height: 100%;
 
-    object-fit: cover;
+    max-width: 1200px;
 
-    display: block;
+    margin: 0 auto;
 
-    transition: transform 0.7s;
-}
+    padding: 100px 70px;
 
-.kagune-card:hover .kagune-image img {
-    transform: scale(1.04);
-}
+    min-height: 500px;
 
-.image-label {
-    position: absolute;
+    scroll-margin-top: 40px;
 
-    left: 25px;
-    bottom: 25px;
-
-    z-index: 2;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 4px;
-
-    color: white;
-
-    background: rgba(0, 0, 0, 0.65);
-
-    padding: 10px 15px;
 }
 
 
-/* =========================================
-   KAGUNE CONTENT
-========================================= */
+/* =========================================================
+   HERO
+   ========================================================= */
 
-.kagune-content {
-    padding: 55px 50px;
-}
+.hero {
 
-.kagune-type {
-    font-family: Arial, sans-serif;
+    min-height: 100vh;
 
-    font-size: 9px;
-
-    letter-spacing: 4px;
-
-    color: var(--red-light);
-}
-
-.kagune-content h3 {
-    font-size: 50px;
-
-    font-weight: normal;
-
-    color: var(--white);
-
-    margin: 8px 0;
-}
-
-.kagune-subtitle {
-    font-family: Arial, sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    color: var(--gold);
-
-    text-transform: uppercase;
-
-    margin-bottom: 35px;
-}
-
-.kagune-content > p {
-    font-size: 14px;
-
-    color: #888;
-
-    margin-bottom: 18px;
-}
-
-
-/* =========================================
-   STATS
-========================================= */
-
-.stats {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 18px;
-
-    margin: 35px 0;
-}
-
-.stat {
-    padding: 14px 0;
-
-    border-top: 1px solid var(--line);
-}
-
-.stat span {
-    display: block;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    color: #666;
-
-    margin-bottom: 5px;
-}
-
-.stars {
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    color: var(--gold);
-}
-
-
-/* =========================================
-   MATCHUP
-========================================= */
-
-.matchup {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    border-top: 1px solid var(--line);
-
-    border-bottom: 1px solid var(--line);
-}
-
-.matchup > div {
-    padding: 17px;
-}
-
-.matchup > div + div {
-    border-left: 1px solid var(--line);
-}
-
-.matchup span {
-    display: block;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 7px;
-
-    letter-spacing: 2px;
-
-    color: #666;
-
-    margin-bottom: 5px;
-}
-
-.matchup strong {
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-}
-
-.advantage strong {
-    color: #8fbf91;
-}
-
-.disadvantage strong {
-    color: #c26a6a;
-}
-
-
-/* =========================================
-   LOCATION
-========================================= */
-
-.location {
-    margin-top: 25px;
-}
-
-.location > span {
-    font-family: Arial, sans-serif;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    color: var(--gold);
-}
-
-.location p {
-    font-size: 12px;
-
-    color: #666;
-
-    margin-top: 4px;
-}
-
-
-/* =========================================
-   CICLO
-========================================= */
-
-.cycle-container {
-    padding: 60px 45px;
-
-    background: var(--panel);
-
-    border: 1px solid var(--line);
-}
-
-.cycle-description {
-    max-width: 700px;
-
-    margin-bottom: 60px;
-}
-
-.cycle-description p {
-    color: #888;
-
-    margin-bottom: 10px;
-}
-
-
-.cycle {
     display: flex;
 
     align-items: center;
 
-    justify-content: center;
+    position: relative;
 
-    gap: 15px;
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(120,0,10,.12),
+            transparent 35%
+        );
 
-    flex-wrap: wrap;
 }
 
-.cycle-item {
-    width: 150px;
 
-    padding: 25px 15px;
+.hero-content {
 
-    text-align: center;
+    max-width: 800px;
 
-    border: 1px solid var(--line);
-
-    background: #101010;
 }
 
-.cycle-item strong {
-    display: block;
 
-    color: var(--white);
+.eyebrow {
 
-    font-family: Arial, sans-serif;
+    font-family: var(--sans);
 
-    font-size: 13px;
+    color: var(--accent);
 
-    letter-spacing: 2px;
-}
+    font-size: 10px;
 
-.cycle-item span {
-    display: block;
+    font-weight: 700;
 
-    font-size: 18px;
-
-    color: var(--red);
-
-    margin: 10px;
-}
-
-.cycle-item small {
-    display: block;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 8px;
-
-    color: #555;
+    letter-spacing: 5px;
 
     text-transform: uppercase;
 
-    letter-spacing: 1px;
-}
-
-.cycle-item b {
-    display: block;
-
-    margin-top: 5px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 10px;
-
-    color: var(--gold);
-}
-
-.cycle-arrow {
-    font-size: 25px;
-
-    color: #444;
-}
-
-.cycle-final {
-    margin-top: 50px;
-
-    text-align: center;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    color: #666;
 }
 
 
-/* =========================================
-   KAKUJA
-========================================= */
+.hero h2 {
 
-.kakuja-intro {
-    max-width: 850px;
+    margin-top: 15px;
 
-    margin-bottom: 70px;
-}
+    font-size: clamp(55px, 8vw, 105px);
 
-.kakuja-intro p {
-    color: #888;
+    line-height: .9;
 
-    font-size: 16px;
+    font-weight: 400;
 
-    margin-bottom: 20px;
+    letter-spacing: -3px;
+
 }
 
 
-/* =========================================
-   KAKUJA CARD
-========================================= */
+.hero h2 strong {
 
-.kakuja-card {
-    display: grid;
+    font-weight: 700;
 
-    grid-template-columns: 55% 45%;
-
-    margin-bottom: 70px;
-
-    background: var(--panel);
-
-    border: 1px solid var(--line);
-
-    min-height: 500px;
-
-    overflow: hidden;
-}
-
-.kakuja-card.reverse {
-    grid-template-columns: 45% 55%;
-}
-
-.kakuja-card.reverse .kakuja-image {
-    order: 2;
-}
-
-.kakuja-card.reverse .kakuja-content {
-    order: 1;
-}
-
-.kakuja-image {
-    position: relative;
-
-    min-height: 500px;
-
-    overflow: hidden;
-
-    background: #050505;
-}
-
-.kakuja-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    transition: transform 0.7s;
-}
-
-.kakuja-card:hover img {
-    transform: scale(1.03);
-}
-
-.kakuja-overlay {
-    position: absolute;
-
-    left: 25px;
-    bottom: 25px;
-
-    padding: 10px 15px;
-
-    background: rgba(0, 0, 0, 0.7);
-
-    font-family: Arial, sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    color: white;
-}
-
-.kakuja-content {
-    padding: 60px 50px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-}
-
-.kakuja-label {
-    font-family: Arial, sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    color: var(--red-light);
-}
-
-.kakuja-content h3 {
-    margin: 10px 0 30px;
-
-    font-size: 38px;
-
-    font-weight: normal;
-
-    color: var(--white);
-
-    line-height: 1.1;
-}
-
-.kakuja-content p {
-    color: #888;
-
-    font-size: 14px;
-
-    margin-bottom: 18px;
-}
-
-.kakuja-tags {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin-top: 25px;
-}
-
-.kakuja-tags span {
-    font-family: Arial, sans-serif;
-
-    font-size: 7px;
-
-    letter-spacing: 1.5px;
-
-    color: #888;
-
-    border: 1px solid var(--line);
-
-    padding: 8px 10px;
 }
 
 
-/* =========================================
-   RULES
-========================================= */
+.hero-description {
 
-.rules-section {
-    border-top: 1px solid var(--line);
-}
+    max-width: 600px;
 
-.rules-grid {
-    display: grid;
+    margin-top: 35px;
 
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.rule-box {
-    padding: 35px;
-
-    background: var(--panel);
-
-    border: 1px solid var(--line);
-}
-
-.rule-box > span {
-    font-family: Arial, sans-serif;
-
-    font-size: 10px;
-
-    color: var(--red-light);
-}
-
-.rule-box h3 {
-    margin: 20px 0 15px;
-
-    color: var(--white);
+    color: #bdb6ae;
 
     font-size: 20px;
 
-    font-weight: normal;
-}
-
-.rule-box p {
-    color: #666;
-
-    font-size: 13px;
 }
 
 
-/* =========================================
-   FOOTER
-========================================= */
+.hero-line {
 
-footer {
-    padding: 50px 70px;
+    width: 80px;
 
-    border-top: 1px solid var(--line);
+    height: 2px;
+
+    margin: 35px 0 20px;
+
+    background: var(--accent);
+
+}
+
+
+.hero-small {
+
+    max-width: 550px;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   CABEÇALHOS DE SEÇÃO
+   ========================================================= */
+
+.section-heading {
+
+    display: flex;
+
+    gap: 25px;
+
+    align-items: flex-start;
+
+    margin-bottom: 55px;
+
+}
+
+
+.section-number {
+
+    color: var(--accent);
+
+    font-family: var(--sans);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    padding-top: 8px;
+
+}
+
+
+.section-heading h2 {
+
+    margin-top: 7px;
+
+    font-size: 48px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro-panel {
+
+    max-width: 850px;
+
+    padding: 35px;
+
+    background: var(--bg-panel);
+
+    border: 1px solid var(--border);
+
+}
+
+
+.intro-panel p {
+
+    margin-bottom: 20px;
+
+    color: #aaa39a;
+
+    font-size: 17px;
+
+}
+
+
+.intro-panel p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.intro-panel strong {
+
+    color: #eee;
+
+}
+
+
+/* =========================================================
+   KAGUNE HEADER
+   ========================================================= */
+
+.kagune-section {
+
+    padding-top: 120px;
+
+    padding-bottom: 120px;
+
+}
+
+
+.kagune-header {
 
     display: flex;
 
     justify-content: space-between;
 
-    font-family: Arial, sans-serif;
+    align-items: flex-start;
+
+    margin-bottom: 45px;
+
+}
+
+
+.kagune-header h2 {
+
+    margin-top: 8px;
+
+    font-size: 58px;
+
+    font-weight: 400;
+
+    line-height: .95;
+
+}
+
+
+.subtitle {
+
+    margin-top: 10px;
+
+    color: #aaa39a;
+
+    font-size: 16px;
+
+}
+
+
+.kagune-code {
+
+    font-family: var(--sans);
+
+    color: #5d5955;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================================
+   ÁREA DA KAGUNE
+   ========================================================= */
+
+.kagune-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(280px, .75fr);
+
+    gap: 50px;
+
+    align-items: center;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   ARTE DA KAGUNE
+   ========================================================= */
+
+.kagune-art {
+
+    width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #101010;
+
+    border: 1px solid var(--border);
+
+    padding: 15px;
+
+}
+
+
+/*
+ * ESTA É A PARTE MAIS IMPORTANTE DA CORREÇÃO.
+ *
+ * A imagem nunca poderá ultrapassar
+ * a área disponível.
+ */
+
+.kagune-art img {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    height: auto;
+
+    max-height: 620px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+.kagune-info {
+
+    min-width: 0;
+
+}
+
+
+.info-box {
+
+    padding: 25px 0;
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.info-box:last-child {
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.info-label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: var(--sans);
+
+    color: var(--accent);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.info-box p {
+
+    color: #aaa39a;
+
+    font-size: 15px;
+
+}
+
+
+.info-box ul {
+
+    list-style: none;
+
+}
+
+
+.info-box li {
+
+    position: relative;
+
+    padding: 4px 0 4px 17px;
+
+    color: #aaa39a;
+
+    font-size: 14px;
+
+}
+
+
+.info-box li::before {
+
+    content: "◆";
+
+    position: absolute;
+
+    left: 0;
+
+    color: var(--accent);
+
+    font-size: 6px;
+
+    top: 10px;
+
+}
+
+
+/* =========================================================
+   MATCHUP
+   ========================================================= */
+
+.matchup {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
+
+.matchup > div {
+
+    padding: 18px;
+
+    background: var(--bg-panel);
+
+    border: 1px solid var(--border);
+
+}
+
+
+.matchup span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-family: var(--sans);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #625e59;
+
+}
+
+
+.matchup strong {
+
+    font-family: var(--sans);
+
+    font-size: 13px;
+
+    color: #ddd;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   CICLO
+   ========================================================= */
+
+.cycle-container {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+}
+
+
+.cycle-item {
+
+    width: 170px;
+
+    min-height: 150px;
+
+    padding: 22px;
+
+    background: var(--bg-panel);
+
+    border: 1px solid var(--border);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.cycle-item span {
+
+    color: var(--accent);
+
+    font-family: var(--sans);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.cycle-item strong {
+
+    margin-top: 8px;
+
+    font-size: 21px;
+
+}
+
+
+.cycle-item small {
+
+    margin-top: 7px;
+
+    color: #66615c;
+
+    font-family: var(--sans);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.cycle-item b {
+
+    margin-top: 4px;
+
+    color: #c5beb6;
+
+    font-family: var(--sans);
+
+    font-size: 11px;
+
+}
+
+
+.cycle-arrow {
+
+    color: var(--accent);
+
+    font-size: 22px;
+
+}
+
+
+.cycle-description {
+
+    max-width: 700px;
+
+    margin: 40px auto 0;
+
+    text-align: center;
+
+    color: #77716b;
+
+}
+
+
+/* =========================================================
+   KAKUJA
+   ========================================================= */
+
+.kakuja-section {
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(100,0,10,.08),
+            transparent 35%
+        );
+
+}
+
+
+.kakuja-intro {
+
+    max-width: 850px;
+
+    margin-bottom: 70px;
+
+}
+
+
+.kakuja-intro p {
+
+    margin-bottom: 20px;
+
+    color: #aaa39a;
+
+    font-size: 17px;
+
+}
+
+
+.kakuja-card {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.15fr);
+
+    gap: 50px;
+
+    align-items: center;
+
+    margin-bottom: 90px;
+
+    padding: 35px;
+
+    background: var(--bg-panel);
+
+    border: 1px solid var(--border);
+
+}
+
+
+.kakuja-card.reverse {
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(0, 1fr);
+
+}
+
+
+.kakuja-card.reverse .kakuja-text {
+
+    order: 2;
+
+}
+
+
+.kakuja-card.reverse .kakuja-art {
+
+    order: 1;
+
+}
+
+
+.kakuja-text h3 {
+
+    margin-top: 8px;
+
+    font-size: 38px;
+
+    font-weight: 400;
+
+}
+
+
+.kakuja-text p {
+
+    margin-top: 15px;
+
+    color: #aaa39a;
+
+}
+
+
+.kakuja-text ul {
+
+    margin-top: 20px;
+
+    padding-left: 18px;
+
+    color: #88817a;
+
+}
+
+
+.kakuja-text li {
+
+    margin: 6px 0;
+
+}
+
+
+.kakuja-art {
+
+    width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #0c0c0c;
+
+    border: 1px solid var(--border);
+
+    padding: 15px;
+
+}
+
+
+.kakuja-art img {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    height: auto;
+
+    max-height: 650px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+}
+
+
+/* =========================================================
+   REGRAS
+   ========================================================= */
+
+.rules-panel {
+
+    max-width: 900px;
+
+    padding: 40px;
+
+    background: var(--bg-panel);
+
+    border: 1px solid var(--border);
+
+}
+
+
+.rules-panel > p {
+
+    color: #aaa39a;
+
+    font-size: 17px;
+
+}
+
+
+.development-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+}
+
+
+.development-grid > div {
+
+    padding: 20px;
+
+    background: #0c0c0c;
+
+    border: 1px solid var(--border);
+
+}
+
+
+.development-grid span {
+
+    color: var(--accent);
+
+}
+
+
+.development-grid strong {
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-family: var(--sans);
+
+    font-size: 13px;
+
+}
+
+
+.development-grid small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #5d5853;
+
+    font-family: var(--sans);
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+
+    padding: 50px 70px;
+
+    border-top: 1px solid var(--border);
+
+    color: #45413d;
+
+    font-family: var(--sans);
 
     font-size: 9px;
 
     letter-spacing: 2px;
 
-    color: #444;
-}
-
-footer span {
-    color: #666;
 }
 
 
-/* =========================================
+.footer span {
+
+    margin-left: 15px;
+
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+   ========================================================= */
+
+.kagune-section,
+.kakuja-card,
+.info-box,
+.matchup,
+.cycle-item,
+.intro-panel,
+.rules-panel {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+
+.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
    RESPONSIVO
-========================================= */
+   ========================================================= */
 
 @media (max-width: 1000px) {
 
+    :root {
+        --sidebar-width: 210px;
+    }
+
+
+    .section {
+
+        padding-left: 45px;
+
+        padding-right: 45px;
+
+    }
+
+
+    .kagune-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .kagune-art {
+
+        max-height: none;
+
+    }
+
+
+    .kagune-art img {
+
+        max-height: 650px;
+
+    }
+
+
+    .kakuja-card,
+    .kakuja-card.reverse {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .kakuja-card.reverse .kakuja-text,
+    .kakuja-card.reverse .kakuja-art {
+
+        order: initial;
+
+    }
+
+}
+
+
+@media (max-width: 720px) {
+
+    :root {
+        --sidebar-width: 0px;
+    }
+
+
     .sidebar {
+
         position: relative;
 
         width: 100%;
 
         height: auto;
 
+        min-height: auto;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+
+    }
+
+
+    .sidebar-header {
+
         padding: 25px;
 
-        flex-direction: row;
-
-        align-items: center;
-
-        justify-content: space-between;
     }
 
-    .logo {
-        margin: 0;
-    }
 
     .navigation {
+
         flex-direction: row;
+
+        flex-wrap: wrap;
+
+        padding: 0 15px 20px;
+
     }
+
 
     .nav-link {
-        padding: 5px;
+
+        padding: 8px;
+
     }
 
-    .nav-link span {
+
+    .nav-link.active::before {
+
         display: none;
+
     }
+
 
     .sidebar-footer {
+
         display: none;
+
     }
+
 
     .main-content {
+
+        width: 100%;
+
         margin-left: 0;
+
     }
+
 
     .section {
-        padding: 90px 35px;
+
+        padding: 70px 25px;
+
     }
 
-    .kagune-card,
-    .kakuja-card,
-    .kakuja-card.reverse {
+
+    .hero h2 {
+
+        font-size: 58px;
+
+    }
+
+
+    .kagune-header h2 {
+
+        font-size: 45px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 38px;
+
+    }
+
+
+    .matchup {
+
         grid-template-columns: 1fr;
+
     }
 
-    .kakuja-card.reverse .kakuja-image,
-    .kakuja-card.reverse .kakuja-content {
-        order: initial;
-    }
 
-    .kagune-image,
-    .kakuja-image {
-        min-height: 450px;
-    }
+    .development-grid {
 
-    .rules-grid {
         grid-template-columns: 1fr;
+
     }
+
+
+    .cycle-arrow {
+
+        display: none;
+
+    }
+
+
+    .cycle-container {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .cycle-item {
+
+        width: 100%;
+
+    }
+
+
+    .footer {
+
+        padding: 35px 25px;
+
+    }
+
 }
 
 
-@media (max-width: 650px) {
+/* =========================================================
+   PROTEÇÃO CONTRA IMAGENS GIGANTES
+   ========================================================= */
 
-    .sidebar {
-        display: block;
-    }
+img {
 
-    .logo {
-        margin-bottom: 20px;
-    }
+    max-width: 100%;
 
-    .navigation {
-        overflow-x: auto;
-    }
+}
 
-    .hero h1 {
-        font-size: 60px;
-    }
 
-    .section h2 {
-        font-size: 34px;
-    }
+img.imagem-erro {
 
-    .intro-grid {
-        grid-template-columns: 1fr;
-    }
+    display: none;
 
-    .kagune-content,
-    .kakuja-content {
-        padding: 35px 25px;
-    }
-
-    .kagune-content h3 {
-        font-size: 40px;
-    }
-
-    .stats {
-        grid-template-columns: 1fr;
-    }
-
-    .matchup {
-        grid-template-columns: 1fr;
-    }
-
-    .matchup > div + div {
-        border-left: none;
-
-        border-top: 1px solid var(--line);
-    }
-
-    .cycle-arrow {
-        transform: rotate(90deg);
-    }
-
-    footer {
-        padding: 35px 25px;
-
-        flex-direction: column;
-
-        gap: 15px;
-    }
 }
