@@ -115,23 +115,28 @@
                 <span>Investigadores</span>
             </a>
 
-            <a href="#classes" class="nav-link">
+            <a href="#arquetipos" class="nav-link">
                 <span class="nav-index">11</span>
+                <span>Arquétipos</span>
+            </a>
+
+            <a href="#classes" class="nav-link">
+                <span class="nav-index">12</span>
                 <span>Classes</span>
             </a>
 
             <a href="#quinques" class="nav-link">
-                <span class="nav-index">12</span>
+                <span class="nav-index">13</span>
                 <span>Quinques</span>
             </a>
 
             <a href="#aratas" class="nav-link ccg-link">
-                <span class="nav-index">13</span>
+                <span class="nav-index">14</span>
                 <span>Aratas</span>
             </a>
 
             <a href="#investigacao" class="nav-link ccg-link">
-                <span class="nav-index">14</span>
+                <span class="nav-index">15</span>
                 <span>Investigação</span>
             </a>
 
@@ -3218,38 +3223,368 @@
                 </div>
 
 
-                <div id="quinques" class="content-panel ccg-panel">
+                <!-- =====================================================
+                     ARQUÉTIPOS DE INVESTIGADOR
+                ====================================================== -->
 
-                    <span class="panel-label">
-                        SISTEMA DE INVESTIGAÇÃO
-                    </span>
+                <div id="arquetipos" class="ccg-archetype-intro content-panel ccg-panel">
 
-                    <h3>
-                        Quanto mais a CCG descobre,
-                        mais perigoso fica ser um Ghoul.
-                    </h3>
+                    <span class="panel-label">ARQUÉTIPOS DE INVESTIGADOR</span>
+
+                    <h3>O investigador define como a CCG entra em combate.</h3>
 
                     <p>
-                        Investigadores podem reunir informações,
-                        testemunhos, registros e evidências sobre
-                        atividades suspeitas.
+                        O arquétipo representa a formação principal do investigador dentro da CCG.
+                        Ele não determina a personalidade do personagem nem impede outras formas de agir:
+                        define, principalmente, onde aquele investigador recebeu treinamento e em que tipo de
+                        operação sua presença é mais valiosa.
                     </p>
 
                     <p>
-                        Conforme a quantidade de evidências aumenta,
-                        a CCG pode determinar características do alvo.
+                        Cada arquétipo possui uma função, pontos fortes, limitações e um Quinque inicial.
+                        O Quinque reforça a identidade do arquétipo, mas não transforma o investigador em uma
+                        classe fechada. Com treinamento, experiência e autorização da CCG, o personagem pode
+                        aprimorar, modificar ou substituir seu equipamento.
+                    </p>
+
+                    <div class="ccg-rule-strip">
+                        <span>ARQUÉTIPO</span>
+                        <strong>FUNÇÃO + TREINAMENTO + QUINQUE INICIAL</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="ccg-archetype-grid">
+
+                    <article class="ccg-archetype-card">
+                        <div class="archetype-head">
+                            <span>01</span>
+                            <div>
+                                <span class="panel-label">LINHA DE FRENTE</span>
+                                <h3>Investigador de Campo</h3>
+                            </div>
+                        </div>
+                        <p class="archetype-role">Combate direto, perseguição e adaptação.</p>
+                        <p>
+                            É o investigador preparado para entrar no território Ghoul e continuar operando
+                            quando o plano inicial deixa de existir. Aprende a alternar rapidamente entre ataque,
+                            defesa, perseguição e proteção de aliados.
+                        </p>
+                        <ul class="archetype-list">
+                            <li><strong>Especialidade:</strong> combate e perseguição.</li>
+                            <li><strong>Melhor em:</strong> confrontos imprevisíveis e operações de campo.</li>
+                            <li><strong>Limitação:</strong> não possui a especialização extrema dos demais arquétipos.</li>
+                        </ul>
+                    </article>
+
+                    <article class="ccg-archetype-card">
+                        <div class="archetype-head">
+                            <span>02</span>
+                            <div>
+                                <span class="panel-label">INTELIGÊNCIA</span>
+                                <h3>Analista</h3>
+                            </div>
+                        </div>
+                        <p class="archetype-role">Informação, leitura de padrões e suporte tático.</p>
+                        <p>
+                            O Analista transforma evidências em decisões. Seu treinamento prioriza observação,
+                            interpretação de cenas, identificação de padrões de comportamento e reconhecimento
+                            das características de uma Kagune.
+                        </p>
+                        <ul class="archetype-list">
+                            <li><strong>Especialidade:</strong> investigação e análise.</li>
+                            <li><strong>Melhor em:</strong> preparar a equipe antes do confronto.</li>
+                            <li><strong>Limitação:</strong> perde eficiência quando surpreendido em combate direto.</li>
+                        </ul>
+                    </article>
+
+                    <article class="ccg-archetype-card">
+                        <div class="archetype-head">
+                            <span>03</span>
+                            <div>
+                                <span class="panel-label">RECONHECIMENTO</span>
+                                <h3>Rastreador</h3>
+                            </div>
+                        </div>
+                        <p class="archetype-role">Localização, perseguição, reconhecimento e emboscada.</p>
+                        <p>
+                            O Rastreador é treinado para encontrar um alvo que não quer ser encontrado. Trabalha
+                            com rotas, sinais, hábitos e movimentação urbana, criando as condições para que a CCG
+                            escolha quando e onde o confronto acontecerá.
+                        </p>
+                        <ul class="archetype-list">
+                            <li><strong>Especialidade:</strong> rastreamento e mobilidade.</li>
+                            <li><strong>Melhor em:</strong> localizar e impedir a fuga de alvos.</li>
+                            <li><strong>Limitação:</strong> não é projetado para permanecer em combate pesado.</li>
+                        </ul>
+                    </article>
+
+                    <article class="ccg-archetype-card">
+                        <div class="archetype-head">
+                            <span>04</span>
+                            <div>
+                                <span class="panel-label">FORÇA DE IMPACTO</span>
+                                <h3>Executor</h3>
+                            </div>
+                        </div>
+                        <p class="archetype-role">Combate pesado, contenção e eliminação.</p>
+                        <p>
+                            O Executor é enviado quando a CCG precisa de alguém capaz de enfrentar fisicamente uma
+                            ameaça de alto risco. Seu treinamento favorece resistência, impacto, controle de espaço
+                            e pressão frontal.
+                        </p>
+                        <ul class="archetype-list">
+                            <li><strong>Especialidade:</strong> combate pesado.</li>
+                            <li><strong>Melhor em:</strong> segurar uma ameaça e abrir espaço para a equipe.</li>
+                            <li><strong>Limitação:</strong> menor mobilidade e dificuldade em operações furtivas.</li>
+                        </ul>
+                    </article>
+
+                    <article class="ccg-archetype-card">
+                        <div class="archetype-head">
+                            <span>05</span>
+                            <div>
+                                <span class="panel-label">DOMÍNIO TÉCNICO</span>
+                                <h3>Especialista Quinque</h3>
+                            </div>
+                        </div>
+                        <p class="archetype-role">Técnica, precisão e domínio absoluto do equipamento.</p>
+                        <p>
+                            O Especialista constrói seu estilo ao redor do Quinque. Em vez de depender apenas de
+                            atributos físicos, aprende configurações, sequências e aplicações específicas de sua
+                            arma até transformá-la em uma extensão do próprio corpo.
+                        </p>
+                        <ul class="archetype-list">
+                            <li><strong>Especialidade:</strong> técnicas de Quinque.</li>
+                            <li><strong>Melhor em:</strong> duelos e situações que permitem explorar seu equipamento.</li>
+                            <li><strong>Limitação:</strong> sua eficiência cai quando perde acesso ao Quinque.</li>
+                        </ul>
+                    </article>
+
+                    <article class="ccg-archetype-card">
+                        <div class="archetype-head">
+                            <span>06</span>
+                            <div>
+                                <span class="panel-label">COMANDO</span>
+                                <h3>Comandante</h3>
+                            </div>
+                        </div>
+                        <p class="archetype-role">Coordenação, liderança e controle do campo.</p>
+                        <p>
+                            O Comandante transforma investigadores individuais em uma unidade. Seu treinamento
+                            prioriza leitura do campo, posicionamento, ordens rápidas e criação de oportunidades
+                            para os companheiros.
+                        </p>
+                        <ul class="archetype-list">
+                            <li><strong>Especialidade:</strong> liderança e suporte.</li>
+                            <li><strong>Melhor em:</strong> operações com vários investigadores.</li>
+                            <li><strong>Limitação:</strong> isolado, perde parte de seu potencial.</li>
+                        </ul>
+                    </article>
+
+                </div>
+
+
+                <div class="content-panel ccg-panel ccg-archetype-rules">
+                    <span class="panel-label">REGRA DE IDENTIDADE</span>
+                    <h3>O arquétipo orienta. Não aprisiona.</h3>
+                    <p>
+                        Escolher um arquétipo não cria um conjunto de ações obrigatórias. O investigador continua
+                        utilizando as regras gerais de testes, combate e investigação. A diferença está no tipo de
+                        situação em que seu treinamento oferece maior eficiência e nas técnicas associadas ao seu
+                        Quinque inicial.
+                    </p>
+                    <p>
+                        Em termos de jogo, o Mestre deve recompensar a especialização quando ela fizer sentido na
+                        ficção. Um Rastreador seguindo uma trilha, um Analista examinando evidências ou um Comandante
+                        coordenando sua equipe estão atuando exatamente dentro daquilo que seu arquétipo representa.
+                    </p>
+                </div>
+
+
+                <div id="quinques" class="content-panel ccg-panel ccg-quinque-intro">
+
+                    <span class="panel-label">QUINQUES INICIAIS</span>
+
+                    <h3>Armas produzidas pela CCG.</h3>
+
+                    <p>
+                        Todo investigador começa com acesso a um Quinque compatível com sua formação inicial.
+                        Os modelos abaixo são equipamentos de entrada: possuem uma identidade clara, uma função
+                        definida e uma técnica característica, mas continuam sujeitos às regras gerais de combate.
+                    </p>
+
+                    <p>
+                        A origem biológica de cada Quinque define sua natureza. O sistema não trata essa origem como
+                        uma simples etiqueta de dano: ela orienta a forma como a arma se comporta, quais situações
+                        favorece e quais limitações o usuário precisa respeitar.
                     </p>
 
                 </div>
 
 
+                <div class="ccg-quinque-grid">
 
-                <div class="content-panel">
-                    <span class="panel-label">QUINQUES</span>
-                    <h3>Armas produzidas pela CCG</h3>
-                    <p>Quinques são armas desenvolvidas a partir de material biológico de Ghouls e utilizadas por Investigadores para enfrentar Kagunes.</p>
-                    <p>Os detalhes de categorias, propriedades, criação e progressão das Quinques permanecem separados do núcleo 2d10 para serem definidos na seção própria do sistema.</p>
+                    <article class="ccg-quinque-card">
+                        <div class="quinque-art">
+                            <img src="imagens/quinques/kurotsuki.jpeg" alt="Quinque Kurotsuki">
+                        </div>
+                        <div class="quinque-info">
+                            <div class="quinque-title-row">
+                                <span>01</span>
+                                <div>
+                                    <span class="panel-label">INVESTIGADOR DE CAMPO</span>
+                                    <h3>Kurotsuki</h3>
+                                </div>
+                            </div>
+                            <p class="quinque-type">Bikaku · Lâmina equilibrada</p>
+                            <p>
+                                Uma lâmina escura e versátil, desenvolvida para adaptação rápida entre ofensiva,
+                                defesa e controle do adversário.
+                            </p>
+                            <p><strong>Característica — Corte Adaptável:</strong> o usuário pode alternar entre uma postura ofensiva, defensiva ou de controle sem abandonar a arma.</p>
+                            <p><strong>Técnica — Lua Crescente:</strong> um corte amplo que mantém pressão sobre o alvo enquanto preserva uma distância segura.</p>
+                            <div class="quinque-tags"><span>CAMPO</span><span>ADAPTAÇÃO</span><span>BIKAKU</span></div>
+                        </div>
+                    </article>
+
+                    <article class="ccg-quinque-card">
+                        <div class="quinque-art">
+                            <img src="imagens/quinques/shirabe.jpeg" alt="Quinque Shirabe">
+                        </div>
+                        <div class="quinque-info">
+                            <div class="quinque-title-row">
+                                <span>02</span>
+                                <div>
+                                    <span class="panel-label">ANALISTA</span>
+                                    <h3>Shirabe</h3>
+                                </div>
+                            </div>
+                            <p class="quinque-type">Ukaku · Dispositivo modular</p>
+                            <p>
+                                Um Quinque de médio alcance projetado para precisão e coleta de dados durante o combate.
+                                Sua configuração favorece investigadores que precisam observar antes de concluir.
+                            </p>
+                            <p><strong>Característica — Leitura de Combate:</strong> depois de observar o inimigo, o Analista pode identificar padrões de ataque, movimento ou comportamento.</p>
+                            <p><strong>Técnica — Marcação:</strong> registra um alvo para que a equipe consiga acompanhar sua posição e seus padrões com maior facilidade.</p>
+                            <div class="quinque-tags"><span>ANÁLISE</span><span>PRECISÃO</span><span>UKAKU</span></div>
+                        </div>
+                    </article>
+
+                    <article class="ccg-quinque-card">
+                        <div class="quinque-art">
+                            <img src="imagens/quinques/kitsune.jpeg" alt="Quinque Kitsune">
+                        </div>
+                        <div class="quinque-info">
+                            <div class="quinque-title-row">
+                                <span>03</span>
+                                <div>
+                                    <span class="panel-label">RASTREADOR</span>
+                                    <h3>Kitsune</h3>
+                                </div>
+                            </div>
+                            <p class="quinque-type">Rinkaku · Lâmina flexível</p>
+                            <p>
+                                Uma lâmina flexível de alcance variável, capaz de atacar de ângulos incomuns e limitar
+                                a movimentação de um alvo em fuga.
+                            </p>
+                            <p><strong>Característica — Alcance Variável:</strong> pode atuar em curta ou média distância e também interagir com obstáculos e alvos fora do alcance de uma lâmina comum.</p>
+                            <p><strong>Técnica — Laço do Caçador:</strong> utiliza a estrutura flexível para restringir o movimento do alvo e impedir uma fuga.</p>
+                            <div class="quinque-tags"><span>RASTREIO</span><span>CONTROLE</span><span>RINKAKU</span></div>
+                        </div>
+                    </article>
+
+                    <article class="ccg-quinque-card">
+                        <div class="quinque-art">
+                            <img src="imagens/quinques/guren.jpeg" alt="Quinque Guren">
+                        </div>
+                        <div class="quinque-info">
+                            <div class="quinque-title-row">
+                                <span>04</span>
+                                <div>
+                                    <span class="panel-label">EXECUTOR</span>
+                                    <h3>Guren</h3>
+                                </div>
+                            </div>
+                            <p class="quinque-type">Koukaku · Machado de impacto</p>
+                            <p>
+                                Uma arma pesada criada para resistir a confrontos violentos. Sua estrutura permite ao
+                                Executor tratar o próprio Quinque como arma e proteção ao mesmo tempo.
+                            </p>
+                            <p><strong>Característica — Guarda Pesada:</strong> o usuário pode assumir uma postura de proteção, utilizando a massa do Quinque para aparar ataques e manter posição.</p>
+                            <p><strong>Técnica — Impacto Carmesim:</strong> concentra força em um golpe de grande impacto, ideal para romper defesas ou interromper uma ofensiva.</p>
+                            <div class="quinque-tags"><span>IMPACTO</span><span>DEFESA</span><span>KOUKAKU</span></div>
+                        </div>
+                    </article>
+
+                    <article class="ccg-quinque-card">
+                        <div class="quinque-art">
+                            <img src="imagens/quinques/kagami.jpeg" alt="Quinque Kagami">
+                        </div>
+                        <div class="quinque-info">
+                            <div class="quinque-title-row">
+                                <span>05</span>
+                                <div>
+                                    <span class="panel-label">ESPECIALISTA QUINQUE</span>
+                                    <h3>Kagami</h3>
+                                </div>
+                            </div>
+                            <p class="quinque-type">Híbrido · Arma transformável</p>
+                            <p>
+                                Um Quinque mutável que alterna entre configurações de lâmina, lança e guarda. Foi
+                                desenvolvido para ser dominado por um único usuário ao longo de sua carreira.
+                            </p>
+                            <p><strong>Característica — Transformação:</strong> o investigador pode alterar a configuração do Kagami para responder à distância, à defesa ou ao espaço disponível.</p>
+                            <p><strong>Técnica — Sequência Perfeita:</strong> encadeia configurações diferentes em uma sequência de ataques, transformando domínio técnico em vantagem durante o combate.</p>
+                            <div class="quinque-tags"><span>DOMÍNIO</span><span>MUTAÇÃO</span><span>HÍBRIDO</span></div>
+                        </div>
+                    </article>
+
+                    <article class="ccg-quinque-card">
+                        <div class="quinque-art">
+                            <img src="imagens/quinques/tensei.jpeg" alt="Quinque Tensei">
+                        </div>
+                        <div class="quinque-info">
+                            <div class="quinque-title-row">
+                                <span>06</span>
+                                <div>
+                                    <span class="panel-label">COMANDANTE</span>
+                                    <h3>Tensei</h3>
+                                </div>
+                            </div>
+                            <p class="quinque-type">Bikaku · Lança de comando</p>
+                            <p>
+                                Uma lança de alcance controlado projetada para combate e coordenação. O núcleo do
+                                Quinque possui sinais visuais utilizados para comunicação rápida em campo.
+                            </p>
+                            <p><strong>Característica — Comando de Campo:</strong> o Comandante pode transmitir ordens simples e coordenar o posicionamento dos investigadores próximos.</p>
+                            <p><strong>Técnica — Formação CCG:</strong> organiza os aliados em uma formação de combate, reduzindo brechas e favorecendo ações coordenadas.</p>
+                            <div class="quinque-tags"><span>COMANDO</span><span>SUPORTE</span><span>BIKAKU</span></div>
+                        </div>
+                    </article>
+
                 </div>
+
+
+                <div class="content-panel ccg-panel ccg-quinque-rules">
+                    <span class="panel-label">PROGRESSÃO DO QUINQUE</span>
+                    <h3>O equipamento cresce junto com o investigador.</h3>
+                    <p>
+                        O Quinque inicial representa familiaridade básica. Conforme o investigador acumula experiência,
+                        o Mestre pode permitir evolução de domínio, novas técnicas, modificações estruturais ou até a
+                        substituição do equipamento por um modelo mais adequado à sua trajetória.
+                    </p>
+                    <div class="ccg-mastery-grid">
+                        <article><span>01</span><strong>Familiaridade</strong><p>Utiliza as funções básicas do Quinque.</p></article>
+                        <article><span>02</span><strong>Proficiência</strong><p>Desbloqueia aplicações e técnicas intermediárias.</p></article>
+                        <article><span>03</span><strong>Especialização</strong><p>Explora plenamente a identidade do equipamento.</p></article>
+                        <article><span>04</span><strong>Maestria</strong><p>Desenvolve técnicas próprias a partir do Quinque.</p></article>
+                        <article><span>05</span><strong>Sincronia</strong><p>O equipamento se torna uma extensão do estilo do investigador.</p></article>
+                    </div>
+                </div>
+
+
 
                 <!-- =====================================================
                      ARATAS

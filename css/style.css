@@ -2426,3 +2426,266 @@ tbody tr:hover {
         padding: 18px;
     }
 }
+
+
+/* =========================================================
+   CCG — ARQUÉTIPOS E QUINQUES INICIAIS
+   Extensão da aparência oficial: mesmo sistema visual,
+   mesma paleta CCG e sem alterar a estrutura existente.
+========================================================= */
+
+.ccg-archetype-intro {
+    margin-top: 35px;
+}
+
+.ccg-rule-strip {
+    margin-top: 25px;
+    padding: 15px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: rgba(13,17,22,.72);
+    border: 1px solid rgba(60,130,196,.18);
+}
+
+.ccg-rule-strip span {
+    color: var(--ccg-light);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.ccg-rule-strip strong {
+    color: var(--text-muted);
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+.ccg-archetype-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.ccg-archetype-card {
+    min-height: 310px;
+    padding: 28px;
+    background: rgba(11,14,18,.88);
+    border: 1px solid rgba(60,130,196,.15);
+    border-left: 2px solid rgba(60,130,196,.38);
+}
+
+.archetype-head {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 15px;
+    align-items: start;
+    margin-bottom: 18px;
+}
+
+.archetype-head > span {
+    color: var(--ccg-light);
+    font-family: var(--serif);
+    font-size: 24px;
+    line-height: 1;
+}
+
+.archetype-head h3 {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.archetype-role {
+    color: var(--ccg-light);
+    font-size: 11px;
+    letter-spacing: .4px;
+}
+
+.archetype-list {
+    margin: 18px 0 0;
+    padding-left: 18px;
+}
+
+.archetype-list li {
+    margin: 8px 0;
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.archetype-list strong {
+    color: var(--text);
+}
+
+.ccg-archetype-rules,
+.ccg-quinque-rules {
+    margin-top: 35px;
+}
+
+.ccg-quinque-intro {
+    margin-top: 35px;
+}
+
+.ccg-quinque-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.ccg-quinque-card {
+    display: grid;
+    grid-template-columns: minmax(210px, .82fr) 1fr;
+    min-width: 0;
+    background: rgba(11,14,18,.9);
+    border: 1px solid rgba(60,130,196,.16);
+    overflow: hidden;
+}
+
+.quinque-art {
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: rgba(7,10,13,.62);
+    border-right: 1px solid rgba(60,130,196,.13);
+}
+
+.quinque-art img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 390px;
+    object-fit: contain;
+}
+
+.quinque-info {
+    min-width: 0;
+    padding: 25px;
+}
+
+.quinque-title-row {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
+    align-items: start;
+    margin-bottom: 12px;
+}
+
+.quinque-title-row > span {
+    color: var(--ccg-light);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1;
+}
+
+.quinque-title-row h3 {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.quinque-type {
+    color: var(--ccg-light);
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.quinque-info p {
+    font-size: 10px;
+    line-height: 1.65;
+}
+
+.quinque-info p strong {
+    color: var(--text);
+}
+
+.quinque-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 18px;
+}
+
+.quinque-tags span {
+    padding: 5px 7px;
+    border: 1px solid rgba(103,176,242,.22);
+    color: var(--ccg-light);
+    font-size: 7px;
+    letter-spacing: 1px;
+}
+
+.ccg-mastery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.ccg-mastery-grid article {
+    min-height: 145px;
+    padding: 18px;
+    background: rgba(11,14,18,.78);
+    border: 1px solid rgba(60,130,196,.12);
+}
+
+.ccg-mastery-grid article > span {
+    color: var(--ccg-light);
+    font-family: var(--serif);
+    font-size: 15px;
+}
+
+.ccg-mastery-grid strong {
+    display: block;
+    margin-top: 10px;
+    color: var(--text);
+    font-size: 9px;
+}
+
+.ccg-mastery-grid p {
+    margin-top: 8px;
+    font-size: 9px;
+    line-height: 1.55;
+}
+
+@media (max-width: 1050px) {
+    .ccg-quinque-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ccg-mastery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .ccg-archetype-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ccg-rule-strip {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ccg-rule-strip strong {
+        text-align: left;
+    }
+
+    .ccg-quinque-card {
+        grid-template-columns: 1fr;
+    }
+
+    .quinque-art {
+        min-height: 280px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(60,130,196,.13);
+    }
+
+    .ccg-mastery-grid {
+        grid-template-columns: 1fr;
+    }
+}
