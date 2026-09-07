@@ -1,126 +1,103 @@
 /* =========================================================
    NOITES EM TOKYO
-   JavaScript principal
-   Versão 0.1
-========================================================= */
+   MOTOR BÁSICO DO SISTEMA
+   ========================================================= */
 
 
-/* =========================
-   NAVEGAÇÃO
-========================= */
+/* =========================================================
+   DADOS
+   ========================================================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+const sistema = {
 
-    link.addEventListener('click', function (event) {
+    dadoBase: "2d10",
 
-        const targetId = this.getAttribute('href');
+    movimento: 6,
 
-        if (!targetId || targetId === "#") {
-            return;
-        }
+    vidaBase: 20,
 
-        const target = document.querySelector(targetId);
+    danoDesarmado: "1d6",
 
-        if (!target) {
-            return;
-        }
+    caBase: 10
 
-        event.preventDefault();
-
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-    });
-
-});
+};
 
 
-/* =========================
-   OBSERVAR SEÇÃO CCG
-========================= */
+const kagunes = {
 
-const ccgSection = document.getElementById("ccg");
+    ukaku: {
 
-const observer = new IntersectionObserver(
-    entries => {
+        nome: "Ukaku",
 
-        entries.forEach(entry => {
+        bonus: "+2 Agilidade",
 
-            if (entry.isIntersecting) {
+        especialidade: "Ataques à distância",
 
-                document.body.classList.add("ccg-active");
-
-            } else {
-
-                document.body.classList.remove("ccg-active");
-
-            }
-
-        });
+        limitacao: "Baixa resistência"
 
     },
-    {
-        threshold: 0.15
-    }
-);
 
-if (ccgSection) {
-    observer.observe(ccgSection);
+    koukaku: {
+
+        nome: "Koukaku",
+
+        bonus: "+2 Resistência",
+
+        especialidade: "Grande defesa",
+
+        limitacao: "Movimentos lentos"
+
+    },
+
+    rinkaku: {
+
+        nome: "Rinkaku",
+
+        bonus: "+2 Regeneração",
+
+        especialidade: "Alto dano",
+
+        limitacao: "Instável emocionalmente"
+
+    },
+
+    bikaku: {
+
+        nome: "Bikaku",
+
+        bonus: "+1 em todos os atributos físicos",
+
+        especialidade: "Equilibrado",
+
+        limitacao: "Nenhuma específica"
+
+    }
+
+};
+
+
+/* =========================================================
+   MODIFICADORES
+   ========================================================= */
+
+function calcularModificador(valor) {
+
+    const atributo = Number(valor);
+
+    if (atributo <= 0) return -1;
+
+    return atributo - 1;
+
 }
 
 
-/* =========================
-   ROLAGEM — DESTACAR MENU
-========================= */
-
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".sidebar nav a");
-
-const sectionObserver = new IntersectionObserver(
-    entries => {
-
-        entries.forEach(entry => {
-
-            if (!entry.isIntersecting) {
-                return;
-            }
-
-            navLinks.forEach(link => {
-                link.classList.remove("active");
-            });
-
-            const active = document.querySelector(
-                `.sidebar nav a[href="#${entry.target.id}"]`
-            );
-
-            if (active) {
-                active.classList.add("active");
-            }
-
-        });
-
-    },
-    {
-        rootMargin: "-30% 0px -60% 0px"
-    }
-);
-
-sections.forEach(section => {
-    sectionObserver.observe(section);
-});
-
-
-/* =========================
-   CALCULADORA BÁSICA
-========================= */
+/* =========================================================
+   DADOS
+   ========================================================= */
 
 function rolarDado(lados = 10) {
 
-    return Math.floor(
-        Math.random() * lados
-    ) + 1;
+    return Math.floor(Math.random() * lados) + 1;
 
 }
 
@@ -128,296 +105,520 @@ function rolarDado(lados = 10) {
 function rolar2d10() {
 
     const dado1 = rolarDado(10);
+
     const dado2 = rolarDado(10);
 
     return {
+
         dado1,
+
         dado2,
+
         total: dado1 + dado2,
+
         critico: dado1 === 10 && dado2 === 10,
+
         falhaCritica: dado1 === 1 && dado2 === 1
+
     };
 
 }
 
 
-/* =========================
-   MODIFICADOR DE ATRIBUTO
-========================= */
+/* =========================================================
+   TESTE BÁSICO
+   ========================================================= */
 
-function calcularModificador(valor) {
+function teste2d10(valorAtributo, dificuldade) {
 
-    const tabela = {
-        0: -1,
-        1: 0,
-        2: 1,
-        3: 2,
-        4: 3,
-        5: 4,
-        6: 5,
-        7: 6,
-        8: 7,
-        9: 8,
-        10: 9
+    const modificador =
+        calcularModificador(valorAtributo);
+
+    const rolagem =
+        rolar2d10();
+
+    const resultado =
+        rolagem.total + modificador;
+
+    return {
+
+        ...rolagem,
+
+        modificador,
+
+        resultado,
+
+        sucesso: resultado >= dificuldade
+
     };
-
-    return tabela[valor] ?? 0;
 
 }
 
 
-/* =========================
-   CÁLCULO DE CA
-========================= */
+/* =========================================================
+   CA
+   ========================================================= */
 
 function calcularCA(agilidade) {
 
-    return 10 + calcularModificador(agilidade);
+    return sistema.caBase +
+        calcularModificador(agilidade);
 
 }
 
 
-/* =========================
-   CÁLCULO DE VIDA
-========================= */
+/* =========================================================
+   VIDA
+   ========================================================= */
 
 function calcularVida(constituicao) {
 
-    return 20 + (constituicao * 2);
+    return sistema.vidaBase +
+        (Number(constituicao) * 2);
 
 }
 
 
-/* =========================
-   CÁLCULO DE FADIGA
-========================= */
+/* =========================================================
+   FADIGA
+   ========================================================= */
 
 function calcularFadiga(constituicao) {
 
-    return 5 + calcularModificador(constituicao);
+    return 5 +
+        calcularModificador(constituicao);
 
 }
 
 
-/* =========================
+/* =========================================================
    INICIATIVA
-========================= */
+   ========================================================= */
 
 function rolarIniciativa(agilidade) {
 
-    const resultado = rolar2d10();
+    const rolagem =
+        rolar2d10();
+
+    const modificador =
+        calcularModificador(agilidade);
 
     return {
-        ...resultado,
 
-        iniciativa:
-            resultado.total +
-            calcularModificador(agilidade)
+        dado1: rolagem.dado1,
+
+        dado2: rolagem.dado2,
+
+        modificador,
+
+        total:
+            rolagem.total + modificador
+
     };
 
 }
 
 
-/* =========================
+/* =========================================================
    ATAQUE
-========================= */
+   ========================================================= */
 
-function realizarAtaque(atributo, CA) {
-
-    const resultado = rolar2d10();
+function realizarAtaque(atributo, defesa) {
 
     const modificador =
         calcularModificador(atributo);
 
+    const rolagem =
+        rolar2d10();
+
     const total =
-        resultado.total +
-        modificador;
+        rolagem.total + modificador;
+
 
     return {
 
-        ...resultado,
+        dado1: rolagem.dado1,
+
+        dado2: rolagem.dado2,
+
+        modificador,
 
         total,
 
-        acertou:
-            resultado.critico ||
-            total >= CA
+        acerto:
+            total >= defesa,
+
+        critico:
+            rolagem.critico,
+
+        falhaCritica:
+            rolagem.falhaCritica
 
     };
 
 }
 
 
-/* =========================
+/* =========================================================
    DANO DESARMADO
-========================= */
+   ========================================================= */
 
 function danoDesarmado(forca) {
 
-    const dado = rolarDado(6);
+    const dado =
+        rolarDado(6);
+
+    const modificador =
+        calcularModificador(forca);
 
     return {
+
         dado,
-        modificador:
-            calcularModificador(forca),
+
+        modificador,
+
         total:
-            dado +
-            calcularModificador(forca)
+            Math.max(0, dado + modificador)
+
     };
 
 }
 
 
-/* =========================
-   REAÇÃO — ESQUIVA
-========================= */
+/* =========================================================
+   CRÍTICO
+   ========================================================= */
 
-function aplicarEsquiva(CA) {
-
-    return CA + 2;
-
-}
-
-
-/* =========================
-   REAÇÃO — DEFESA EMERGENCIAL
-========================= */
-
-function defesaEmergencial(dano) {
-
-    const reducao = rolarDado(6);
+function danoCritico(lados, modificador = 0) {
 
     return {
-        reducao,
-        danoFinal:
-            Math.max(0, dano - reducao)
+
+        dano:
+            lados + modificador,
+
+        maximizado: true
+
     };
 
 }
 
 
-/* =========================
-   TESTE DE SOBREVIVÊNCIA
-========================= */
+/* =========================================================
+   ESQUIVA
+   ========================================================= */
+
+function aplicarEsquiva(caAtual) {
+
+    return caAtual + 2;
+
+}
+
+
+/* =========================================================
+   DEFESA EMERGENCIAL
+   ========================================================= */
+
+function defesaEmergencial(danoRecebido) {
+
+    const reducao =
+        rolarDado(6);
+
+    return {
+
+        reducao,
+
+        danoFinal:
+            Math.max(0, danoRecebido - reducao)
+
+    };
+
+}
+
+
+/* =========================================================
+   SOBREVIVÊNCIA
+   ========================================================= */
 
 function testeSobrevivencia(constituicao) {
 
-    const resultado = rolar2d10();
+    const rolagem =
+        rolar2d10();
 
-    const total =
-        resultado.total +
-        constituicao;
+    const resultado =
+        rolagem.total +
+        Number(constituicao);
 
     return {
 
-        ...resultado,
+        ...rolagem,
 
-        total,
-
-        sucesso:
-            total >= 10
+        resultado
 
     };
 
 }
 
 
-/* =========================
-   KAGUNE
-========================= */
+/* =========================================================
+   REGENERAÇÃO
+   ========================================================= */
 
-const kagunes = {
+function regeneracaoGhoul(fome) {
 
-    ukaku: {
-        nome: "Ukaku",
-        bonus: "+2 Agilidade",
-        especialidade: "Ataques à distância",
-        fraqueza: "Baixa resistência"
-    },
+    const dado =
+        rolarDado(6);
 
-    koukaku: {
-        nome: "Koukaku",
-        bonus: "+2 Resistência",
-        especialidade: "Grande defesa",
-        fraqueza: "Movimentos lentos"
-    },
+    const modificador =
+        calcularModificador(fome);
 
-    rinkaku: {
-        nome: "Rinkaku",
-        bonus: "+2 Regeneração",
-        especialidade: "Alto dano",
-        fraqueza: "Instabilidade emocional"
-    },
+    return {
 
-    bikaku: {
-        nome: "Bikaku",
-        bonus: "+1 atributos físicos",
-        especialidade: "Equilibrado",
-        fraqueza: "Nenhuma específica"
-    }
+        dado,
 
-};
+        modificador,
 
+        total:
+            Math.max(0, dado + modificador)
 
-/* =========================
-   CICLO NATURAL
-========================= */
-
-const cicloKagune = {
-
-    ukaku: "bikaku",
-    bikaku: "rinkaku",
-    rinkaku: "koukaku",
-    koukaku: "ukaku"
-
-};
-
-
-/* =========================
-   VERIFICAR VANTAGEM
-========================= */
-
-function possuiVantagemKagune(atacante, defensor) {
-
-    return cicloKagune[atacante] === defensor;
+    };
 
 }
 
 
-/* =========================
-   RC — ESTÁGIO
-========================= */
+/* =========================================================
+   RANK DE GHOUL
+   ========================================================= */
+
+function determinarRankGhoul(rc) {
+
+    rc = Number(rc);
+
+
+    if (rc >= 10000)
+        return "SS/SSS";
+
+
+    if (rc >= 6000)
+        return "Elite";
+
+
+    if (rc >= 3000)
+        return "Ghoul Forte";
+
+
+    if (rc >= 1000)
+        return "Ghoul Comum";
+
+
+    return "Ghoul Fraco";
+
+}
+
+
+/* =========================================================
+   ESTÁGIO DE RC
+   ========================================================= */
 
 function determinarEstagioRC(rc) {
 
-    if (rc < 1000) {
-        return "Ghoul Iniciante";
+    rc = Number(rc);
+
+
+    if (rc >= 15000) {
+
+        return "Kakuja Completa";
+
     }
 
-    if (rc < 3000) {
-        return "Ghoul Experiente";
-    }
 
-    if (rc < 6000) {
-        return "Ghoul Forte";
-    }
+    if (rc >= 10000) {
 
-    if (rc < 10000) {
-        return "Elite";
-    }
-
-    if (rc < 15000) {
         return "Semi-Kakuja";
+
     }
 
-    return "Kakuja Completa";
+
+    if (rc >= 6000) {
+
+        return "Elite";
+
+    }
+
+
+    if (rc >= 3000) {
+
+        return "Ghoul Forte";
+
+    }
+
+
+    if (rc >= 1000) {
+
+        return "Ghoul Experiente";
+
+    }
+
+
+    return "Ghoul Iniciante";
 
 }
 
 
-/* =========================
+/* =========================================================
+   ALIMENTAÇÃO
+   ========================================================= */
+
+const alimentacao = {
+
+    cadaverRuim: 20,
+
+    desnutrido: 30,
+
+    humanoComum: 50,
+
+    humanoSaudavel: 60,
+
+    atletaMilitar: 75,
+
+    investigadorCCG: 100
+
+};
+
+
+const consumoGhoul = {
+
+    fraco: 150,
+
+    rankC: 200,
+
+    rankB: 300,
+
+    rankA: 450,
+
+    rankSS: 700,
+
+    rankSSS: 1000
+
+};
+
+
+/* =========================================================
+   FOME
+   ========================================================= */
+
+function aumentarFome(fomeAtual, missoesSemComer = 1) {
+
+    return Number(fomeAtual) +
+        Number(missoesSemComer);
+
+}
+
+
+function verificarFrenesi(fome, dificuldade = 15) {
+
+    if (fome < 10) {
+
+        return {
+
+            necessario: false,
+
+            sucesso: true
+
+        };
+
+    }
+
+
+    const teste =
+        teste2d10(fome, dificuldade);
+
+
+    return {
+
+        necessario: true,
+
+        sucesso: teste.sucesso,
+
+        resultado: teste.resultado
+
+    };
+
+}
+
+
+/* =========================================================
+   SEMI-KAKUJA
+   ========================================================= */
+
+function ativarSemiKakuja(vontade, dificuldade = 15) {
+
+    const teste =
+        teste2d10(vontade, dificuldade);
+
+
+    return {
+
+        ativada: true,
+
+        controlada: teste.sucesso,
+
+        resultado: teste.resultado,
+
+        frenesi: !teste.sucesso
+
+    };
+
+}
+
+
+/* =========================================================
+   GHOUL DE UM OLHO
+   ========================================================= */
+
+function rolarGhoulUmOlho() {
+
+    const resultado =
+        rolarDado(100);
+
+    return {
+
+        resultado,
+
+        umOlho:
+            resultado >= 96
+
+    };
+
+}
+
+
+/* =========================================================
+   CICLO DE KAGUNES
+   ========================================================= */
+
+function vantagemKagune(atacante, defensor) {
+
+    const ciclo = {
+
+        ukaku: "bikaku",
+
+        bikaku: "rinkaku",
+
+        rinkaku: "koukaku",
+
+        koukaku: "ukaku"
+
+    };
+
+
+    return ciclo[atacante] === defensor;
+
+}
+
+
+/* =========================================================
    UTILITÁRIOS
-========================= */
+   ========================================================= */
 
 function limitar(valor, minimo, maximo) {
 
@@ -429,43 +630,79 @@ function limitar(valor, minimo, maximo) {
 }
 
 
-/* =========================
-   API GLOBAL
-========================= */
+function formatarNumero(numero) {
+
+    return Number(numero)
+        .toLocaleString("pt-BR");
+
+}
+
+
+/* =========================================================
+   EXPORTAÇÃO
+   ========================================================= */
 
 window.NoitesEmTokyo = {
 
-    rolarDado,
-    rolar2d10,
+    sistema,
+
+    kagunes,
+
+    alimentacao,
+
+    consumoGhoul,
 
     calcularModificador,
+
+    rolarDado,
+
+    rolar2d10,
+
+    teste2d10,
+
     calcularCA,
+
     calcularVida,
+
     calcularFadiga,
 
     rolarIniciativa,
+
     realizarAtaque,
+
     danoDesarmado,
 
+    danoCritico,
+
     aplicarEsquiva,
+
     defesaEmergencial,
+
     testeSobrevivencia,
 
-    kagunes,
-    cicloKagune,
-    possuiVantagemKagune,
+    regeneracaoGhoul,
+
+    determinarRankGhoul,
 
     determinarEstagioRC,
-    limitar
+
+    aumentarFome,
+
+    verificarFrenesi,
+
+    ativarSemiKakuja,
+
+    rolarGhoulUmOlho,
+
+    vantagemKagune,
+
+    limitar,
+
+    formatarNumero
 
 };
 
 
 console.log(
-    "%c NOITES EM TOKYO — SISTEMA ONLINE ",
-    "color:#d62845;font-weight:bold;font-size:14px;"
-);
-
-console.log(
-    "Fase 1 — Fundamentos Jogáveis carregada."
+    "Noites em Tokyo — Sistema carregado."
 );
