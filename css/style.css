@@ -2689,3 +2689,146 @@ tbody tr:hover {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* =========================================================
+   CCG — FOME DE CAÇA
+   Mantém a identidade visual oficial da CCG e adiciona
+   apenas os componentes necessários para a regra.
+========================================================= */
+
+.ccg-hunt-hunger {
+    margin-bottom: 25px;
+}
+
+.ccg-hunt-intro {
+    margin-top: 35px;
+}
+
+.ccg-hunt-scale {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.ccg-hunt-scale article {
+    min-height: 190px;
+    padding: 20px;
+    background: rgba(11,14,18,.86);
+    border: 1px solid rgba(60,130,196,.14);
+    border-top: 2px solid rgba(60,130,196,.34);
+}
+
+.ccg-hunt-scale article > span {
+    color: var(--ccg-light);
+    font-family: var(--serif);
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+
+.ccg-hunt-scale article strong {
+    display: block;
+    margin-top: 10px;
+    color: var(--text);
+    font-size: 11px;
+}
+
+.ccg-hunt-scale article p {
+    margin-top: 9px;
+    color: var(--text-muted);
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+.ccg-hunt-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ccg-hunt-list {
+    margin: 18px 0 0;
+    padding-left: 18px;
+}
+
+.ccg-hunt-list li {
+    margin: 9px 0;
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.65;
+}
+
+.ccg-hunt-list strong {
+    color: var(--text);
+}
+
+.ccg-hunt-note {
+    margin-top: 18px;
+    color: var(--text-muted);
+    font-size: 9px;
+    line-height: 1.65;
+}
+
+.ccg-hunt-will {
+    margin-top: 10px;
+}
+
+.ccg-hunt-will .formula-panel {
+    margin-top: 20px;
+}
+
+.ccg-hunt-archetypes {
+    margin-top: 35px;
+}
+
+.ccg-hunt-archetype-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.ccg-hunt-archetype-grid article {
+    min-height: 150px;
+    padding: 18px;
+    background: rgba(11,14,18,.78);
+    border: 1px solid rgba(60,130,196,.12);
+    border-left: 2px solid rgba(60,130,196,.28);
+}
+
+.ccg-hunt-archetype-grid strong {
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 12px;
+}
+
+.ccg-hunt-archetype-grid p {
+    margin-top: 9px;
+    color: var(--text-muted);
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+.ccg-hunt-hunger > .warning-panel {
+    margin-top: 12px;
+}
+
+@media (max-width: 1050px) {
+    .ccg-hunt-scale {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ccg-hunt-archetype-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .ccg-hunt-scale,
+    .ccg-hunt-columns,
+    .ccg-hunt-archetype-grid {
+        grid-template-columns: 1fr;
+    }
+}
