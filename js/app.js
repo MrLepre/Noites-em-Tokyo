@@ -1,198 +1,18 @@
 /* =========================================================
    NOITES EM TOKYO
-   JAVASCRIPT
-   FASE 1 — COMBATE
+   FASE 2 — CRIAÇÃO DE PERSONAGEM
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
 
+/* =========================================================
+   MODIFICADORES
+========================================================= */
 
-    /* =====================================================
-       ANO AUTOMÁTICO
-    ====================================================== */
+function calcularModificador(valor) {
 
-    const year = document.getElementById("current-year");
+    valor = Number(valor);
 
-    if (year) {
-        year.textContent = new Date().getFullYear();
-    }
-
-
-    /* =====================================================
-       NAVEGAÇÃO ATIVA
-    ====================================================== */
-
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    const sections = document.querySelectorAll(
-        "main section[id]"
-    );
-
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach((entry) => {
-
-                if (!entry.isIntersecting) {
-                    return;
-                }
-
-                const id =
-                    entry.target.getAttribute("id");
-
-                navLinks.forEach((link) => {
-
-                    link.classList.remove("active");
-
-                    if (
-                        link.getAttribute("href") ===
-                        `#${id}`
-                    ) {
-                        link.classList.add("active");
-                    }
-
-                });
-
-            });
-
-        },
-        {
-            rootMargin: "-30% 0px -60% 0px",
-            threshold: 0
-        }
-    );
-
-
-    sections.forEach((section) => {
-        observer.observe(section);
-    });
-
-
-    /* =====================================================
-       SCROLL SUAVE
-    ====================================================== */
-
-    navLinks.forEach((link) => {
-
-        link.addEventListener(
-            "click",
-            (event) => {
-
-                const targetId =
-                    link.getAttribute("href");
-
-                if (
-                    !targetId ||
-                    !targetId.startsWith("#")
-                ) {
-                    return;
-                }
-
-                const target =
-                    document.querySelector(targetId);
-
-                if (!target) {
-                    return;
-                }
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-        );
-
-    });
-
-
-    /* =====================================================
-       REVELAÇÃO DOS ELEMENTOS
-    ====================================================== */
-
-    const revealElements =
-        document.querySelectorAll(
-            ".feature-card, " +
-            ".attribute-card, " +
-            ".kagune-entry, " +
-            ".kakuja-card, " +
-            ".small-panel, " +
-            ".rank-card, " +
-            ".district-grid article, " +
-            ".investigation-grid article"
-        );
-
-
-    const revealObserver =
-        new IntersectionObserver(
-            (entries, observer) => {
-
-                entries.forEach((entry) => {
-
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
-
-                    entry.target.classList.add(
-                        "revealed"
-                    );
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                });
-
-            },
-            {
-                threshold: 0.08
-            }
-        );
-
-
-    revealElements.forEach((element) => {
-
-        element.style.opacity = "0";
-
-        element.style.transform =
-            "translateY(16px)";
-
-        element.style.transition =
-            "opacity .6s ease, transform .6s ease";
-
-        revealObserver.observe(element);
-
-    });
-
-
-    /* =====================================================
-       CSS DA REVELAÇÃO
-    ====================================================== */
-
-    const style =
-        document.createElement("style");
-
-    style.textContent = `
-
-        .revealed {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-    `;
-
-    document.head.appendChild(style);
-
-
-    /* =====================================================
-       SISTEMA DE DADOS
-    ====================================================== */
-
-    const modificadores = {
-
+    const tabela = {
         0: -1,
         1: 0,
         2: 1,
@@ -204,594 +24,732 @@ document.addEventListener("DOMContentLoaded", () => {
         8: 7,
         9: 8,
         10: 9
+    };
 
+    return tabela[Math.max(0, Math.min(10, valor))] ?? 0;
+}
+
+
+/* =========================================================
+   DADOS
+========================================================= */
+
+function rolarDado(lados = 10) {
+
+    return Math.floor(Math.random() * lados) + 1;
+}
+
+
+function rolar2d10() {
+
+    return rolarDado(10) + rolarDado(10);
+}
+
+
+/* =========================================================
+   ATRIBUTOS
+========================================================= */
+
+function obterAtributos() {
+
+    return {
+
+        forca:
+            Number(document.getElementById("attrForca").value),
+
+        agilidade:
+            Number(document.getElementById("attrAgilidade").value),
+
+        constituicao:
+            Number(document.getElementById("attrConstituicao").value),
+
+        inteligencia:
+            Number(document.getElementById("attrInteligencia").value),
+
+        sabedoria:
+            Number(document.getElementById("attrSabedoria").value),
+
+        carisma:
+            Number(document.getElementById("attrCarisma").value),
+
+        fome:
+            Number(document.getElementById("attrFome").value)
+
+    };
+}
+
+
+/* =========================================================
+   KAGUNES
+========================================================= */
+
+const kagunes = {
+
+    none: {
+
+        nome: "Nenhuma",
+
+        bonus:
+            "Nenhuma Kagune selecionada.",
+
+        descricao:
+            "Personagem sem Kagune.",
+
+        ca: 0
+
+    },
+
+
+    ukaku: {
+
+        nome: "Ukaku",
+
+        bonus:
+            "+2 Agilidade. Especialização em ataques à distância.",
+
+        descricao:
+            "Kagune leve e veloz, especializada em ataques à distância. Sua principal limitação é a baixa resistência.",
+
+        ca: 0
+
+    },
+
+
+    koukaku: {
+
+        nome: "Koukaku",
+
+        bonus:
+            "+2 Resistência. Grande capacidade defensiva.",
+
+        descricao:
+            "Kagune extremamente resistente, capaz de assumir formas de escudo ou lâmina. Seus movimentos são mais lentos.",
+
+        ca: 2
+
+    },
+
+
+    rinkaku: {
+
+        nome: "Rinkaku",
+
+        bonus:
+            "+2 Regeneração. Alto potencial de dano.",
+
+        descricao:
+            "Kagune extremamente ofensiva, com forte regeneração. Sua principal fraqueza é a instabilidade emocional.",
+
+        ca: 0
+
+    },
+
+
+    bikaku: {
+
+        nome: "Bikaku",
+
+        bonus:
+            "+1 em todos os atributos físicos.",
+
+        descricao:
+            "Kagune equilibrada, normalmente semelhante a uma cauda.",
+
+        ca: 1
+
+    }
+
+};
+
+
+/* =========================================================
+   ORIGENS
+========================================================= */
+
+const origens = {
+
+    humano: {
+
+        nome: "Humano",
+
+        bonus:
+            "Nenhum bônus sobrenatural.",
+
+        sanidade:
+            10,
+
+        rc:
+            0
+
+    },
+
+
+    ghoul: {
+
+        nome: "Ghoul",
+
+        bonus:
+            "Acesso à Kagune, alimentação por carne humana e regeneração.",
+
+        sanidade:
+            10,
+
+        rc:
+            500
+
+    },
+
+
+    "one-eyed": {
+
+        nome: "Ghoul de Um Olho",
+
+        bonus:
+            "+2 em todos os atributos físicos, RC muito elevado e evolução mais rápida.",
+
+        sanidade:
+            10,
+
+        rc:
+            1000
+
+    }
+
+};
+
+
+/* =========================================================
+   ORIGEM
+========================================================= */
+
+function atualizarOrigem() {
+
+    atualizarFicha();
+
+}
+
+
+/* =========================================================
+   VIDA
+========================================================= */
+
+function calcularVida(constituicao) {
+
+    return 20 + (Number(constituicao) * 2);
+}
+
+
+/* =========================================================
+   FADIGA
+========================================================= */
+
+function calcularFadiga(constituicao) {
+
+    return 5 + calcularModificador(constituicao);
+}
+
+
+/* =========================================================
+   CA
+========================================================= */
+
+function calcularCA(agilidade, bonusKagune = 0) {
+
+    return 10 +
+        calcularModificador(agilidade) +
+        Number(bonusKagune);
+
+}
+
+
+/* =========================================================
+   INICIATIVA
+========================================================= */
+
+function valorIniciativa(agilidade) {
+
+    return calcularModificador(agilidade);
+
+}
+
+
+/* =========================================================
+   SANIDADE
+========================================================= */
+
+function calcularSanidade(sabedoria, origem) {
+
+    let base =
+        10 + calcularModificador(sabedoria);
+
+    if (origem === "one-eyed") {
+
+        base += 1;
+
+    }
+
+    return Math.max(1, base);
+
+}
+
+
+/* =========================================================
+   ATUALIZAR MODIFICADORES VISUAIS
+========================================================= */
+
+function atualizarModificadores() {
+
+    const atributos = obterAtributos();
+
+
+    document.getElementById("modForca").textContent =
+        formatarMod(calcularModificador(atributos.forca));
+
+
+    document.getElementById("modAgilidade").textContent =
+        formatarMod(calcularModificador(atributos.agilidade));
+
+
+    document.getElementById("modConstituicao").textContent =
+        formatarMod(calcularModificador(atributos.constituicao));
+
+
+    document.getElementById("modInteligencia").textContent =
+        formatarMod(calcularModificador(atributos.inteligencia));
+
+
+    document.getElementById("modSabedoria").textContent =
+        formatarMod(calcularModificador(atributos.sabedoria));
+
+
+    document.getElementById("modCarisma").textContent =
+        formatarMod(calcularModificador(atributos.carisma));
+
+
+    document.getElementById("modFome").textContent =
+        formatarMod(calcularModificador(atributos.fome));
+
+}
+
+
+function formatarMod(valor) {
+
+    return valor >= 0
+        ? `+${valor}`
+        : `${valor}`;
+
+}
+
+
+/* =========================================================
+   APLICAR BÔNUS DA ORIGEM
+========================================================= */
+
+function aplicarBonusOrigem(atributos, origem) {
+
+    const resultado = {
+        ...atributos
     };
 
 
-    /* =====================================================
-       MODIFICADOR
-    ====================================================== */
+    if (origem === "one-eyed") {
 
-    function calcularModificador(valor) {
+        resultado.forca += 2;
 
-        valor =
-            Number(valor);
+        resultado.agilidade += 2;
 
-        if (
-            Number.isNaN(valor)
-        ) {
-            return 0;
-        }
+        resultado.constituicao += 2;
 
-        valor =
-            Math.max(
-                0,
-                Math.min(
-                    10,
-                    valor
-                )
-            );
-
-        return modificadores[valor];
     }
 
 
-    /* =====================================================
-       DADOS
-    ====================================================== */
+    return resultado;
 
-    function rolarDado(lados = 10) {
+}
 
-        return (
-            Math.floor(
-                Math.random() * lados
-            ) + 1
+
+/* =========================================================
+   ATUALIZAR FICHA
+========================================================= */
+
+function atualizarFicha() {
+
+    atualizarModificadores();
+
+
+    const atributosBase =
+        obterAtributos();
+
+
+    const origem =
+        document.getElementById("charOrigin").value;
+
+
+    const kagune =
+        document.getElementById("charKagune").value;
+
+
+    const atributos =
+        aplicarBonusOrigem(
+            atributosBase,
+            origem
         );
 
-    }
+
+    const dadosOrigem =
+        origens[origem] ||
+        origens.humano;
 
 
-    function rolar2d10() {
-
-        const dado1 =
-            rolarDado(10);
-
-        const dado2 =
-            rolarDado(10);
-
-        return {
-
-            dado1,
-            dado2,
-
-            total:
-                dado1 + dado2,
-
-            critico:
-                dado1 === 10 &&
-                dado2 === 10,
-
-            falhaCritica:
-                dado1 === 1 &&
-                dado2 === 1
-
-        };
-
-    }
+    const dadosKagune =
+        kagunes[kagune] ||
+        kagunes.none;
 
 
-    /* =====================================================
-       VIDA
-       FASE 1
-       
-       Vida = 20 + Constituição × 2
-    ====================================================== */
-
-    function calcularVida(constituicao) {
-
-        constituicao =
-            Number(constituicao);
-
-        if (
-            Number.isNaN(constituicao)
-        ) {
-            return 20;
-        }
-
-        return (
-            20 +
-            (constituicao * 2)
+    const vida =
+        calcularVida(
+            atributos.constituicao
         );
 
-    }
 
-
-    /* =====================================================
-       FADIGA
-       FASE 1
-       
-       Fadiga = 5 + modificador de Constituição
-    ====================================================== */
-
-    function calcularFadiga(constituicao) {
-
-        const modificador =
-            calcularModificador(
-                constituicao
-            );
-
-        return (
-            5 +
-            modificador
+    const fadiga =
+        calcularFadiga(
+            atributos.constituicao
         );
 
-    }
 
-
-    /* =====================================================
-       CA
-       FASE 1
-       
-       CA = 10 + modificador de Agilidade
-    ====================================================== */
-
-    function calcularCA(agilidade) {
-
-        return (
-            10 +
-            calcularModificador(
-                agilidade
-            )
+    const ca =
+        calcularCA(
+            atributos.agilidade,
+            dadosKagune.ca
         );
 
-    }
 
-
-    /* =====================================================
-       INICIATIVA
-       
-       2d10 + modificador de Agilidade
-    ====================================================== */
-
-    function rolarIniciativa(agilidade) {
-
-        const dados =
-            rolar2d10();
-
-        const modificador =
-            calcularModificador(
-                agilidade
-            );
-
-        return {
-
-            ...dados,
-
-            modificador,
-
-            resultado:
-                dados.total +
-                modificador
-
-        };
-
-    }
-
-
-    /* =====================================================
-       ATAQUE
-       
-       2d10 + modificador
-       
-       Acerta se:
-       resultado >= CA
-    ====================================================== */
-
-    function realizarAtaque(
-        atributo,
-        caAlvo
-    ) {
-
-        const dados =
-            rolar2d10();
-
-        const modificador =
-            calcularModificador(
-                atributo
-            );
-
-        const resultado =
-            dados.total +
-            modificador;
-
-        const acerto =
-            dados.critico ||
-            resultado >= Number(caAlvo);
-
-        return {
-
-            ...dados,
-
-            modificador,
-
-            resultado,
-
-            caAlvo,
-
-            acerto
-
-        };
-
-    }
-
-
-    /* =====================================================
-       DANO DESARMADO
-       
-       1d6 + modificador de Força
-    ====================================================== */
-
-    function danoDesarmado(
-        forca,
-        critico = false
-    ) {
-
-        const modificador =
-            calcularModificador(
-                forca
-            );
-
-        const danoBase =
-            critico
-                ? 6
-                : rolarDado(6);
-
-        return {
-
-            dado:
-                danoBase,
-
-            modificador,
-
-            dano:
-                Math.max(
-                    0,
-                    danoBase +
-                    modificador
-                )
-
-        };
-
-    }
-
-
-    /* =====================================================
-       ESQUIVA
-       
-       +2 CA contra um ataque
-    ====================================================== */
-
-    function aplicarEsquiva(caAtual) {
-
-        return (
-            Number(caAtual) + 2
+    const iniciativa =
+        valorIniciativa(
+            atributos.agilidade
         );
 
-    }
+
+    const sanidade =
+        calcularSanidade(
+            atributos.sabedoria,
+            origem
+        );
 
 
-    /* =====================================================
-       DEFESA EMERGENCIAL
-       
-       Reduz 1d6 de dano
-    ====================================================== */
-
-    function defesaEmergencial(dano) {
-
-        const reducao =
-            rolarDado(6);
-
-        return {
-
-            danoOriginal:
-                Number(dano),
-
-            reducao,
-
-            danoFinal:
-                Math.max(
-                    0,
-                    Number(dano) -
-                    reducao
-                )
-
-        };
-
-    }
+    document.getElementById("sheetVida").textContent =
+        vida;
 
 
-    /* =====================================================
-       TESTE DE SOBREVIVÊNCIA
-       
-       2d10 + Constituição
-       
-       Observação:
-       A regra da Fase 1 utiliza Constituição
-       diretamente neste teste.
-    ====================================================== */
-
-    function testeSobrevivencia(
-        constituicao,
-        dificuldade = 10
-    ) {
-
-        const dados =
-            rolar2d10();
-
-        const resultado =
-            dados.total +
-            Number(constituicao);
-
-        return {
-
-            ...dados,
-
-            resultado,
-
-            dificuldade,
-
-            sucesso:
-                resultado >= dificuldade
-
-        };
-
-    }
+    document.getElementById("sheetFadiga").textContent =
+        fadiga;
 
 
-    /* =====================================================
-       REGENERAÇÃO GHOUL
-       
-       1d6 + modificador de Fome
-    ====================================================== */
+    document.getElementById("sheetCA").textContent =
+        ca;
 
-    function regeneracaoGhoul(fome) {
 
-        const dado =
-            rolarDado(6);
+    document.getElementById("sheetInitiative").textContent =
+        `2d10 ${formatarMod(iniciativa)}`;
 
-        const modificador =
-            calcularModificador(
-                fome
-            );
 
-        return {
+    document.getElementById("sheetSanidade").textContent =
+        sanidade;
 
-            dado,
 
-            modificador,
+    document.getElementById("sheetFome").textContent =
+        atributos.fome;
 
-            recuperacao:
-                Math.max(
-                    0,
-                    dado + modificador
-                )
 
-        };
+    document.getElementById("sheetRC").textContent =
+        dadosOrigem.rc;
+
+
+    document.getElementById("originBonus").textContent =
+        dadosOrigem.bonus;
+
+
+    document.getElementById("kaguneBonus").textContent =
+        dadosKagune.bonus;
+
+
+    document.getElementById("kagune-description").textContent =
+        dadosKagune.descricao;
+
+
+    document.getElementById("sheetOrigin").textContent =
+        dadosOrigem.nome;
+
+}
+
+
+/* =========================================================
+   GERAR FICHA
+========================================================= */
+
+function gerarFicha() {
+
+    const nome =
+        document.getElementById("charName").value.trim();
+
+
+    const origem =
+        document.getElementById("charOrigin").value;
+
+
+    document.getElementById("sheetName").textContent =
+        nome || "Personagem";
+
+
+    if (!origem) {
+
+        document.getElementById("sheetOrigin").textContent =
+            "Humano";
 
     }
 
 
-    /* =====================================================
-       RC
-    ====================================================== */
+    atualizarFicha();
 
-    function determinarEstagioRC(rc) {
 
-        rc =
-            Number(rc);
+    const ficha =
+        document.querySelector(".character-sheet");
 
-        if (rc < 1000) {
-            return "Ghoul Iniciante";
-        }
 
-        if (rc < 3000) {
-            return "Ghoul Experiente";
-        }
+    ficha.scrollIntoView({
 
-        if (rc < 6000) {
-            return "Ghoul Forte";
-        }
+        behavior: "smooth",
 
-        if (rc < 10000) {
-            return "Elite";
-        }
+        block: "center"
 
-        if (rc < 15000) {
-            return "Semi-Kakuja";
-        }
+    });
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+function resetarFicha() {
+
+    document.getElementById("charName").value = "";
+
+    document.getElementById("charAge").value = "";
+
+    document.getElementById("charDistrict").value = "";
+
+    document.getElementById("charOrigin").value = "";
+
+    document.getElementById("charKagune").value = "none";
+
+
+    document.getElementById("attrForca").value = 1;
+
+    document.getElementById("attrAgilidade").value = 1;
+
+    document.getElementById("attrConstituicao").value = 1;
+
+    document.getElementById("attrInteligencia").value = 1;
+
+    document.getElementById("attrSabedoria").value = 1;
+
+    document.getElementById("attrCarisma").value = 1;
+
+    document.getElementById("attrFome").value = 0;
+
+
+    document.getElementById("sheetName").textContent =
+        "Personagem";
+
+
+    atualizarFicha();
+
+}
+
+
+/* =========================================================
+   TESTE DE ATRIBUTO
+========================================================= */
+
+function testeAtributo(valor) {
+
+    const resultado =
+        rolar2d10() +
+        calcularModificador(valor);
+
+    return resultado;
+
+}
+
+
+/* =========================================================
+   ATAQUE
+========================================================= */
+
+function realizarAtaque(atributo, CA) {
+
+    const dado1 = rolarDado(10);
+
+    const dado2 = rolarDado(10);
+
+    const modificador =
+        calcularModificador(atributo);
+
+    const total =
+        dado1 +
+        dado2 +
+        modificador;
+
+
+    return {
+
+        dado1,
+
+        dado2,
+
+        modificador,
+
+        total,
+
+        critico:
+            dado1 === 10 &&
+            dado2 === 10,
+
+        falhaCritica:
+            dado1 === 1 &&
+            dado2 === 1,
+
+        acertou:
+            total >= CA ||
+            (dado1 === 10 && dado2 === 10)
+
+    };
+
+}
+
+
+/* =========================================================
+   DANO DESARMADO
+========================================================= */
+
+function danoDesarmado(forca) {
+
+    return
+        rolarDado(6) +
+        calcularModificador(forca);
+
+}
+
+
+/* =========================================================
+   REAÇÃO — ESQUIVA
+========================================================= */
+
+function aplicarEsquiva(caAtual) {
+
+    return Number(caAtual) + 2;
+
+}
+
+
+/* =========================================================
+   DEFESA EMERGENCIAL
+========================================================= */
+
+function defesaEmergencial(dano) {
+
+    const reducao =
+        rolarDado(6);
+
+    return Math.max(
+        0,
+        Number(dano) - reducao
+    );
+
+}
+
+
+/* =========================================================
+   TESTE DE SOBREVIVÊNCIA
+========================================================= */
+
+function testeSobrevivencia(constituicao) {
+
+    return
+        rolar2d10() +
+        calcularModificador(constituicao);
+
+}
+
+
+/* =========================================================
+   REGENERAÇÃO GHOUL
+========================================================= */
+
+function regeneracaoGhoul(fome) {
+
+    return
+        rolarDado(6) +
+        calcularModificador(fome);
+
+}
+
+
+/* =========================================================
+   ESTÁGIO RC
+========================================================= */
+
+function determinarEstagioRC(rc) {
+
+    rc = Number(rc);
+
+
+    if (rc >= 15000) {
 
         return "Kakuja Completa";
 
     }
 
+    if (rc >= 10000) {
 
-    /* =====================================================
-       CICLO DOS KAGUNES
-    ====================================================== */
-
-    const cicloKagune = {
-
-        Ukaku: "Bikaku",
-
-        Bikaku: "Rinkaku",
-
-        Rinkaku: "Koukaku",
-
-        Koukaku: "Ukaku"
-
-    };
-
-
-    function possuiVantagemKagune(
-        atacante,
-        defensor
-    ) {
-
-        if (
-            !atacante ||
-            !defensor
-        ) {
-            return false;
-        }
-
-        return (
-            cicloKagune[atacante] ===
-            defensor
-        );
+        return "Semi-Kakuja";
 
     }
 
+    if (rc >= 6000) {
 
-    /* =====================================================
-       UM OLHO
-    ====================================================== */
-
-    function determinarGhoulUmOlho() {
-
-        const resultado =
-            rolarDado(100);
-
-        return {
-
-            resultado,
-
-            umOlho:
-                resultado >= 96
-
-        };
+        return "Elite";
 
     }
 
+    if (rc >= 3000) {
 
-    /* =====================================================
-       FOME
-    ====================================================== */
-
-    function aumentarFome(
-        fomeAtual,
-        missoesSemAlimentacao = 1
-    ) {
-
-        return (
-            Number(fomeAtual) +
-            Number(missoesSemAlimentacao)
-        );
+        return "Ghoul Forte";
 
     }
 
+    if (rc >= 1000) {
 
-    /* =====================================================
-       LIMITADOR DE ATRIBUTO
-    ====================================================== */
-
-    function limitar(
-        valor,
-        minimo = 0,
-        maximo = 10
-    ) {
-
-        return Math.max(
-            minimo,
-            Math.min(
-                maximo,
-                Number(valor)
-            )
-        );
+        return "Ghoul Experiente";
 
     }
 
+    return "Ghoul Iniciante";
 
-    /* =====================================================
-       EXPOSIÇÃO GLOBAL
-       
-       Permite que outras partes do projeto,
-       futuras fichas e ferramentas utilizem
-       as regras sem duplicar código.
-    ====================================================== */
-
-    window.NoitesEmTokyo = {
-
-        dados: {
-
-            modificadores
-
-        },
-
-        dadosRPG: {
-
-            rolarDado,
-
-            rolar2d10,
-
-            calcularModificador,
-
-            calcularVida,
-
-            calcularFadiga,
-
-            calcularCA,
-
-            rolarIniciativa,
-
-            realizarAtaque,
-
-            danoDesarmado,
-
-            aplicarEsquiva,
-
-            defesaEmergencial,
-
-            testeSobrevivencia,
-
-            regeneracaoGhoul,
-
-            determinarEstagioRC,
-
-            possuiVantagemKagune,
-
-            determinarGhoulUmOlho,
-
-            aumentarFome,
-
-            limitar
-
-        },
-
-        kagune: {
-
-            ciclo:
-                cicloKagune
-
-        }
-
-    };
+}
 
 
-    /* =====================================================
-       LOG INICIAL
-    ====================================================== */
+/* =========================================================
+   INICIALIZAÇÃO
+========================================================= */
 
-    console.log(
-        "%c NOITES EM TOKYO ",
-        "color:#d83243;font-weight:bold;"
-    );
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
 
-    console.log(
-        "Manual carregado."
-    );
+        atualizarFicha();
 
-    console.log(
-        "Fase 1 de combate carregada."
-    );
-
-});
+    }
+);
