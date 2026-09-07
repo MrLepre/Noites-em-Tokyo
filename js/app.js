@@ -1,7 +1,7 @@
 /* =========================================================
    NOITES EM TOKYO
    JAVASCRIPT
-   FASE 1 — COMBATE
+   FASES DO SISTEMA — NAVEGAÇÃO E REGRAS
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
