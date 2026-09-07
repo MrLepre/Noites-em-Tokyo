@@ -2313,3 +2313,100 @@ tbody tr:hover {
     }
 
 }
+
+
+/* =========================================================
+   ARATAS — CCG
+========================================================= */
+
+.ccg-arata-intro {
+    border-left: 3px solid var(--ccg);
+    margin-bottom: 20px;
+}
+
+.warning-panel {
+    margin-top: 24px;
+    padding: 18px 20px;
+    background: rgba(90, 20, 24, .20);
+    border: 1px solid rgba(180, 55, 65, .28);
+    border-left: 3px solid var(--accent);
+}
+
+.warning-panel p {
+    margin-bottom: 0;
+}
+
+.arata-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 20px 0 28px;
+}
+
+.arata-card {
+    min-width: 0;
+    overflow: hidden;
+    background: rgba(11, 14, 18, .88);
+    border: 1px solid rgba(60, 130, 196, .16);
+}
+
+.arata-art {
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #090909;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.arata-art img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: contain;
+}
+
+.arata-info {
+    padding: 24px;
+}
+
+.arata-info h3 {
+    margin-bottom: 12px;
+}
+
+.arata-info p {
+    margin-bottom: 18px;
+}
+
+.arata-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.arata-tags span {
+    padding: 5px 8px;
+    border: 1px solid rgba(60, 130, 196, .22);
+    color: var(--ccg-light);
+    font-size: 8px;
+    letter-spacing: 1.2px;
+}
+
+@media (max-width: 900px) {
+    .arata-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .arata-art,
+    .arata-art img {
+        min-height: 300px;
+        height: 300px;
+    }
+
+    .arata-info {
+        padding: 18px;
+    }
+}
